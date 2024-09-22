@@ -3,8 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
 
 body {
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
     background: url(/static/img/bg.png) repeat;
+    background-color: rgb(24, 181, 192);
+    background-size: auto;
     font-family: "Playpen Sans", cursive;
+}
+
+/* Ensure the main content pushes the footer to the bottom */
+main {
+  flex: 1 0 auto;
 }
 
 /* Header style*/
@@ -15,7 +27,7 @@ body {
 .top-header {
     background: url(/static/img/header-bg2.png) no-repeat;
     /* align-items: center; */
-    height: 200px;
+    height: 180px;
     /* overflow: hidden; */
     background-position-x: center;
     background-size: cover;
@@ -34,9 +46,13 @@ body {
 .logo {
     height: 40%;
     width: 40%;
-
+    min-height: 20%;
+    min-width: 20%;
 }
 
+.d-flex.flex-column {
+  min-height: 100vh;
+}
 
 /* Custom styling for the dropdown */
   .dropdown-menu {
@@ -48,11 +64,11 @@ body {
 
   .dropdown-item {
     color: black !important; /* Set text color to black */
-    background-color: rgb(255,255,255, 0.5)
+    background-color: rgb(255,255,255, 0.9)
   }
 
   .dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.1) !important; /* Slight hover effect with transparent black */
+    background-color: rgba(128, 174, 255, 0.8) !important; /* Slight hover effect with transparent black */
     color: black !important; /* Ensure text stays black on hover */
   }
 
@@ -114,8 +130,25 @@ body {
     width: 1.75rem;
   }
 
-
-
 .slider-img {
     width: 888px;
+}
+
+/* Footer */
+.footer {
+    margin-top: 20px; /* Push the footer to the bottom */
+    background: url(/static/img/header-bg2.png) no-repeat;
+    height: 180px;
+    background-position-x: center;
+    background-size: cover;
+    padding-bottom: 0;
+    text-align: center; /* Optional: center align footer content */
+}
+
+
+
+
+/* Media Queries */
+@media (min-width: 992px) {
+    
 }

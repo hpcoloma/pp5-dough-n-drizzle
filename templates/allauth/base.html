@@ -2,53 +2,65 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+<head>
+  {% block meta %}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% endblock %}
 
-    {% block corecss %}
-    <!--Bootsrap CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+  {% block extra_meta %}
+  {% endblock %}
 
-    {% endblock %}
+  {% block corecss %}
+  <!--Bootsrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!--Google Font-->
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
 
-    {% block extra_css %}
-    {% endblock %}
+  {% endblock %}
 
-    {% block corejs %}
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    {% endblock %}
+  {% block extra_css %}
+  {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+  {% block corejs %}
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+  </script>
+  {% endblock %}
 
-    <title>Dough n' Drizzle {% block extra_title %} {% endblock %}</title>
+  {% block extra_js %}
+  {% endblock %}
 
-  </head>
-  <body>
+  <title>Dough n' Drizzle {% block extra_title %} {% endblock %}</title>
+
+</head>
+
+<body>
+  <div class="d-flex flex-column min-vh-100">
     <header class="container-fluid fixed-top"></header>
+
     <div class="header-top">
       <div class="row top-header">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <div class="d-flex justify-content-start align-items-center">
             <!-- Currency Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="currencyDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="currencyDropdown"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 EUR
               </button>
               <div class="dropdown-menu" aria-labelledby="currencyDropdown">
@@ -56,34 +68,35 @@
                 <a class="dropdown-item" href="#">USD</a>
               </div>
             </div>
-            
+
             <span class="mx-2">|</span>
 
             <!-- MY ACCOUNT Dropdown -->
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="user-options" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 MY ACCOUNT
               </button>
               <div class="dropdown-menu" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                      <a href="" class="dropdown-item">Product Management</a>
-                    {% endif %}
-                    <a href="" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% if request.user.is_superuser %}
+                <a href="" class="dropdown-item">Product Management</a>
+                {% endif %}
+                <a href="" class="dropdown-item">My Profile</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                 {% endif %}
               </div>
             </div>
           </div>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
-            <a href="{% url 'home' %}" class="nav-link main-logo-link">
-              <h1 id="logo">Dough n Drizzle</h1>
-              <img class="logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
-            </a>
+          <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <h1 id="logo">Dough n Drizzle</h1>
+            <img class="logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
+          </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <div class="d-flex justify-content-end align-items-center">
@@ -91,7 +104,7 @@
             <a href="#" class="icon-container mx-2 search-icon" data-toggle="modal" data-target="#searchModal">
               <img class="icons" src="{% static 'img/search1.png' %}" alt="Search">
             </a>
-        
+
             <!-- Favorite Icon -->
             <a href="#" class="icon-container mx-2 favorite-icon">
               <img class="icons" src="{% static 'img/favorite.png' %}" alt="Favorite">
@@ -103,11 +116,11 @@
             </a>
           </div>
         </div>
-        
+
       </div>
     </div>
     {% if messages %}
-        <div class="message-container">THIS IS A MESSAGE</div>
+    <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}
@@ -119,34 +132,42 @@
     {% block postloadjs %}
     {% endblock %}
 
-  
-  <!-- Search Modal -->
-    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <!-- <div class="modal-header">
-            <h5 class="modal-title" id="searchModalLabel">Search</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div> -->
+              <h5 class="modal-title" id="searchModalLabel">Search</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div> -->
           <div class="modal-body">
             <form method="GET" action="">
               <div class="input-group w-100">
-                  <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                  <div class="input-group-append">
-                      <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                        <span class="icon icon-container">
-                          <span class="modal-icon"></span>
-                        </span>
-                      </button>
-                  </div>
+                <input class="form-control border border-black rounded-0" type="text" name="q"
+                  placeholder="Search our site">
+                <div class="input-group-append">
+                  <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                    <span class="icon icon-container">
+                      <span class="modal-icon"></span>
+                    </span>
+                  </button>
+                </div>
               </div>
-          </form>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
-  </body>
+    <!-- Footer -->
+    <footer class="footer">
+      {% include "snippets/footer.html" %}
+    </footer>
+  </div>
+</body>
+
 </html>
