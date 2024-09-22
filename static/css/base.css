@@ -1,10 +1,119 @@
 
-
+/*Google Fonts Import*/
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
 
 body {
-    
-    
+    background: url(/static/img/bg.png) repeat;
+    font-family: "Playpen Sans", cursive;
 }
+
+/* Header style*/
+.header-top {
+    padding: 20px;
+}
+
+.top-header {
+    background: url(/static/img/header-bg2.png) no-repeat;
+    /* align-items: center; */
+    height: 200px;
+    /* overflow: hidden; */
+    background-position-x: center;
+    background-size: cover;
+    padding: 20px;
+}
+
+.page-header {
+  position: relative;
+  z-index: 100;
+}
+
+#logo {
+    display: none;
+}
+
+.logo {
+    height: 40%;
+    width: 40%;
+
+}
+
+
+/* Custom styling for the dropdown */
+  .dropdown-menu {
+    background-color: transparent !important; /* Make background transparent */
+    border: none; /* Remove border */
+    position: absolute;
+    z-index: 1050;
+  }
+
+  .dropdown-item {
+    color: black !important; /* Set text color to black */
+    background-color: rgb(255,255,255, 0.5)
+  }
+
+  .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important; /* Slight hover effect with transparent black */
+    color: black !important; /* Ensure text stays black on hover */
+  }
+
+  .btn-secondary {
+    background-color: transparent !important; /* Make button background transparent */
+    color: black !important; /* Set button text color to black */
+    border: none; /* Remove border */
+    
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(128, 174, 255, 0.8) !important; /* Add slight hover effect to the button */
+  }
+
+  /* Common styling for the icons */
+  .icon-container img {
+    transition: transform 0.2s ease; /* Adds smooth transition effect */
+  }
+  
+  .icon-container:hover img {
+    transform: scale(1.1); /* Slightly scales the icon when hovered */
+  }
+  
+  /* Search Icon Hover */
+  .search-icon:hover img {
+    content: url(/static/img/search.png);
+  }
+  
+  /* Favorite Icon Hover */
+  .favorite-icon:hover img {
+    content: url(/static/img/favorite1.png);
+  }
+  
+  /* Cart Icon Hover */
+  .cart-icon:hover img {
+    content: url(/static/img/cart.png);
+  }
+
+  /* Modal Search */
+  .modal-icon {
+    display: inline-block;
+    width: 24px;  /* Set width */
+    height: 24px; /* Set height */
+    background-image: url(/static/img/loupe.png);  /* Default icon */
+    background-size: cover;
+    transition: background-image 0.3s ease; /* Smooth transition */
+  }
+
+  .modal-icon:hover {
+    background-image: url(/static/img/loupe1.png);  /* Hover icon */
+  }
+  .icons {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .modal-icon {
+    height:1.75rem;
+    width: 1.75rem;
+  }
+
 
 
 .slider-img {

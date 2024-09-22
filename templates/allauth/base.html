@@ -15,8 +15,14 @@
     {% block corecss %}
     <!--Bootsrap CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+
     {% endblock %}
 
     {% block extra_css %}
@@ -36,17 +42,72 @@
   </head>
   <body>
     <header class="container-fluid fixed-top"></header>
-      <div class="row">
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
-              <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <img src="/media/logo.png">
-              </a>
+    <div class="header-top">
+      <div class="row top-header">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+          <div class="d-flex justify-content-start align-items-center">
+            <!-- Currency Dropdown -->
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="currencyDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                EUR
+              </button>
+              <div class="dropdown-menu" aria-labelledby="currencyDropdown">
+                <a class="dropdown-item" href="#">EUR</a>
+                <a class="dropdown-item" href="#">USD</a>
+              </div>
+            </div>
+            
+            <span class="mx-2">|</span>
+
+            <!-- MY ACCOUNT Dropdown -->
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                MY ACCOUNT
+              </button>
+              <div class="dropdown-menu" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                      <a href="" class="dropdown-item">Product Management</a>
+                    {% endif %}
+                    <a href="" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </div>
           </div>
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
+        </div>
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
+            <a href="{% url 'home' %}" class="nav-link main-logo-link">
+              <h1 id="logo">Dough n Drizzle</h1>
+              <img class="logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
+            </a>
+        </div>
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+          <div class="d-flex justify-content-end align-items-center">
+            <!-- Search Icon -->
+            <a href="#" class="icon-container mx-2 search-icon" data-toggle="modal" data-target="#searchModal">
+              <img class="icons" src="{% static 'img/search1.png' %}" alt="Search">
+            </a>
+        
+            <!-- Favorite Icon -->
+            <a href="#" class="icon-container mx-2 favorite-icon">
+              <img class="icons" src="{% static 'img/favorite.png' %}" alt="Favorite">
+            </a>
+
+            <!-- Cart Icon -->
+            <a href="#" class="icon-container mx-2 cart-icon">
+              <img class="icons" src="{% static 'img/cart1.png' %}" alt="Cart">
+            </a>
+          </div>
+        </div>
+        
       </div>
+    </div>
     {% if messages %}
-        <div class="message-container"></div>
+        <div class="message-container">THIS IS A MESSAGE</div>
     {% endif %}
 
     {% block page_header %}
@@ -58,6 +119,34 @@
     {% block postloadjs %}
     {% endblock %}
 
-   
+  
+  <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h5 class="modal-title" id="searchModalLabel">Search</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> -->
+          <div class="modal-body">
+            <form method="GET" action="">
+              <div class="input-group w-100">
+                  <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                  <div class="input-group-append">
+                      <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                        <span class="icon icon-container">
+                          <span class="modal-icon"></span>
+                        </span>
+                      </button>
+                  </div>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
