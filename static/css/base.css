@@ -14,14 +14,10 @@ body {
     font-family: "Playpen Sans", cursive;
 }
 
-/* Ensure the main content pushes the footer to the bottom */
-main {
-  flex: 1 0 auto;
-}
-
 /* Header style*/
 .header-top {
-    padding: 20px;
+  padding: 10px 0;
+  z-index: 1030; 
 }
 
 .top-header {
@@ -44,10 +40,14 @@ main {
 }
 
 .logo {
-    height: 40%;
-    width: 40%;
+    height: 120px;
+    width: auto;
     min-height: 20%;
     min-width: 20%;
+}
+
+li {
+  display: none;
 }
 
 .d-flex.flex-column {
@@ -138,15 +138,58 @@ main {
 .footer {
     margin-top: 20px; /* Push the footer to the bottom */
     background: url(/static/img/header-bg2.png) no-repeat;
-    height: 180px;
+    min-height: 180px;
+    width:auto;
     background-position-x: center;
     background-size: cover;
     padding-bottom: 0;
     text-align: center; /* Optional: center align footer content */
 }
+.footer-logo {
+    height: 90px;
+    width: auto;
+    
+}
+
+/* Social Links Styling */
+.socials {
+  height: 30px;
+  width: auto;
+}
+
+.social-links {
+  list-style-type: none; /* Remove bullet points */
+  justify-content: center; /* Center the list items */
+  display: flex; /* Use flexbox for horizontal alignment */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.social-links li {
+  display: inline-block; /* Make list items inline */
+  margin: 0 10px; /* Add space between the list items */
+}
 
 
+/* Footer Links Styling */
+.footer-links {
+  list-style-type: disc; /* Default bullet points */
+  padding-left: 20px; /* Add some space before the bullets */
+  margin: 0;
+}
 
+.footer-links li {
+  margin-bottom: 5px; /* Add space between each list item */
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000; /* Set text color */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Add hover effect */
+}
 
 /* Media Queries */
 @media (min-width: 992px) {

@@ -1,23 +1,68 @@
+{% load static %}
+
 <footer class="d-none d-md-block my-3 position-relative footer">
     <div class="container-fluid">
         <div class="row justify-content-between align-items-center">
-            <!-- Test Section -->
+            <!-- Social Links Section -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
-                TEST
+                Find Us Here
+                <div class="d-flex justify-content-center align-items-center">
+                    <ul class="social-links d-flex p-0 m-0">
+                        <li class="mx-2">
+                            <a href="#" target="_blank" rel="noopener">
+                                <img class="socials" src="{% static 'img/facebook.png' %}" alt="Facebook">
+                            </a>
+                        </li>
+                        <li class="mx-2">
+                            <a href="#" target="_blank" rel="noopener">
+                                <img class="socials" src="{% static 'img/instagram.png' %}" alt="Instagram">
+                            </a>
+                        </li>
+                        <li class="mx-2">
+                            <a href="#" target="_blank" rel="noopener">
+                                <img class="socials" src="{% static 'img/social-media.png' %}" alt="Tiktok">
+                            </a>
+                        </li>
+                        <li class="mx-2">
+                            <a href="#" target="_blank" rel="noopener">
+                                <img class="socials" src="{% static 'img/x-logo.png' %}" alt="X">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <!-- Logo Section -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 alight-items-center">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h1 id="logo">Dough n Drizzle</h1>
-                    <img class="logo" src="" alt="Dough n Drizzle logo">
-                  </a>
+                    <img class="footer-logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
+                </a>
             </div>
 
-            <!-- Text Section -->
+            <!-- Footer Links -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
-                TEXT
+                <ul class="footer-links">
+                    <li>
+                        <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="FAQs">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Contact Information">Contact Information</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Terms of Service">Terms of Service</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>  
+    </div>
+    <!--Bottom Section -->
+    <div class="row mt-3"></div>
+    <div class="col-12 text-center">
+        This site is created for Code Institute as a requirement for Full Stack Software Development.
+    </div>
+</div>
 </footer>
