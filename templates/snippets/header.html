@@ -1,0 +1,79 @@
+{% load static %}
+
+<div class="header-top">
+    <div class="row top-header">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="d-flex justify-content-start align-items-center">
+                <!-- Currency Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="currencyDropdown"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    EUR
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="currencyDropdown">
+                    <a class="dropdown-item" href="#">EUR</a>
+                    <a class="dropdown-item" href="#">USD</a>
+                    </div>
+                </div>
+
+                    <span class="mx-2">|</span>
+
+                    <!-- MY ACCOUNT Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="user-options" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        MY ACCOUNT
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            f="" class="dropdown-item">Product Management</a>
+                        {% endif %}
+                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
+                <a href="{% url 'home' %}" class="main-logo-link">
+                    <h1 id="logo">Dough n Drizzle</h1>
+                    <img class="logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <div class="d-flex justify-content-end align-items-center">
+                    <!-- Search Icon -->
+                    <a href="#" class="icon-container mx-2 search-icon" data-toggle="modal" data-target="#searchModal">
+                        <img class="icons" src="{% static 'img/search1.png' %}" alt="Search">
+                    </a>
+
+                    <!-- Favorite Icon -->
+                    <a href="#" class="icon-container mx-2 favorite-icon">
+                        <img class="icons" src="{% static 'img/favorite.png' %}" alt="Favorite">
+                    </a>
+
+                    <!-- Cart Icon -->
+                    <a href="#" class="icon-container mx-2 cart-icon">
+                        <img class="icons" src="{% static 'img/cart1.png' %}" alt="Cart">
+                        <p class="my-0">
+                        {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                        {% else %}
+                            $0.00
+                        {% endif %}
+                        </p>
+                    </a>
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>
+   

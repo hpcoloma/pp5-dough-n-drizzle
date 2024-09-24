@@ -1,10 +1,13 @@
 {% load static %}
 
+
+
+
 <footer class="d-none d-md-block my-3 position-relative footer">
     <div class="container-fluid">
         <div class="row justify-content-between align-items-center">
             <!-- Social Links Section -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 Find Us Here
                 <div class="d-flex justify-content-center align-items-center">
                     <ul class="social-links d-flex p-0 m-0">
@@ -33,36 +36,28 @@
             </div>
 
             <!-- Logo Section -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 alight-items-center">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 align-items-center">
+                <a href="{% url 'home' %}" class="main-logo-link">
                     <h1 id="logo">Dough n Drizzle</h1>
                     <img class="footer-logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
                 </a>
             </div>
 
             <!-- Footer Links -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
                 <ul class="footer-links">
-                    <li>
-                        <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="FAQs">FAQs</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Contact Information">Contact Information</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-label="Terms of Service">Terms of Service</a>
-                    </li>
+                    <li><a href="#" aria-label="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="#" aria-label="FAQs">FAQs</a></li>
+                    <li><a href="#" aria-label="Contact Information">Contact Information</a></li>
+                    <li><a href="#" aria-label="Terms of Service">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <!--Bottom Section -->
-    <div class="row mt-3"></div>
-    <div class="col-12 text-center">
-        This site is created for Code Institute as a requirement for Full Stack Software Development.
+
+    <!-- Bottom Section -->
+    <div class="row mt-3">
+        <div class="col-12 text-center">
+            This site is created for Code Institute as a requirement for Full Stack Software Development.
+        </div>
     </div>
-</div>
-</footer>
