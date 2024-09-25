@@ -1,0 +1,206 @@
+[
+    {
+    "model": "products.Product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Grazing Table for 50 pax",
+      "description": "A beautifully arranged grazing table for 50 people.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Grazing Table for 80 pax",
+      "description": "A beautifully arranged grazing table for 80 people.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "name": "Grazing Table for 100 pax",
+      "description": "A beautifully arranged grazing table for 100 people.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 4,
+    "fields": {
+      "category": 1,
+      "name": "Grazing Table for 200 pax",
+      "description": "A beautifully arranged grazing table for 200 people.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 5,
+    "fields": {
+      "category": 2,
+      "name": "Sweet Bites Box",
+      "description": "A small assortment of bite-sized sweets.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 6,
+    "fields": {
+      "category": 2,
+      "name": "Sugar Bliss Box",
+      "description": "A medium box filled with a variety of sugary treats.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 7,
+    "fields": {
+      "category": 2,
+      "name": "Dessert Dream Box",
+      "description": "A large box packed with an assortment of decadent desserts.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 8,
+    "fields": {
+      "category": 3,
+      "name": "Large Cake",
+      "description": "A large, delicious cake perfect for celebrations.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 9,
+    "fields": {
+      "category": 4,
+      "name": "Cake Pops",
+      "description": "Cute and fun cake pops, perfect for any occasion.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 10,
+    "fields": {
+      "category": 4,
+      "name": "Cupcakes",
+      "description": "Delicious, beautifully decorated cupcakes.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 11,
+    "fields": {
+      "category": 4,
+      "name": "Cheesecakes",
+      "description": "Rich, creamy cheesecakes.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 12,
+    "fields": {
+      "category": 4,
+      "name": "Fruit Cones",
+      "description": "Fresh and vibrant fruit cones.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 13,
+    "fields": {
+      "category": 4,
+      "name": "Macaroons",
+      "description": "Delicate and flavorful macaroons.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 14,
+    "fields": {
+      "category": 4,
+      "name": "Dessert Cups",
+      "description": "Elegant cups filled with layered desserts.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 15,
+    "fields": {
+      "category": 5,
+      "name": "Donuts",
+      "description": "Fresh, fluffy donuts in a variety of flavors.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 16,
+    "fields": {
+      "category": 5,
+      "name": "Tarts",
+      "description": "Sweet and savory tarts with various fillings.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 17,
+    "fields": {
+      "category": 6,
+      "name": "Gift Card",
+      "description": "Gift the perfect present with a Dough n Drizzle gift card.",
+      "price": 350.00,
+      "image-url":"",
+      "image": "",
+    }
+  }
+]

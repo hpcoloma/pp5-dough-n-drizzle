@@ -36,12 +36,12 @@ main {
   padding: 0; /* Remove any padding if exists */
   background: url(/static/img/header-bg3.png) repeat;
   background-size: auto;
-  height: 160px;
+  height: 150px;
 }
 
 .top-header {
     background: url(/static/img/header-bg2.png) no-repeat;
-    height: 180px;
+    height: 200px;
     width: auto;
     background-position-x: center;
     background-size: cover;
@@ -79,7 +79,7 @@ main {
 }
 
 .navbar {
-  height: 50px;
+  height: 30px;
   /* width: 100%; */
   padding-top: 8px;
   padding-bottom: 2px;
