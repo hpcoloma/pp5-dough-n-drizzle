@@ -20,6 +20,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)  # Increased max_digits to allow for larger prices
+    image_url = models.URLField(max_length=255, blank=True, null=True)
     image = models.ImageField(blank=True, null=True)
     
     def __str__(self):
