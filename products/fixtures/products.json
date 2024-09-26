@@ -18,7 +18,7 @@
       "category": 1,
       "name": "Grazing Table for 80 pax",
       "description": "A beautifully arranged grazing table for 80 people.",
-      "price": 350.00,
+      "price": 480.00,
       "image-url":"",
       "image": "",
     }
@@ -30,7 +30,7 @@
       "category": 1,
       "name": "Grazing Table for 100 pax",
       "description": "A beautifully arranged grazing table for 100 people.",
-      "price": 350.00,
+      "price": 600.00,
       "image-url":"",
       "image": "",
     }
@@ -42,7 +42,7 @@
       "category": 1,
       "name": "Grazing Table for 200 pax",
       "description": "A beautifully arranged grazing table for 200 people.",
-      "price": 350.00,
+      "price": 1100.00,
       "image-url":"",
       "image": "",
     }
@@ -54,9 +54,9 @@
       "category": 2,
       "name": "Sweet Bites Box",
       "description": "A small assortment of bite-sized sweets.",
-      "price": 350.00,
+      "price": 20.00,
       "image-url":"",
-      "image": "",
+      "image": "dessert-smallbox.png",
     }
   },
   {
@@ -66,9 +66,9 @@
       "category": 2,
       "name": "Sugar Bliss Box",
       "description": "A medium box filled with a variety of sugary treats.",
-      "price": 350.00,
+      "price": 30.00,
       "image-url":"",
-      "image": "",
+      "image": "dessert-medbox.png",
     }
   },
   {
@@ -78,9 +78,9 @@
       "category": 2,
       "name": "Dessert Dream Box",
       "description": "A large box packed with an assortment of decadent desserts.",
-      "price": 350.00,
+      "price": 40.00,
       "image-url":"",
-      "image": "",
+      "image": "dessert-largebox.png",
     }
   },
   {
@@ -89,10 +89,10 @@
     "fields": {
       "category": 3,
       "name": "Large Cake",
-      "description": "A large, delicious cake perfect for celebrations.",
-      "price": 350.00,
+      "description": "A large, 1-tier themed delicious cake perfect for celebrations.",
+      "price": 75.00,
       "image-url":"",
-      "image": "",
+      "image": "cake-floral.png",
     }
   },
   {
@@ -101,10 +101,10 @@
     "fields": {
       "category": 4,
       "name": "Cake Pops",
-      "description": "Cute and fun cake pops, perfect for any occasion.",
-      "price": 350.00,
+      "description": "Cute and fun cake pops, perfect for any occasion. (set of 12)",
+      "price": 10.00,
       "image-url":"",
-      "image": "",
+      "image": "cake-pops.png",
     }
   },
   {
@@ -113,10 +113,10 @@
     "fields": {
       "category": 4,
       "name": "Cupcakes",
-      "description": "Delicious, beautifully decorated cupcakes.",
-      "price": 350.00,
+      "description": "Delicious, beautifully decorated cupcakes. (box of 12)",
+      "price": 20.00,
       "image-url":"",
-      "image": "",
+      "image": "mini-cupcakes.png",
     }
   },
   {
@@ -125,10 +125,10 @@
     "fields": {
       "category": 4,
       "name": "Cheesecakes",
-      "description": "Rich, creamy cheesecakes.",
-      "price": 350.00,
+      "description": "Rich, creamy cheesecakes. (12 pcs)",
+      "price": 20.00,
       "image-url":"",
-      "image": "",
+      "image": "cheesecakes.png",
     }
   },
   {
@@ -138,9 +138,9 @@
       "category": 4,
       "name": "Fruit Cones",
       "description": "Fresh and vibrant fruit cones.",
-      "price": 350.00,
+      "price": 15.00,
       "image-url":"",
-      "image": "",
+      "image": "fruit-cones.png",
     }
   },
   {
@@ -149,10 +149,10 @@
     "fields": {
       "category": 4,
       "name": "Macaroons",
-      "description": "Delicate and flavorful macaroons.",
-      "price": 350.00,
+      "description": "Delicate and flavorful macaroons.(12 pcs)",
+      "price": 10.00,
       "image-url":"",
-      "image": "",
+      "image": "macarons.png",
     }
   },
   {
@@ -161,10 +161,10 @@
     "fields": {
       "category": 4,
       "name": "Dessert Cups",
-      "description": "Elegant cups filled with layered desserts.",
-      "price": 350.00,
+      "description": "Elegant cups filled with layered desserts. (6 pcs)",
+      "price": 12.00,
       "image-url":"",
-      "image": "",
+      "image": "dessert-cups.png",
     }
   },
   {
@@ -173,10 +173,10 @@
     "fields": {
       "category": 5,
       "name": "Donuts",
-      "description": "Fresh, fluffy donuts in a variety of flavors.",
-      "price": 350.00,
+      "description": "Fresh, fluffy donuts in a variety of flavors. (12 pcs)",
+      "price": 8.00,
       "image-url":"",
-      "image": "",
+      "image": "mini-donuts.png",
     }
   },
   {
@@ -185,10 +185,10 @@
     "fields": {
       "category": 5,
       "name": "Tarts",
-      "description": "Sweet and savory tarts with various fillings.",
-      "price": 350.00,
+      "description": "Sweet and savory tarts with various fillings. (12 pcs)",
+      "price": 15.00,
       "image-url":"",
-      "image": "",
+      "image": "mini-tarts.png",
     }
   },
   {
@@ -198,9 +198,9 @@
       "category": 6,
       "name": "Gift Card",
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
-      "price": 350.00,
+      "price": 50.00,
       "image-url":"",
-      "image": "",
+      "image": "no-image.png",
     }
   }
 ]

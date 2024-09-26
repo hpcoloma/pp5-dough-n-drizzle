@@ -1,44 +1,50 @@
 [
-    {
-      "model": "products.Category",
-      "pk": 1,
-      "fields": {
-        "name": "Grazing Tables"
-      }
-    },
-    {
-      "model": "products.Category",
-      "pk": 2,
-      "fields": {
-        "name": "Grazing Boxes"
-      }
-    },
-    {
-      "model": "products.Category",
-      "pk": 3,
-      "fields": {
-        "name": "Cakes"
-      }
-    },
-    {
-      "model": "products.Category",
-      "pk": 4,
-      "fields": {
-        "name": "Desserts"
-      }
-    },
-    {
-      "model": "products.Category",
-      "pk": 5,
-      "fields": {
-        "name": "Pastries"
-      }
-    },
-    {
-      "model": "products.Category",
-      "pk": 6,
-      "fields": {
-        "name": "Gift Cards"
-      }
+  {
+    "model": "products.Category",
+    "pk": 1,
+    "fields": {
+      "name": "Grazing Tables",
+      "friendly_name": "Grazing Tables"
     }
+  },
+  {
+    "model": "products.Category",
+    "pk": 2,
+    "fields": {
+      "name": "Grazing Boxes",
+      "friendly_name": "Grazing Boxes"
+    }
+  },
+  {
+    "model": "products.Category",
+    "pk": 3,
+    "fields": {
+      "name": "Cakes",
+      "friendly_name": "Cakes"
+    }
+  },
+  {
+    "model": "products.Category",
+    "pk": 4,
+    "fields": {
+      "name": "Desserts",
+      "friendly_name": "Desserts"
+    }
+  },
+  {
+    "model": "products.Category",
+    "pk": 5,
+    "fields": {
+      "name": "Pastries",
+      "friendly_name": "Pastries"
+    }
+  },
+  {
+    "model": "products.Category",
+    "pk": 6,
+    "fields": {
+      "name": "Gift Cards",
+      "friendly_name": "Gift Cards"
+    }
+  }
 ]

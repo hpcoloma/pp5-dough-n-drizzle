@@ -22,7 +22,7 @@ html, body {
 }
 
 main {
-  padding-top: 230px;
+  padding-top: 175px;
   flex-grow: 1;
 }
 
@@ -45,7 +45,7 @@ main {
     width: auto;
     background-position-x: center;
     background-size: cover;
-    /* padding: 20px; */
+    padding: 20px;
 }
 
 .page-header {
@@ -62,6 +62,7 @@ main {
     width: auto;
     min-height: 20%;
     min-width: 20%;
+    padding-top: -5px;
 }
 
 .logo:hover {
@@ -74,9 +75,9 @@ main {
 
 /* Custome styling for Navbar */
 
-.navbar-row {
+/* .navbar-row {
   background: url(/static/img/header-bg3.png) repeat;
-}
+} */
 
 .navbar {
   height: 30px;
@@ -182,7 +183,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   backface-visibility: hidden;
-  height: 50vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   width: 100%;
