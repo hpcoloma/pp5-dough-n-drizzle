@@ -75,10 +75,6 @@ main {
 
 /* Custome styling for Navbar */
 
-/* .navbar-row {
-  background: url(/static/img/header-bg3.png) repeat;
-} */
-
 .navbar {
   height: 30px;
   /* width: 100%; */
@@ -199,6 +195,65 @@ main {
   }
   
 
+/* Custome styling for productspage */
+.category-section {
+  margin-bottom: 60px;
+}
+
+.category-section h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 20px; /* Space between category title and products */
+}
+
+.product-container .card-img-top {
+  object-fit: cover;  /* Ensures image maintains aspect ratio while covering its container */
+  height: auto;      /* Set a fixed height for all images */
+  width: auto;        /* Make sure the image takes the full width of the card */
+  border-radius: 8px; /* Optionally, round the corners of the images */
+}
+
+.product-container {
+  justify-content: center;  /* Ensures items are centered in the row */
+  display: flex;
+  flex-wrap: wrap;          /* Ensures items wrap correctly in smaller viewports */
+}
+
+/* Add spacing between products */
+.product-container .card {
+  margin: 10px;  /* Add space around each card */
+  
+}
+
+.product-image {
+  margin-bottom: 20px;
+}
+
+/* Add some space between product name and price */
+.card-body {
+  text-align: center;  /* Center text */
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.card-image {
+  margin-bottom: 30px;
+}
+
+.img-fluid:hover {
+  background-color: rgba(128, 174, 255, 0.8);
+}
+
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: transparent;
+	z-index: -1;
+}
 
 /* Footer */
 .footer {
