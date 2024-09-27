@@ -15,7 +15,7 @@ body {
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -97,105 +97,155 @@ main {
 
 
 /* Custom styling for the dropdown */
-  .dropdown-menu {
-    background-color: transparent !important; /* Make background transparent */
-    border: none; /* Remove border */
-    position: absolute;
-    z-index: 1050;
-  }
+.dropdown-menu {
+  background-color: transparent !important; /* Make background transparent */
+  border: none; /* Remove border */
+  position: absolute;
+  z-index: 1050;
+}
 
-  .dropdown-item {
-    color: black !important; /* Set text color to black */
-    background-color: rgb(255,255,255, 0.9)
-  }
+.dropdown-item {
+  color: black !important; /* Set text color to black */
+  background-color: rgb(255,255,255, 0.9)
+}
 
-  .dropdown-item:hover {
-    background-color: rgba(128, 174, 255, 0.8) !important; /* Slight hover effect with transparent black */
-    color: black !important; /* Ensure text stays black on hover */
-  }
+.dropdown-item:hover {
+  background-color: rgba(128, 174, 255, 0.8) !important; /* Slight hover effect with transparent black */
+  color: black !important; /* Ensure text stays black on hover */
+}
 
-  .btn-secondary {
-    background-color: transparent !important; /* Make button background transparent */
-    color: black !important; /* Set button text color to black */
-    border: none; /* Remove border */
-    
-  }
-
-  .btn-secondary:hover {
-    background-color: rgba(128, 174, 255, 0.8) !important; /* Add slight hover effect to the button */
-  }
-
-  /* Common styling for the icons */
-  .icon-container img {
-    transition: transform 0.2s ease; /* Adds smooth transition effect */
-  }
+.btn-secondary {
+  background-color: transparent !important; /* Make button background transparent */
+  color: black !important; /* Set button text color to black */
+  border: none; /* Remove border */
   
-  .icon-container:hover img {
-    transform: scale(1.1); /* Slightly scales the icon when hovered */
-  }
-  
-  /* Search Icon Hover */
-  .search-icon:hover img {
-    content: url(/static/img/search.png);
-  }
-  
-  /* Favorite Icon Hover */
-  .favorite-icon:hover img {
-    content: url(/static/img/favorite1.png);
-  }
-  
-  /* Cart Icon Hover */
-  .cart-icon:hover img {
-    content: url(/static/img/cart.png);
-  }
+}
 
-  /* Modal Search */
-  .modal-icon {
-    display: inline-block;
-    width: 24px;  /* Set width */
-    height: 24px; /* Set height */
-    background-image: url(/static/img/loupe.png);  /* Default icon */
-    background-size: cover;
-    transition: background-image 0.3s ease; /* Smooth transition */
-  }
+.btn-secondary:hover {
+  background-color: rgba(128, 174, 255, 0.8) !important; /* Add slight hover effect to the button */
+}
 
-  .modal-icon:hover {
-    background-image: url(/static/img/loupe1.png);  /* Hover icon */
-  }
-  .icons {
-    height: 2rem;
-    width: 2rem;
-  }
+/* Common styling for the icons */
+.icon-container img {
+  transition: transform 0.2s ease; /* Adds smooth transition effect */
+}
 
-  .modal-icon {
-    height:1.75rem;
-    width: 1.75rem;
-  }
+.icon-container:hover img {
+  transform: scale(1.1); /* Slightly scales the icon when hovered */
+}
+
+/* Search Icon Hover */
+.search-icon:hover img {
+  content: url(/static/img/search.png);
+}
+
+/* Favorite Icon Hover */
+.favorite-icon:hover img {
+  content: url(/static/img/favorite1.png);
+}
+
+/* Cart Icon Hover */
+.cart-icon:hover img {
+  content: url(/static/img/cart.png);
+}
+
+/* Modal Search */
+.modal-icon {
+  display: inline-block;
+  width: 24px;  /* Set width */
+  height: 24px; /* Set height */
+  background-image: url(/static/img/loupe.png);  /* Default icon */
+  background-size: cover;
+  transition: background-image 0.3s ease; /* Smooth transition */
+}
+
+.modal-icon:hover {
+  background-image: url(/static/img/loupe1.png);  /* Hover icon */
+}
+.icons {
+  height: 2rem;
+  width: 2rem;
+}
+
+.modal-icon {
+  height:1.75rem;
+  width: 1.75rem;
+}
 
 /* Hero Style */
 .hero {
   background: url(/static/img/hero.png);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
   background-size: cover;
-  backface-visibility: hidden;
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  width: 100%; /* Full viewport width */
+  margin: 0; /* No margin */
+}
+
+.hero-container {
+  /* position: relative; */
   width: 100%;
-
+  max-width: 1200px;
+  text-align: center;
+  padding-bottom: 0px;
 }
 
-.hero p {
-  padding-top: 20px;
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
 }
 
-  @media screen and (min-width:640px) {
-    background-position: 50% 0;
-  }
+.button-container .btn {
+  display: inline-block;
+}
+
+.button-image {
+  border-color: #000;
+  max-width: 100px;
+  min-width:80px;
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button-image:hover {
+  transform: scale(1.1);
+}
+
+.button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for readability */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the text on hover */
+.button-overlay:hover .button-text {
+  opacity: 1;
+}
+
+/* Additional styling for a smoother layout */
+.mb-4 {
+  margin-bottom: 20px;
+}
+
+.mx-2 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
   
 
-/* Custome styling for productspage */
+/* Custom styling for productspage */
 .category-section {
   margin-bottom: 60px;
 }
@@ -209,8 +259,9 @@ main {
 .product-container .card-img-top {
   object-fit: cover;  /* Ensures image maintains aspect ratio while covering its container */
   height: auto;      /* Set a fixed height for all images */
-  width: auto;        /* Make sure the image takes the full width of the card */
+  width: 100%;        /* Make sure the image takes the full width of the card */
   border-radius: 8px; /* Optionally, round the corners of the images */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for background */
 }
 
 .product-container {
@@ -229,10 +280,15 @@ main {
   margin-bottom: 20px;
 }
 
+.card {
+  background-color: transparent; /* Initial background is transparent */
+}
+
 /* Add some space between product name and price */
 .card-body {
   text-align: center;  /* Center text */
-  margin-bottom: 10px;
+  /* margin-bottom: 5px; */
+  padding: 0;
   border-radius: 15px;
 }
 
@@ -315,4 +371,8 @@ main {
 /* Media Queries */
 @media (min-width: 992px) {
     
+}
+
+@media screen and (min-width:640px) {
+  background-position: 50% 0;
 }

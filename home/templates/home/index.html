@@ -11,10 +11,22 @@
 
 {% block content %}
 <section class="hero image-as-background">
-  <div class="hero-container">
-    <p class="animate fadeInLeft delay-400">Mazgine cover hero style</p>
-    <h1 class="hero-title animate fadeInLeft delay-600">This is a large hero section</h1>
-    <a href="#" class="hero-button animate fadeInLeft delay-800" title="Click to see more">Click Me</a>
-  </div>
+    <div class="hero-container d-flex flex-column justify-content-end align-items-center">
+        <!-- Button Images for Cakes, Pastries, Desserts -->
+        <div class="button-container mb-4 d-flex justify-content-center">
+            <a href="" class="btn btn-cake mx-2">
+                <img src="{% static 'img/cake2.png' %}" alt="Cakes Button" class="button-image">
+                <div class="button-text">Cakes</div>
+            </a>
+            <a href="" class="btn btn-pastries mx-2">
+                <img src="{% static 'img/pastries2.png' %}" alt="Pastries Button" class="button-image">
+                <div class="button-text">Pastries</div>
+            </a>
+            <a href="" class="btn btn-desserts mx-2">
+                <img src="{% static 'img/dessert2.png' %}" alt="Desserts Button" class="button-image">
+                <div class="button-text">Desserts</div>
+            </a>
+        </div>
+    </div>
 </section>
 {% endblock %}
