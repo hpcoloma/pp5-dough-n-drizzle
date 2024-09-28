@@ -11,13 +11,13 @@ def all_products(request):
     categories = Category.objects.all()
     products_by_category = {}
     query = None
-    categories = None
+    category = None
 
     if request.GET:
         if 'category' in request.GET:
-            category_slug = request.GET['category']
-            selected_category = get_object_or_404(Category, slug=category_slug)
-            products = products.filter(category=selected_category)
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -37,8 +37,7 @@ def all_products(request):
         'products_by_category': products_by_category,
         'products': products,
         'search_term': query,
-        'selected_category': selected_category,
-        'categories': categories,
+        'current_categories': categories,
     }
 
     return render(request, 'products/products.html', context)

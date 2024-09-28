@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav w-auto mx-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
@@ -11,15 +11,12 @@
           Shop
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <!-- <a class="dropdown-item" href="{% url 'products' %}?category=grazing_table">Grazing Table</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=grazing_tables">Grazing Table</a>
           <a class="dropdown-item" href="{% url 'products' %}?category=grazing_box">Grazing Box</a>
           <a class="dropdown-item" href="{% url 'products' %}?category=cakes">Cakes</a>
           <a class="dropdown-item" href="{% url 'products' %}?category=desserts">Desserts</a>
           <a class="dropdown-item" href="{% url 'products' %}?category=pastries">Pastries</a>
-          <a class="dropdown-item" href="{% url 'products' %}?category=gift_cards">Gift Cards</a> -->
-          {% for category in categories %}
-            <a class="dropdown-item" href="{% url 'products' %}?category={{ category.slug }}">{{ category.friendly_name }}</a>
-          {% endfor %}
+          <a class="dropdown-item" href="{% url 'products' %}?category=gift_cards">Gift Cards</a>
           <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
         </div>
       </li>

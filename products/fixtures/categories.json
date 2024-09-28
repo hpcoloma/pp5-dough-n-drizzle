@@ -3,7 +3,7 @@
     "model": "products.Category",
     "pk": 1,
     "fields": {
-      "name": "Grazing Tables",
+      "name": "grazing_tables",
       "friendly_name": "Grazing Tables"
     }
   },
@@ -11,7 +11,7 @@
     "model": "products.Category",
     "pk": 2,
     "fields": {
-      "name": "Grazing Boxes",
+      "name": "grazing_box",
       "friendly_name": "Grazing Boxes"
     }
   },
@@ -19,7 +19,7 @@
     "model": "products.Category",
     "pk": 3,
     "fields": {
-      "name": "Cakes",
+      "name": "cakes",
       "friendly_name": "Cakes"
     }
   },
@@ -27,7 +27,7 @@
     "model": "products.Category",
     "pk": 4,
     "fields": {
-      "name": "Desserts",
+      "name": "desserts",
       "friendly_name": "Desserts"
     }
   },
@@ -35,7 +35,7 @@
     "model": "products.Category",
     "pk": 5,
     "fields": {
-      "name": "Pastries",
+      "name": "pastries",
       "friendly_name": "Pastries"
     }
   },
@@ -43,7 +43,7 @@
     "model": "products.Category",
     "pk": 6,
     "fields": {
-      "name": "Gift Cards",
+      "name": "gift_cards",
       "friendly_name": "Gift Cards"
     }
   }
