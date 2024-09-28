@@ -59,7 +59,9 @@
                     </div>
                 </div>
             {% empty %}
-                <p>No products available in this category.</p>
+            <div class="col-12 text-center d-flex justify-content-center align-items-center no-products-container">
+                <p class="lead mb-0 font-weight-bold no-products">No products available in this category.</p>
+            </div>
             {% endfor %}
         </div>
     </div>

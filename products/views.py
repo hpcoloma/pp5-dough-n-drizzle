@@ -11,8 +11,14 @@ def all_products(request):
     categories = Category.objects.all()
     products_by_category = {}
     query = None
+    categories = None
 
     if request.GET:
+        if 'category' in request.GET:
+            category_slug = request.GET['category']
+            selected_category = get_object_or_404(Category, slug=category_slug)
+            products = products.filter(category=selected_category)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -22,17 +28,21 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+    for category in categories:
+        category_products = products.filter(category=category)
+        if category_products.exists():
+            products_by_category[category] = category_products
+
     context = {
         'products_by_category': products_by_category,
         'products': products,
-        'search-term': query,
+        'search_term': query,
+        'selected_category': selected_category,
+        'categories': categories,
     }
 
-    for category in categories:
-        products_by_category[category] = Product.objects.filter(category=category)
-    
-
     return render(request, 'products/products.html', context)
+
 
 def product_detail(request, product_id):
     """ A view to show individual product details """

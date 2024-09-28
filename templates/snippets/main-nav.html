@@ -11,12 +11,15 @@
           Shop
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Grazing Table</a>
-          <a class="dropdown-item" href="#">Grazing Box</a>
-          <a class="dropdown-item" href="#">Cakes</a>
-          <a class="dropdown-item" href="#">Desserts</a>
-          <a class="dropdown-item" href="#">Pastries</a>
-          <a class="dropdown-item" href="#">Gift Cards</a>
+          <!-- <a class="dropdown-item" href="{% url 'products' %}?category=grazing_table">Grazing Table</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=grazing_box">Grazing Box</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=cakes">Cakes</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=desserts">Desserts</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=pastries">Pastries</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=gift_cards">Gift Cards</a> -->
+          {% for category in categories %}
+            <a class="dropdown-item" href="{% url 'products' %}?category={{ category.slug }}">{{ category.friendly_name }}</a>
+          {% endfor %}
           <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
         </div>
       </li>

@@ -324,6 +324,24 @@ main {
 	z-index: -1;
 }
 
+/* Add this CSS to your existing styles */
+
+/* Styling for the 'no products available' message */
+.no-products-container {
+  height: 300px; /* Or adjust height as per your preference */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.no-products {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+
 /* Footer */
 .footer {
     margin-top: auto; /* Push the footer to the bottom */
