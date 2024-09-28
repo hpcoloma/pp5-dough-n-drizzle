@@ -75,6 +75,13 @@
       {% endblock %}
     </main>
 
+    <!-- Include footer on all pages except home -->
+    {% if request.path != '/' %}
+      <footer>
+        {% include "snippets/footer.html" %}
+      </footer>
+    {% endif %}
+
     <!-- Search Modal -->
     <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"
       aria-hidden="true">
@@ -87,7 +94,7 @@
               </button>
             </div> -->
           <div class="modal-body">
-            <form method="GET" action="">
+            <form method="GET" action="{% url 'products' %}">
               <div class="input-group w-100">
                 <input class="form-control border border-black rounded-0" type="text" name="q"
                   placeholder="Search our site">

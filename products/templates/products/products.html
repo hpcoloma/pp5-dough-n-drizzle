@@ -41,14 +41,14 @@
                                     <div class="card-body pb-0">
                                         <p class="mb-0">{{ product.name }}</p>
                                     </div>
-                                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="card-footer pt-0 border-0 text-center align-items-center">
                                         <div class="row">
                                             <div class="col">
                                                  <!-- Check if it's the 'Large Cake' product or similar -->
                                                  {% if product.name == 'Large Cake' %}
-                                                    <p class="lead mb-0 text-left font-weight-bold">Price starts at €{{ product.price }}</p>
+                                                    <p class="lead mb-0 text-center font-weight-bold">Price starts at €{{ product.price }}</p>
                                                  {% else %}
-                                                    <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+                                                    <p class="lead mb-0 text-center font-weight-bold">€{{ product.price }}</p>
                                                  {% endif %}
                                             </div>
                                         </div>
