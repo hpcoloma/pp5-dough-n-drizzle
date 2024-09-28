@@ -268,13 +268,12 @@ main {
 .product-container {
   justify-content: center;  /* Ensures items are centered in the row */
   display: flex;
-  flex-wrap: wrap;          /* Ensures items wrap correctly in smaller viewports */
+  flex-wrap: wrap; /* Ensures items wrap correctly in smaller viewports */
 }
 
 /* Add spacing between products */
 .product-container .card {
   margin: 10px;  /* Add space around each card */
-  
 }
 
 .product-image {
@@ -298,6 +297,11 @@ main {
   margin-bottom: 30px;
 }
 
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
 .img-fluid:hover {
   transform: scale(1.1);
 }
@@ -306,6 +310,9 @@ main {
   background-color: transparent;
 }
 
+.product-detail {
+  margin-top: 20px;
+}
 
 .overlay {
 	height: 100%;
