@@ -45,11 +45,13 @@
                                         <div class="row">
                                             <div class="col">
                                                  <!-- Check if it's the 'Large Cake' product or similar -->
-                                                 {% if product.name == 'Large Cake' %}
+                                                {% if product.name == 'Large Cake' %}
                                                     <p class="lead mb-0 text-center font-weight-bold">Price starts at €{{ product.price }}</p>
-                                                 {% else %}
+                                                {% elif category.friendly_name == 'Grazing Table' %}
+                                                    <p class="lead mb-0 text-center font-weight-bold">Price from €{{ product.price }}</p>
+                                                {% else %}
                                                     <p class="lead mb-0 text-center font-weight-bold">€{{ product.price }}</p>
-                                                 {% endif %}
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>

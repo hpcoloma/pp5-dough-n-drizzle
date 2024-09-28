@@ -14,15 +14,15 @@
     <div class="hero-container d-flex flex-column justify-content-end align-items-center">
         <!-- Button Images for Cakes, Pastries, Desserts -->
         <div class="button-container mb-4 d-flex justify-content-center">
-            <a href="" class="btn btn-cake mx-2">
+            <a href="{% url 'products' %}?category=cakes" class="btn btn-cake mx-2">
                 <img src="{% static 'img/cake2.png' %}" alt="Cakes Button" class="button-image">
                 <div class="button-text">Cakes</div>
             </a>
-            <a href="" class="btn btn-pastries mx-2">
+            <a href="{% url 'products' %}?category=pastries" class="btn btn-pastries mx-2">
                 <img src="{% static 'img/pastries2.png' %}" alt="Pastries Button" class="button-image">
                 <div class="button-text">Pastries</div>
             </a>
-            <a href="" class="btn btn-desserts mx-2">
+            <a href="{% url 'products' %}?category=desserts" class="btn btn-desserts mx-2">
                 <img src="{% static 'img/dessert2.png' %}" alt="Desserts Button" class="button-image">
                 <div class="button-text">Desserts</div>
             </a>
