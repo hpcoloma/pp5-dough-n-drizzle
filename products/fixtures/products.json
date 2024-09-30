@@ -137,7 +137,7 @@
     "fields": {
       "category": 4,
       "name": "Fruit Cones",
-      "description": "Fresh and vibrant fruit cones.",
+      "description": "Fresh and vibrant fruit cones. (8 pcs)",
       "price": 15.00,
       "image_url":"media/fruit-cones.png",
       "image": "fruit-cones.png"
@@ -199,7 +199,31 @@
       "name": "Gift Card",
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
       "price": 50.00,
-      "image_url":"media/no-image.png",
+      "image_url":"media/giftcard.png",
+      "image": "no-image.png"
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 18,
+    "fields": {
+      "category": 6,
+      "name": "Gift Card",
+      "description": "Gift the perfect present with a Dough n Drizzle gift card.",
+      "price": 80.00,
+      "image_url":"media/giftcard.png",
+      "image": "no-image.png"
+    }
+  },
+  {
+    "model": "products.Product",
+    "pk": 19,
+    "fields": {
+      "category": 6,
+      "name": "Gift Card",
+      "description": "Gift the perfect present with a Dough n Drizzle gift card.",
+      "price": 120.00,
+      "image_url":"media/giftcard.png",
       "image": "no-image.png"
     }
   }

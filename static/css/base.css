@@ -276,7 +276,7 @@ main {
 
 /* Custom styling for products page */
 .category-section {
-  margin-bottom: 60px;
+  /* margin-bottom: 30px; */
 }
 
 .category-section h3 {
@@ -339,7 +339,16 @@ main {
 }
 
 .product-detail {
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.category-title {
+  background: url(/static/img/title-bg.png) no-repeat center center;
+  background-size: contain;
+  margin: 0 auto; /* Center the element */
+  width: 70%; /* Set width to 70% */
+  padding: 10px; /* Add some padding to the h3 */
+  height: fit-content;
 }
 
 .overlay {
@@ -352,7 +361,6 @@ main {
 	z-index: -1;
 }
 
-/* Add this CSS to your existing styles */
 
 /* Styling for the 'no products available' message */
 .no-products-container {
@@ -433,9 +441,11 @@ main {
 }
 
 @media screen and (min-width:640px) {
-  background-position: 50% 0;
+  /* background-position: 50% 0; */
 }
 
 @media (max-width: 768px) {
-  
+  .category-title {
+    width: 100%; /* Make the h3 full width */
+  }
 }
