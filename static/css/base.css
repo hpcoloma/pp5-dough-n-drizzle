@@ -115,11 +115,14 @@ main {
   color: black !important; /* Ensure text stays black on hover */
 }
 
+btn-outline-black {
+  background-color: rgba(128, 174, 255);
+}
+
 .btn-secondary {
   background-color: transparent !important; /* Make button background transparent */
   color: black !important; /* Set button text color to black */
   border: none; /* Remove border */
-  
 }
 
 .btn-secondary:hover {
