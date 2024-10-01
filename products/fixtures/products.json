@@ -88,8 +88,8 @@
     "pk": 8,
     "fields": {
       "category": 3,
-      "name": "Large Cake",
-      "description": "A large, 1-tier themed delicious cake perfect for celebrations.",
+      "name": "Signature Cake",
+      "description": "An 8 inches tall, 1-tier themed delicious cake perfect for celebrations.",
       "price": 75.00,
       "image_url":"media/cake-floral.png",
       "image": "cake-floral.png"
@@ -200,7 +200,7 @@
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
       "price": 50.00,
       "image_url":"media/giftcard.png",
-      "image": "no-image.png"
+      "image": "giftcard.png"
     }
   },
   {
@@ -212,7 +212,7 @@
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
       "price": 80.00,
       "image_url":"media/giftcard.png",
-      "image": "no-image.png"
+      "image": "giftcard.png"
     }
   },
   {
@@ -224,7 +224,7 @@
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
       "price": 120.00,
       "image_url":"media/giftcard.png",
-      "image": "no-image.png"
+      "image": "giftcard.png"
     }
   }
 ]

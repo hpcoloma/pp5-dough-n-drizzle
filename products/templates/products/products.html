@@ -11,7 +11,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container-fluid px-3">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="">PRODUCTS</h2>
@@ -21,7 +21,7 @@
 
         <div class="row">
             {% if not is_filtered_by_category %}
-            <div class="col text-center mb-3">
+            <div class="col d-flex justify-content-end mb-3 pr-5">
                 <form method="GET" action="">
                     <label for="sort">Sort by:</label>
                     <select id="sort" name="sort" onchange="this.form.submit()">
@@ -59,6 +59,11 @@
                                     <div class="card-footer pt-0 border-0 text-center align-items-center">
                                         <div class="row">
                                             <div class="col">
+                                                <p class="small mt-1 mb-0">
+                                                    <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
+                                                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                    </a>
+                                                </p>
                                                 <!-- Check if it's the 'Large Cake' product or similar -->
                                                 {% if product.name == 'Large Cake' %}
                                                     <p class="lead mb-0 text-center font-weight-bold">Price starts at €{{ product.price }}</p>
@@ -80,8 +85,9 @@
                 </div>
                 {% endfor %}
                 {% else %}
+
                 <!-- Display all products in rows of 4 when no category is filtered -->
-                <div class="product-container row mt-3 justify-content-center">
+                <div class="product-container row mt-3 justify-content-center g-0">
                     {% for product in products %}
                         <div class="col-6 col-sm-6 col-md-4 col-lg-3 card-image">
                             <div class="card h-100 border-0">
@@ -100,6 +106,11 @@
                                 <div class="card-footer pt-0 border-0 text-center align-items-center">
                                     <div class="row">
                                         <div class="col">
+                                            <p class="small mt-1 mb-0">
+                                                <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
+                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                </a>
+                                            </p>
                                             <p class="lead mb-0 text-center font-weight-bold">€{{ product.price }}</p>
                                         </div>
                                     </div>

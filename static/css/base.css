@@ -12,6 +12,7 @@ body {
     background-color: rgb(24, 181, 192);
     background-size: auto;
     font-family: "Playpen Sans", cursive;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -272,13 +273,8 @@ main {
   margin-left: 10px;
   margin-right: 10px;
 }
-  
 
 /* Custom styling for products page */
-.category-section {
-  /* margin-bottom: 30px; */
-}
-
 .category-section h3 {
   font-size: 1.75rem;
   font-weight: bold;
@@ -297,7 +293,10 @@ main {
   justify-content: center;  /* Ensures items are centered in the row */
   display: flex;
   flex-wrap: wrap; /* Ensures items wrap correctly in smaller viewports */
+  margin-left: 0;
+  margin-right: 0;
 }
+
 
 /* Add spacing between products */
 .product-container .card {
@@ -305,7 +304,7 @@ main {
 }
 
 .product-image {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .card {
