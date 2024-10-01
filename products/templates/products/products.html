@@ -27,7 +27,7 @@
                     <select id="sort" name="sort" onchange="this.form.submit()">
                         <option value="name" {% if sort_by == 'name' %}selected{% endif %}>Name</option>
                         <option value="price" {% if sort_by == 'price' %}selected{% endif %}>Price</option>
-                        <option value="category" {% if sort_by == 'category' %}selected{% endif %}>Category</option>
+                        <option value="category_asc" {% if sort_by == 'category' %}selected{% endif %}>Category</option>
                     </select>
                 </form>
             </div>

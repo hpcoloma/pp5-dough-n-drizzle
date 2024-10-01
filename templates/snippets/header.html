@@ -60,7 +60,7 @@
                     </a>
 
                     <!-- Cart Icon -->
-                    <a href="#" class="icon-container mx-2 cart-icon">
+                    <a href="{% url 'view_cart' %}" class="icon-container mx-2 cart-icon">
                         <img class="icons" src="{% static 'img/cart1.png' %}" alt="Cart">
                         <p class="my-0">
                         {% if grand_total %}
