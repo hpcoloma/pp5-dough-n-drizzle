@@ -64,9 +64,9 @@
                         <img class="icons" src="{% static 'img/cart1.png' %}" alt="Cart">
                         <p class="my-0">
                         {% if grand_total %}
-                            ${{ grand_total|floatformat:2 }}
+                            €{{ grand_total|floatformat:2 }}
                         {% else %}
-                            $0.00
+                            €0.00
                         {% endif %}
                         </p>
                     </a>
