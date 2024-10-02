@@ -114,8 +114,11 @@ main {
   background-color: rgba(128, 174, 255, 0.8) !important; /* Slight hover effect with transparent black */
   color: black !important; /* Ensure text stays black on hover */
 }
+.btn {
+  background-color:#e37682;
+}
 
-btn-outline-black {
+.btn:hover {
   background-color: rgba(128, 174, 255);
 }
 
