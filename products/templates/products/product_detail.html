@@ -48,6 +48,7 @@
                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                 </a>
                             </p>     
+
                             <!-- Add to cart -->
                             <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                                 {% csrf_token %}

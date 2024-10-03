@@ -115,7 +115,7 @@ main {
   color: black !important; /* Ensure text stays black on hover */
 }
 .btn {
-  background-color:#e37682;
+  /* background-color:#e37682; */
 }
 
 .btn:hover {
