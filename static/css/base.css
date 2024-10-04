@@ -42,7 +42,7 @@ main {
 
 .top-header {
     background: url(/static/img/header-bg2.png) no-repeat;
-    height: 200px;
+    height: 210px;
     width: auto;
     background-position-x: center;
     background-size: cover;
@@ -63,7 +63,7 @@ main {
     width: auto;
     min-height: 20%;
     min-width: 20%;
-    padding-top: -5px;
+    padding-bottom: 5px;
 }
 
 .logo:hover {
@@ -85,7 +85,6 @@ main {
 }
 
 .navbar-nav .nav-link {
-  
   color: black;
   margin: 0 20px;
   border-radius: 5px; /* Add rounded corners */
@@ -99,7 +98,7 @@ main {
 
 /* Custom styling for the dropdown */
 .dropdown-menu {
-  background-color: transparent !important; /* Make background transparent */
+  background-color: #65B6c0; !important; /* Make background transparent */
   border: none; /* Remove border */
   position: absolute;
   z-index: 1050;
@@ -107,15 +106,12 @@ main {
 
 .dropdown-item {
   color: black !important; /* Set text color to black */
-  background-color: rgb(255,255,255, 0.9)
+  background-color: white;
 }
 
 .dropdown-item:hover {
   background-color: rgba(128, 174, 255, 0.8) !important; /* Slight hover effect with transparent black */
   color: black !important; /* Ensure text stays black on hover */
-}
-.btn {
-  /* background-color:#e37682; */
 }
 
 .btn:hover {
@@ -152,7 +148,7 @@ main {
   content: url(/static/img/favorite1.png);
 }
 
-/* Cart Icon Hover */
+/* Cart */
 .cart-icon:hover img {
   content: url(/static/img/cart.png);
 }
@@ -179,7 +175,6 @@ main {
   height:1.75rem;
   width: 1.75rem;
 }
-
 
 /* Keyframes for zoom animation */
 @keyframes zoom {
@@ -263,6 +258,11 @@ main {
 
 .btn:hover .button-text {
   opacity: 1; /* Show the text on hover */
+}
+
+.update-link,
+.remove-item {
+  cursor: pointer;
 }
 
 /* Show the text on hover */
