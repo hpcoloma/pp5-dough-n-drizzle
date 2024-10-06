@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+# from products.model
 
 # Create your views here.
 
@@ -20,6 +21,7 @@ def add_to_cart(request, item_id):
         cart[item_id] = quantity
 
     request.session['cart'] = cart
+    print(request.POST)  # This will show what data is being submitted in the request
     return redirect(redirect_url)
 
 

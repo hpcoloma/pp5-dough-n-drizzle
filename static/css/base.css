@@ -23,19 +23,19 @@ html, body {
 }
 
 main {
-  padding-top: 175px;
+  padding-top: 0;
   flex-grow: 1;
 }
 
 /* Header style*/
 .container-fluid {
-  padding: 0;
+  padding-top: 0;
 }
 .header-top {
   z-index: 1030;
   margin: 0; /* Remove margin */
   padding: 0; /* Remove any padding if exists */
-  background: url(/static/img/header-bg3.png) repeat;
+  /* background: url(/static/img/header-bg3.png) repeat; */
   background-size: auto;
   height: 150px;
 }
@@ -71,7 +71,7 @@ main {
 }
 
 .d-flex.flex-column {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 /* Custome styling for Navbar */
@@ -98,8 +98,8 @@ main {
 
 /* Custom styling for the dropdown */
 .dropdown-menu {
-  background-color: #65B6c0; !important; /* Make background transparent */
-  border: none; /* Remove border */
+  background-color: rgb(101, 182, 192) !important;
+  border: none;
   position: absolute;
   z-index: 1050;
 }
@@ -114,18 +114,14 @@ main {
   color: black !important; /* Ensure text stays black on hover */
 }
 
-.btn:hover {
-  background-color: rgba(128, 174, 255);
-}
-
 .btn-secondary {
-  background-color: transparent !important; /* Make button background transparent */
-  color: black !important; /* Set button text color to black */
-  border: none; /* Remove border */
+  background-color: transparent !important;
+  color: black !important;
+  border: none;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(128, 174, 255, 0.8) !important; /* Add slight hover effect to the button */
+  background-color: rgba(128, 174, 255, 0.8) !important;
 }
 
 /* Common styling for the icons */
@@ -151,6 +147,10 @@ main {
 /* Cart */
 .cart-icon:hover img {
   content: url(/static/img/cart.png);
+}
+/* Custom styling for content */
+.content-container {
+  padding-top: 200px;
 }
 
 /* Modal Search */
@@ -193,7 +193,7 @@ main {
 .hero {
   background: url(/static/img/hero.png) no-repeat;
   background-size: cover;
-  height: calc(100vh - 177px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -215,15 +215,17 @@ main {
   justify-content: center;
   gap: 20px; /* Space between buttons */
   position: relative;
+  background-color: transparent;
 }
 
-.button-container .btn {
-  display: inline-block;
+.btn:hover {
+  background-color: transparent;
 }
 
 .btn {
   position: relative; /* Ensure btn has a position for absolute children */
   overflow: hidden; /* Hide overflow to prevent text from showing initially */
+  display: inline-block;
 }
 
 .button-image {
@@ -237,6 +239,7 @@ main {
 
 .button-image:hover {
   transform: scale(1.1);
+  background-color: transparent;
 }
 
 .button-text {
@@ -315,6 +318,9 @@ main {
 
 .card {
   background-color: transparent; /* Initial background is transparent */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* ensures full height for the card */
 }
 
 /* Add some space between product name and price */
@@ -327,24 +333,55 @@ main {
 }
 
 .card-image {
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 .img-fluid {
   width: 100%;
-  height: auto;
+  height: 297px;
 }
 
 .img-fluid:hover {
   transform: scale(1.1);
 }
 
-.card-footer {
-  background-color: transparent;
+.card-body {
+  height: 15px;
 }
 
-.product-detail {
-  margin-top: 10px;
+.card-footer {
+  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
+              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+  margin-top: auto;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  background-color: #007bff; /* Background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular shape */
+  padding: 10px; /* Padding */
+  font-size: 24px; /* Icon size */
+  display: none; /* Hidden by default */
+  z-index: 1000; /* On top of other elements */
+  transition: background-color 0.3s, opacity 0.3s; /* Transition effect */
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3; /* Darker on hover */
+  opacity: 0.8; /* Slightly transparent on hover */
+}
+
+.product-details, .card-footer, .table-responsive{
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
+              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+  padding: 1.5rem;
+  margin-top: auto;
 }
 
 .category-title {
@@ -369,7 +406,7 @@ main {
 
 /* Styling for the 'no products available' message */
 .no-products-container {
-  height: 300px; /* Or adjust height as per your preference */
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -441,7 +478,10 @@ main {
 }
 
 /* Media Queries */
-@media (min-width: 992px) {
+@media (min-width: 1385px) {
+  .img-fluid {
+    height: auto;
+  }
     
 }
 
