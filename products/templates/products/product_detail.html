@@ -105,31 +105,5 @@
 
 {% block postloadjs %}
 {{ block.super }}
-    <script type="text/javascript">
-        // Increment quantity
-        $('.increment-qty').click(function(e) {
-            e.preventDefault();  // Prevent form submission
-            var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-            var currentValue = parseInt($(closestInput).val());
-            if (currentValue < 99) { // Ensure max limit of 99
-                $(closestInput).val(currentValue + 1);
-            }
-            var itemId = $(this).data('item_id');
-            handleEnableDisable(itemId);
-        });
-
-        // Decrement quantity
-        $('.decrement-qty').click(function(e) {
-            e.preventDefault();  // Prevent form submission
-            var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-            var currentValue = parseInt($(closestInput).val());
-            if (currentValue > 1) { // Ensure minimum limit of 1
-                $(closestInput).val(currentValue - 1);
-            }
-            var itemId = $(this).data('item_id');
-            handleEnableDisable(itemId);
-        });
-    </script>
-
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
