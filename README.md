@@ -247,199 +247,84 @@ PHOTO HERE
 ![Logo](static/images/techtackles_logo.png)
 
 ## Features
-### Home Page
-![Home Page](static/images/site_homepage.PNG)
-
-### Navigation
-![Navigation Bar](static/images/site_navigationbar.PNG)
-
-### Responsive Nav
-![Responsive Nav](static/images/site_responsivenav.PNG)
-
-### Create Ticket
-![Create Ticket](static/images/site_createticket.PNG)
-
-### Ticket List
-Ticket List view with filter status functionality
-![Ticket List](static/images/site_filter.png)
-
-### Ticket Detail
-
-![Ticket Detail](static/images/site_ticketdetailview.PNG)
-
-### Ticket Delete
-![Ticket Delete](static/images/site_ticketdelete.png)
-
-### Ticket Edit
-![Ticket Edit](static/images/site_ticketupdate.PNG)
-### Comment Edit
-![Comment Edit](static/images/site_commentedit.png)
-### Comment Delete
-![Comment Delete](static/images/site_commentdelete.png)
-### Access Denied
-![Access Denied](static/images/site_access_denied.PNG)
-### 404! Error
-![Error Page](static/images/site_404.PNG)
 
 ## Future Enhancements
-It is essential to plan for the future by considering potential features that can enhance Tech Tackle's functionality, usability and overall user experience. To remain competitive and adaptable to the changing needs of users, below are future feature considerations thta can be integrated to ensure continued growth of this application.
-
-- **Customizable User Profiles**
-  - **Feature:** Allow users to customize their profiles with additional information.
-  - **Benefits:** Enhances user engagement and personalization. 
-  - **Example:** Users can upload profile pictures, add bio information, company roles and set notification preferences.
-- **Advanced Search and Filtering**
-  - **Feature:** Implement advanced search and filtering options for tickets.
-  - **Benefits:** Users can easily find specific tickets based on criteria like date range, status, user, keywords, etc.
-  - **Example:** A search bar with dropdown filters for status, user, date 
-  range, and keywords.
-- **Notification System**
-  - **Feature:** Develop a notification system for ticket updates.
-  - **Benefits:** Users and staff will receive real-time notifications for ticket status changes, new comments, or assigned tickets.
-  - **Example:** Email notifications, in-app notifications, or push notifications.
-- **Analytics Dashboard**
-  - **Feature:** Create an analytics dashboard to display ticket statistics.
-  - **Benefits:** Provides insights into ticket trends, user activity, and system performance.
-  - **Example:** Charts and graphs showing the number of open tickets, average resolution time, most common issues, etc.
-- **Mobile App Integration**
-  - **Feature:** Develop a mobile app or ensure the web application is fully responsive.
-  - **Benefits:** Increases accessibility, allowing users to manage tickets on the go.
-  - **Example:** A mobile-friendly interface or dedicated mobile app for both Android and iOS platforms.
-- **Ticket Assignment Automation**
-  - **Feature:** Automate ticket assignment based on predefined rules.
-  - **Benefits:** Reduces manual workload and ensures tickets are assigned to the appropriate staff member.
-  - **Example:** Automatically assign tickets based on the issue type, department, or staff availability.
-- **Feedback and Rating System**
-  - **Feature:** Implement a feedback and rating system for resolved tickets.
-  - **Benefits:** Gathers user feedback on support quality and identifies areas for improvement.
-  - **Example:** After ticket resolution, users can rate their experience and leave feedback.
-- **Knowledge Base Integration**
-  - **Feature:** Integrate a knowledge base where users can find solutions to common issues.
-  - **Benefits:** Reduces the number of support tickets by providing self-help resources.
-  - **Example:** Articles, FAQs, and how-to guides accessible within the platform.
-
 
 ## Testing
   - Complete Testing documentation can be found [here](TESTING.md)
 ## Agile Development
 
-To ensure the TECH TACKLES IT Support Ticketing System is developed effectively and efficiently, I followed an agile approach. This involved iterative development cycles (sprints) where I continuously build, test, and refine the system. Here's how I can break down the development process into iterations:
 
 #### Iteration 0: Planning and Setup
 - Goals:
-  - Define project objectives, user stories, and initial requirements.
-  - Set up the development environment.
-  - Create initial project structure and repository.
+  
 
 - Tasks:
-  - Create and initialize a Git repository.
-  - Set up Django project and application.
-  - Create database and connect the database.
-  - Create initial models for User, Ticket, and Comment.
-  - Configure Django AllAuth for user authentication.
-  - Set up static files and templates structure.
+  
 
 #### Iteration 1: User Authentication and Role Management
 - Goals:
-  - Implement user authentication.
-  - Define and implement user roles (Admin, User, Tech Support).
+  
 - Tasks:
-  - Implement login, signup, and logout functionality using Django AllAuth.
-  - Create user roles and permissions.
-  - Implement user management in the admin dashboard.
-  - Test user authentication and role management.
+  
 - Deliverables:
-  - Functional user authentication system.
-  - User roles and permissions implemented.
-  - Basic admin interface for user management.
+  
 
 #### Iteration 2: Ticket Management
 - Goals:
-  - Implement ticket creation, viewing, and listing.
+  
 - Tasks:
-  - Create forms for ticket creation and updating.
-  - Implement views for creating, listing, and viewing tickets.
-  - Implement ticket status (Open, In Progress, Closed).
-  - Test ticket creation and viewing functionalities.
+  
 - Deliverables:
-  - Functional ticket creation form.
-  - List view of tickets with status filters.
-  - Detail view for individual tickets.
+  
 
 #### Iteration 3: Commenting and Interaction
 - Goals:
-  - Implement ticket commenting system.
-  - Ensure interaction between users and tech support through comments.
+  
 - Tasks:
-  - Create comment model and forms.
-  - Implement views for adding and viewing comments.
-  - Restrict comment access based on user roles.
-  - Test commenting functionality.
+ 
 - Deliverables:
-  - Functional commenting system.
-  - Users can add comments to their own tickets.
-  - Tech support can add comments to all tickets.
+  .
 
 #### Iteration 4: Admin and Tech Support Features
 - Goals:
-  - Implement additional features for admin and tech support users.
+  
 - Tasks:
-  - Allow tech support to edit and delete opena nd in progress tickets.
-  - Test admin and tech support features.
+  
 - Deliverables:
-  - Admin and tech support can manage tickets.
-  - Admin django  for user and ticket management.
+  
 
 #### Iteration 5: Testing and Bug Fixing
 - Goals:
-  - Ensure the system is fully functional and bug-free.
+  
 - Tasks:
-  - Perform comprehensive testing of all features.
-  - Fix any bugs or issues found during testing.
-  - Ensure all user stories are met.
+  
 - Deliverables:
-  - Fully tested and functional IT support ticketing system.
-  - Documentation for testing procedures and results.
+  
 
 #### Iteration 6: Deployment and Documentation
 - Goals:
-  - Deploy the application to a production environment.
-  - Create comprehensive documentation.
+  
 - Tasks:
-  - Set up and configure the production environment.
-  - Deploy the application.
-  - Write detailed documentation for installation, usage, and contribution.
-  - Create a README file with all necessary information.
+  
 - Deliverables:
-  - Deployed application.
-  - Comprehensive documentation and README.
+  
 #### Iteration 8: Feedback and Iteration
 - Goals:
-  - Get feedback from mentor and potential user.
-  - Implement improvements based on feedback.
+ 
 - Tasks:
-  - Prioritize and implement changes based on feedback.
-  - Plan for future iterations or updates.
+  
 - Deliverables:
-  - Updated application with improvements based on feedback.
+  
 
 ## Bugs and Potential issues
-- Bootstrap CSS and JavaScript Loading Issues
-  - Problem: The application has encountered issues loading Bootstrap CSS and JavaScript files correctly, resulting in error like:
-    
-    'Uncaught TypeError: Cannot read properties of undefined (reading 'backdrop').'
-  - Steps taken to Resolve:
-    - Checked the CDN URL directly in the browser by verifying that the url  "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" displays raw CSS instead of HTM or error page. URL is accessible.
-    - Verified Integrity attribute. I used the [SRI Hash Generator](https://www.srihash.org/) to verify the hash.
-    - Checked Cross-Origin Attribute: Confirmed that the crossorigin="anonymous" attribute is used correctly, which is necessary for CORS with CDNs.
-    - Attempted to Use Local Bootstrap File:
-      - Downloaded the Bootstrap CSS file and placed it in the static folder of the project. - Updated the URL paths in the template accordingly.
-      - Ran python manage.py collectstatic to ensure the static files are collected and served properly.
-      - Encountered issues with local file serving, potentially due to misconfiguration or incorrect file paths.
-
-![Bootstrap Error](static/images/bugs_js.PNG)
-  - Resolution: Despite the above steps taken, error on the browser still appearing. Conclusion is that this is down to the Bootstrap library that I dont have control with.
-
+- Increment/Decrement Button on product detail page
+  
+  Issue: The +/- buttons on the quantity section is mean to update the quantity on this page, however when during the early stages these buttons are directly updating the cart page. You can see the update when the button was clicked the value on the cart increases. Both buttons increases the value of the cart.
+  
+  Remedies:
+  
+  Resolution:
 ## Technologies and Language
 Tech Tackles is built using a combination of modern technologies and programming languages to ensure a robust and efficient application. Below is a list of the primary technologies and languages used in this project:
 ### Frontend
