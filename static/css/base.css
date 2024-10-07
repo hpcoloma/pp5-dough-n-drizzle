@@ -419,6 +419,24 @@ main {
   text-align: center;
 }
 
+/* Bootstrap toasts */
+
+.message-container {
+  position: fixed;
+  top: 130px;
+  right: 25px;
+  z-index: 99999999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
+}
+
+
 
 /* Footer */
 .footer {
