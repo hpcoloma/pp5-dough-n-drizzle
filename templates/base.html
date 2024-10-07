@@ -104,6 +104,11 @@
       </div>
     </div>
 
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+    {% endblock %}
    
 </body>
 
