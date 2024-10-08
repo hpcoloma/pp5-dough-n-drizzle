@@ -3,6 +3,7 @@
     "model": "products.Product",
     "pk": 1,
     "fields": {
+      "sku": "GT1",
       "category": 1,
       "name": "Grazing Table for 50 pax",
       "description": "A beautifully arranged grazing table for 50 people.",
@@ -15,6 +16,7 @@
     "model": "products.Product",
     "pk": 2,
     "fields": {
+      "sku": "GT2",
       "category": 1,
       "name": "Grazing Table for 80 pax",
       "description": "A beautifully arranged grazing table for 80 people.",
@@ -27,6 +29,7 @@
     "model": "products.Product",
     "pk": 3,
     "fields": {
+      "sku": "GT3",
       "category": 1,
       "name": "Grazing Table for 100 pax",
       "description": "A beautifully arranged grazing table for 100 people.",
@@ -39,6 +42,7 @@
     "model": "products.Product",
     "pk": 4,
     "fields": {
+      "sku": "GT4",
       "category": 1,
       "name": "Grazing Table for 200 pax",
       "description": "A beautifully arranged grazing table for 200 people.",
@@ -51,6 +55,7 @@
     "model": "products.Product",
     "pk": 5,
     "fields": {
+      "sku": "GB1",
       "category": 2,
       "name": "Sweet Bites Box",
       "description": "A small assortment of bite-sized sweets.",
@@ -63,6 +68,7 @@
     "model": "products.Product",
     "pk": 6,
     "fields": {
+      "sku": "GB2",
       "category": 2,
       "name": "Sugar Bliss Box",
       "description": "A medium box filled with a variety of sugary treats.",
@@ -75,6 +81,7 @@
     "model": "products.Product",
     "pk": 7,
     "fields": {
+      "sku": "GB3",
       "category": 2,
       "name": "Dessert Dream Box",
       "description": "A large box packed with an assortment of decadent desserts.",
@@ -87,6 +94,7 @@
     "model": "products.Product",
     "pk": 8,
     "fields": {
+      "sku": "C001",
       "category": 3,
       "name": "Signature Cake",
       "description": "An 8 inches tall, 1-tier themed delicious cake perfect for celebrations.",
@@ -99,6 +107,7 @@
     "model": "products.Product",
     "pk": 9,
     "fields": {
+      "sku": "D001",
       "category": 4,
       "name": "Cake Pops",
       "description": "Cute and fun cake pops, perfect for any occasion. (set of 12)",
@@ -111,6 +120,7 @@
     "model": "products.Product",
     "pk": 10,
     "fields": {
+      "sku": "D002",
       "category": 4,
       "name": "Cupcakes",
       "description": "Delicious, beautifully decorated cupcakes. (box of 12)",
@@ -123,6 +133,7 @@
     "model": "products.Product",
     "pk": 11,
     "fields": {
+      "sku": "D003",
       "category": 4,
       "name": "Cheesecakes",
       "description": "Rich, creamy cheesecakes. (12 pcs)",
@@ -135,6 +146,7 @@
     "model": "products.Product",
     "pk": 12,
     "fields": {
+      "sku": "D004",
       "category": 4,
       "name": "Fruit Cones",
       "description": "Fresh and vibrant fruit cones. (8 pcs)",
@@ -147,6 +159,7 @@
     "model": "products.Product",
     "pk": 13,
     "fields": {
+      "sku": "D005",
       "category": 4,
       "name": "Macaroons",
       "description": "Delicate and flavorful macaroons.(12 pcs)",
@@ -159,6 +172,7 @@
     "model": "products.Product",
     "pk": 14,
     "fields": {
+      "sku": "D006",
       "category": 4,
       "name": "Dessert Cups",
       "description": "Elegant cups filled with layered desserts. (6 pcs)",
@@ -171,6 +185,7 @@
     "model": "products.Product",
     "pk": 15,
     "fields": {
+      "sku": "P001",
       "category": 5,
       "name": "Donuts",
       "description": "Fresh, fluffy donuts in a variety of flavors. (12 pcs)",
@@ -183,6 +198,7 @@
     "model": "products.Product",
     "pk": 16,
     "fields": {
+      "sku": "P002",
       "category": 5,
       "name": "Tarts",
       "description": "Sweet and savory tarts with various fillings. (12 pcs)",
@@ -195,6 +211,7 @@
     "model": "products.Product",
     "pk": 17,
     "fields": {
+      "sku": "GC1",
       "category": 6,
       "name": "Gift Card",
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
@@ -207,6 +224,7 @@
     "model": "products.Product",
     "pk": 18,
     "fields": {
+      "sku": "GC2",
       "category": 6,
       "name": "Gift Card",
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
@@ -219,6 +237,7 @@
     "model": "products.Product",
     "pk": 19,
     "fields": {
+      "sku": "GC3",
       "category": 6,
       "name": "Gift Card",
       "description": "Gift the perfect present with a Dough n Drizzle gift card.",
