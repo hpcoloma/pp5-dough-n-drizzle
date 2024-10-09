@@ -89,7 +89,7 @@
       {% endblock %}
     </main>
 
-    <!-- Include footer on all pages except home -->
+    <!-- Include footer on all pages except home and checkout page-->
     {% if request.path != '/' %}
       <footer>
         {% include "snippets/footer.html" %}
