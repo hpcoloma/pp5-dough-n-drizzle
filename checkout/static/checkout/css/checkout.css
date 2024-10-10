@@ -1,7 +1,7 @@
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
-  height: 40px;
+  height: auto;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 0px;
@@ -44,6 +44,16 @@
                 0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
     height: fit-content;
     padding: 1.5rem;
+  }
+
+  select,
+  select option {
+      color: #000000;
+  }
+
+  select:invalid,
+  select option[value=""] {
+      color: #aab7c4 !important;
   }
   
   #loading-overlay {

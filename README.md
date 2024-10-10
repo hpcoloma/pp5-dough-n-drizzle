@@ -325,6 +325,15 @@ PHOTO HERE
   Remedies:
   
   Resolution:
+
+- Problem after upgrading to django 5.0 "AttributeError: 'BlankChoiceIterator' object has no attribute '__len__' "
+
+  Issue: This error comes up after I install django-countries==7.2.1. I accidentally upgraded to Django 5.0.
+
+  Remedies: 
+
+  Resolution: I uninstall django-countries 7.2.1 and installed  django-countries 7.6.1. This has the fix for this bug. You can reference on this [Github](https://github.com/SmileyChris/django-countries/issues/447) repo about Django Countries 
+  
 ## Technologies and Language
 Tech Tackles is built using a combination of modern technologies and programming languages to ensure a robust and efficient application. Below is a list of the primary technologies and languages used in this project:
 ### Frontend
