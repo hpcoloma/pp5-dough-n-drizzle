@@ -53,8 +53,13 @@
                                 <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                 </a>
-                            </p>     
-
+                            </p>
+                            {% if request.user.is_superuser %}
+                                <small class="ml-0">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
+                            {% endif %}    
                             <!-- Add to cart -->
                             <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                                 {% csrf_token %}
@@ -98,7 +103,8 @@
                                     </div>
                                 </div>
                             </form>  
-
+                            <!-- Edit and Delete -->
+                              
                         </div>
                     </div>
                 </div>
