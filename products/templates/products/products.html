@@ -40,7 +40,7 @@
                     <div class="category-section col-12 mt-3">
                         <h3 class="category-title text-center">{{ category.friendly_name }}</h3>
                     </div>
-                    <div class="product-container row mt-3 justify-content-center">
+                    <div class="product-container row mt-3 justify-content-center w-100">
                         {% for product in products %}
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card-image">
                                 <div class="card h-100 border-0">
@@ -50,7 +50,7 @@
                                     </a>
                                     {% else %}
                                     <a href="{% url 'product_detail' product.id %}">
-                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
                                     </a>
                                     {% endif %}
                                     
@@ -84,7 +84,7 @@
                 {% else %}
 
                 <!-- Display all products in rows of 4 when no category is filtered -->
-                <div class="product-container row mt-3 justify-content-center g-0">
+                <div class="product-container row mt-3 justify-content-center g-0 w-100">
                     {% for product in products %}
                         <div class="col-6 col-sm-6 col-md-4 col-lg-3 card-image">
                             <div class="card h-100 border-0">
@@ -94,7 +94,7 @@
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-footer pt-0 pb-0 border-0 d-flex flex-column justify-content-center align-items-center text-center">
