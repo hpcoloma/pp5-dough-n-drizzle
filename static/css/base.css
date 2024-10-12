@@ -556,24 +556,6 @@ th {
   text-decoration: underline; /* Add hover effect */
 }
 
-/* Media Queries */
-@media (min-width: 1385px) {
-  .img-fluid {
-    height: auto;
-  }
-    
-}
-
-@media screen and (min-width:640px) {
-  /* background-position: 50% 0; */
-}
-
-@media (max-width: 768px) {
-  .category-title {
-    width: 100%; /* Make the h3 full width */
-  }
-}
-
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
@@ -595,10 +577,8 @@ th {
 }
 
 .allauth-form-inner-content button {
-/* btn */
-display: inline-block;
+  display: inline-block;
   font-weight: 400;
-  /* color: #fff; */
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -616,4 +596,51 @@ display: inline-block;
 
 .allauth-form-inner-content a {
 color: #17a2b8; /* text-info */
+}
+
+/* Product Form */
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 0;
+}
+
+
+/* Media Queries */
+@media (min-width: 1385px) {
+  .img-fluid {
+    height: auto;
+  }
+    
+}
+
+@media screen and (min-width:640px) {
+  /* background-position: 50% 0; */
+}
+
+@media (max-width: 768px) {
+  .category-title {
+    width: 100%; /* Make the h3 full width */
+  }
 }
