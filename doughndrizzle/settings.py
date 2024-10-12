@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-j1$3$_+3ff&x$#(5ai*u(gsiz5@@gqgff-b@t=8ag9c-=z6=*@
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-hpcoloma-pp5doughndrizz-ghhtuxykw47.ws.codeinstitute-ide.net', 
-                 'dough-n-drizzle.herokuapp.com']
+                 'dough-n-drizzle-b9b1690c5ae3.herokuapp.com']
 
 
 CSRF_TRUSTED_ORIGINS = [
