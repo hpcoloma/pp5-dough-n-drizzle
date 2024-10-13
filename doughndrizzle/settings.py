@@ -26,10 +26,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-hpcoloma-pp5doughndrizz-ghhtuxykw47.ws.codeinstitute-ide.net', 
-                 'pp5-dough-n-drizzle.herokuapp.com']
+                 'pp5-dough-n-drizzle-257d1212e951.herokuapp.com/']
 
 
 CSRF_TRUSTED_ORIGINS = [
