@@ -183,6 +183,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+# Define STATIC_ROOT for local collectstatic process
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Media files settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
