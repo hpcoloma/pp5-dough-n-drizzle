@@ -178,15 +178,14 @@ USE_TZ = True
 
 # Static and media files
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Media files settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Absolute path to the directory where static files are stored
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Ensure this path points to your static folder
-]
+
 
 if 'USE_AWS' in os.environ:
     # Bucket Config
