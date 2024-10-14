@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('SECRET_KEY', '')
-SECRET_KEY = 'django-insecure-j1$3$_+3ff&x$#(5ai*u(gsiz5@@gqgff-b@t=8ag9c-=z6=*@'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
+# SECRET_KEY = 'django-insecure-j1$3$_+3ff&x$#(5ai*u(gsiz5@@gqgff-b@t=8ag9c-=z6=*@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-hpcoloma-pp5doughndrizz-ghhtuxykw47.ws.codeinstitute-ide.net', 
                  'pp5-dough-n-drizzle-257d1212e951.herokuapp.com']
@@ -203,15 +203,15 @@ if 'USE_AWS' in os.environ:
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-    # Static and media files
+     # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    # STATICFILES_LOCATION = 'static'
+    STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    # MEDIAFILES_LOCATION = 'media'
+    MEDIAFILES_LOCATION = 'media'
 
     # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
