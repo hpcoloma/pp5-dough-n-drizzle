@@ -178,12 +178,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# Define STATIC_ROOT for collectstatic command
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Static and media files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+# Define STATIC_ROOT for collectstatic command
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files settings
 MEDIA_URL = '/media/'
@@ -201,7 +202,7 @@ if 'USE_AWS' in os.environ:
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.eu-west-1.amazonaws.com'
 
      # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
