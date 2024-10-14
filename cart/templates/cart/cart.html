@@ -173,6 +173,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="quantityModal" tabindex="-1" role="dialog" aria-labelledby="quantityModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quantityModalLabel">Quantity Limit</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    The maximum quantity allowed is 99. Please adjust your order.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block postloadjs %}
@@ -183,8 +204,18 @@
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');
-        form.submit();
-    })
+        var qtyInput = form.find('.qty_input');
+        var quantity = parseInt(qtyInput.val());
+
+        // Prevent the form submission if quantity is over 99
+        if (quantity > 99) {
+            qtyInput.val(99);
+            $('#quantityModal').modal('show');  // Show the modal
+            return false;
+        } else {
+            form.submit();
+        }
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {

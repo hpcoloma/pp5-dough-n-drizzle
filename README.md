@@ -320,7 +320,7 @@ PHOTO HERE
 ## Bugs and Potential issues
 - Increment/Decrement Button on product detail page
   
-  Issue: The +/- buttons on the quantity section is mean to update the quantity on this page, however when during the early stages these buttons are directly updating the cart page. You can see the update when the button was clicked the value on the cart increases. Both buttons increases the value of the cart.
+  Issue: The +/- buttons on the quantity section is meant to update the quantity on this page, however when during the early stages these buttons are directly updating the cart page. You can see the update when the button was clicked the value on the cart increases. Both buttons increases the value of the cart.
   
   Remedies:
   
@@ -333,6 +333,19 @@ PHOTO HERE
   Remedies: 
 
   Resolution: I uninstall django-countries 7.2.1 and installed  django-countries 7.6.1. This has the fix for this bug. You can reference on this [Github](https://github.com/SmileyChris/django-countries/issues/447) repo about Django Countries 
+
+- Django not connecting/uploading static files to AWS S3 Bucket.
+
+  Issue: After adding all the required configuration settings for AWS and deploying to Heroku, static filea re not uploading to my AWS S3 Bucket. 
+
+  Remedies: 
+    1. I refactored AWS settings several times, disable and re-enable static_root folder.
+    2. I created another AWS S3 bucket incase I missed a step when following the walkthrough. Another student provided an updated instruction
+    3. 
+
+  Resolution: I downgraded my Django version from 5.1.1 to Djano version 4.2. After pushing to Heroku, all my static files uploaded to my AWS S3 Bucket. Issue was fixed by Roman from Code Institute
+
+
   
 ## Technologies and Language
 Tech Tackles is built using a combination of modern technologies and programming languages to ensure a robust and efficient application. Below is a list of the primary technologies and languages used in this project:
@@ -457,3 +470,4 @@ This project will not be live today without the help and support of the followin
 
 1. Arnold Ambida - my husband, who looks after my 3 children while I do this course.
 2. Matt Bodden - my mentor who have made a significant impact on completing this projecs with all the tips and the encouragements.
+3. Roman from Code Institute
