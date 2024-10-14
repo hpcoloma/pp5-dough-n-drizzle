@@ -143,6 +143,10 @@ main {
 }
 
 /* Search Icon Hover */
+.user-icon:hover img {
+  content: url(/static/img/user2.png);
+}
+
 .search-icon:hover img {
   content: url(/static/img/search.png);
 }
@@ -159,6 +163,7 @@ main {
 /* Custom styling for content */
 .content-container {
   padding-top: 210px;
+  
 }
 
 /* Modal Search */
@@ -387,7 +392,7 @@ th {
   opacity: 0.8; /* Slightly transparent on hover */
 }
 
-.product-details, .card-footer, .table-responsive{
+.product-details, .card-footer, .table-responsive {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */

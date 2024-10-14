@@ -4,7 +4,7 @@
     <div class="row top-header">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
             <div class="d-flex justify-content-start align-items-center">
-                <!-- Currency Dropdown -->
+                <!-- Currency Dropdown
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="currencyDropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -16,61 +16,60 @@
                     </div>
                 </div>
 
-                    <span class="mx-2">|</span>
+                    <span class="mx-2">|</span> -->
 
-                    <!-- MY ACCOUNT Dropdown -->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="user-options" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        MY ACCOUNT
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="user-options">
+                <!-- MY ACCOUNT Dropdown -->
+                <div class="dropdown d-flex flex-column align-items-center">
+                    <a href="#" class="icon-container user-icon d-flex flex-column align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="icons" src="{% static 'img/user1.png' %}" alt="My Account">
+                        <p class="my-0">My Account</p>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                        {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                         {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                         {% endif %}
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
-                <a href="{% url 'home' %}" class="main-logo-link">
-                    <h1 id="logo">Dough n Drizzle</h1>
-                    <img class="logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
+        </div>
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-center">
+            <a href="{% url 'home' %}" class="main-logo-link">
+                <h1 id="logo">Dough n Drizzle</h1>
+                <img class="logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
+            </a>
+        </div>
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="d-flex justify-content-end align-items-center">
+                <!-- Search Icon -->
+                <a href="#" class="icon-container mx-3 py-2 search-icon d-flex flex-column align-items-center" data-toggle="modal" data-target="#searchModal">
+                    <img class="icons" src="{% static 'img/search1.png' %}" alt="Search">
+                    <p class="my-0">Search</p>
                 </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <div class="d-flex justify-content-end align-items-center">
-                    <!-- Search Icon -->
-                    <a href="#" class="icon-container mx-2 search-icon" data-toggle="modal" data-target="#searchModal">
-                        <img class="icons" src="{% static 'img/search1.png' %}" alt="Search">
-                        <p class="my-0">Search</p>
-                    </a>
 
-                    <!-- Favorite Icon -->
-                    <a href="#" class="icon-container mx-2 favorite-icon">
-                        <img class="icons" src="{% static 'img/favorite.png' %}" alt="Favorite">
-                        <p class="my-0">Favourite</p>
-                    </a>
+                <!-- Favorite Icon -->
+                <a href="#" class="icon-container mx-3 py-2 favorite-icon d-flex flex-column align-items-center">
+                    <img class="icons" src="{% static 'img/favorite.png' %}" alt="Favorite">
+                    <p class="my-0">Favourite</p>
+                </a>
 
-                    <!-- Cart Icon -->
-                    <a href="{% url 'view_cart' %}" class="icon-container mx-2 cart-icon">
-                        <img class="icons" src="{% static 'img/cart1.png' %}" alt="Cart">
-                        <p class="my-0">
-                        {% if grand_total %}
-                            €{{ grand_total|floatformat:2 }}
-                        {% else %}
-                            €0.00
-                        {% endif %}
-                        </p>
-                    </a>
-                </div>
+                <!-- Cart Icon -->
+                <a href="{% url 'view_cart' %}" class="icon-container mx-3 py-2 cart-icon d-flex flex-column align-items-center">
+                    <img class="icons" src="{% static 'img/cart1.png' %}" alt="Cart">
+                    <p class="my-0">
+                    {% if grand_total %}
+                        €{{ grand_total|floatformat:2 }}
+                    {% else %}
+                        €0.00
+                    {% endif %}
+                    </p>
+                </a>
             </div>
         </div>
     </div>
