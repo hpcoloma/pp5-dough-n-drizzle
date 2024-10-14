@@ -26,8 +26,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECRET_KEY = 'django-insecure-j1$3$_+3ff&x$#(5ai*u(gsiz5@@gqgff-b@t=8ag9c-=z6=*@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = False
+# DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-hpcoloma-pp5doughndrizz-ghhtuxykw47.ws.codeinstitute-ide.net', 
                  'pp5-dough-n-drizzle-257d1212e951.herokuapp.com']
@@ -178,12 +178,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# Define STATIC_ROOT for collectstatic command
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Static and media files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-# Define STATIC_ROOT for collectstatic command
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files settings
 MEDIA_URL = '/media/'
