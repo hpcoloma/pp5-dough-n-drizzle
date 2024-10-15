@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
-from .forms import ContactForm
+from .forms import ContactForm, NewsletterSubscriptionForm
+from .models import NewsletterSubscription
 
 # Create your views here.
 
@@ -41,3 +42,25 @@ def contact_us(request):
         form = ContactForm()
 
     return render(request, 'home/contact_us.html', {'form': form})
+
+
+def subscribe_newsletter(request):
+    """Handles newsletter subscription."""
+    if request.method == 'POST':
+        form = NewsletterSubscriptionForm(request.POST)
+        if form.is_valid():
+            subscription = form.save()
+           # Send a confirmation email
+            send_mail(
+                'Welcome to Dough & Drizzle',
+                'Thank you for subscribing to our newsletter! Use code WELCOME10 and enjoy 10% off on your first order.',
+                'doughndrizzle@example.com',  # Replace with your email
+                [subscription.email],
+                fail_silently=False,
+            )
+            messages.success(request, 'Thank you for subscribing!')
+            return redirect('home')
+    else:
+        messages.error(request, 'There was an error with your subscription.')
+    
+    return redirect('home')

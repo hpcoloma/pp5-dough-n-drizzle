@@ -29,4 +29,52 @@
         </div>
     </div>
 </section>
+
+<!-- Newsletter Subscription Modal -->
+<div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newsletterModalLabel">Get 10% Off Your First Order!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Subscribe to our newsletter for the latest updates and enjoy 10% off your first order!</p>
+                <form id="newsletterForm" method="POST" action="{% url 'subscribe_newsletter' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="btn btn-cyan">Subscribe</button>
+                    <button type="button" class="btn btn-secondary btn-outline-cyan" data-dismiss="modal">No thanks</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs%}
+<script>
+    // Show the modal after 5 seconds, only once
+    $(document).ready(function() {
+        // Wait 5 seconds and then show the modal
+        setTimeout(function() {
+            $('#newsletterModal').modal('show');
+        }, 5000); // 5000 milliseconds = 5 seconds
+    });
+   
+   
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     if (!localStorage.getItem('newsletterShown')) {
+    //         setTimeout(function () {
+    //             $('#newsletterModal').modal('show');
+    //             localStorage.setItem('newsletterShown', 'true');
+    //         }, 5000);
+    //     }
+    // });
+</script>
 {% endblock %}

@@ -51,7 +51,11 @@ This application will be designed using a combination of front-end and back-end 
 
 
 ### The Scope Plane 
-#### FEATURES
+#### FEATURES:
+
+#### CUSTOM FEATURES:
+
+- **Subscription** - This allow users to sign up to receive emails about news, offers, and get a 10% discount on their first order. It store the user's email, subscription status, and track whether they have used the 10% discount on their first order.
 
 
 #### CONTENT REQUIREMENTS:
