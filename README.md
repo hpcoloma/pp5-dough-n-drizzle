@@ -322,32 +322,41 @@ PHOTO HERE
   
 
 ## Bugs and Potential issues
-- Increment/Decrement Button on product detail page
+- **Increment/Decrement Button on product detail page**
   
-  Issue: The +/- buttons on the quantity section is meant to update the quantity on this page, however when during the early stages these buttons are directly updating the cart page. You can see the update when the button was clicked the value on the cart increases. Both buttons increases the value of the cart.
+  **Issue:** The +/- buttons on the quantity section is meant to update the quantity on this page, however when during the early stages these buttons are directly updating the cart page. You can see the update when the button was clicked the value on the cart increases. Both buttons increases the value of the cart.
   
-  Remedies:
+  **Remedies:**
   
-  Resolution:
+  **Resolution:**
 
-- Problem after upgrading to django 5.0 "AttributeError: 'BlankChoiceIterator' object has no attribute '__len__' "
+- **Problem after upgrading to django 5.0 "AttributeError: 'BlankChoiceIterator' object has no attribute "'__len__'"**
 
-  Issue: This error comes up after I install django-countries==7.2.1. I accidentally upgraded to Django 5.0.
+  **Issue:** This error comes up after I install django-countries==7.2.1. I accidentally upgraded to Django 5.0.
 
-  Remedies: 
+  **Remedies:**
 
-  Resolution: I uninstall django-countries 7.2.1 and installed  django-countries 7.6.1. This has the fix for this bug. You can reference on this [Github](https://github.com/SmileyChris/django-countries/issues/447) repo about Django Countries 
+  **Resolution:** I uninstall django-countries 7.2.1 and installed  django-countries 7.6.1. This has the fix for this bug. You can reference on this [Github](https://github.com/SmileyChris/django-countries/issues/447) repo about Django Countries 
 
-- Django not connecting/uploading static files to AWS S3 Bucket.
+- **Django not connecting/uploading static files to AWS S3 Bucket.**
 
-  Issue: After adding all the required configuration settings for AWS and deploying to Heroku, static filea re not uploading to my AWS S3 Bucket. 
+  **Issue:** After adding all the required configuration settings for AWS and deploying to Heroku, static filea re not uploading to my AWS S3 Bucket. 
 
-  Remedies: 
+  **Remedies:**
     1. I refactored AWS settings several times, disable and re-enable static_root folder.
     2. I created another AWS S3 bucket incase I missed a step when following the walkthrough. Another student provided an updated instruction
     3. 
 
-  Resolution: I downgraded my Django version from 5.1.1 to Djano version 4.2. After pushing to Heroku, all my static files uploaded to my AWS S3 Bucket. Issue was fixed by Roman from Code Institute
+  **Resolution:** I downgraded my Django version from 5.1.1 to Djano version 4.2. After pushing to Heroku, all my static files uploaded to my AWS S3 Bucket. Issue was fixed by Roman from Code Institute
+
+- **Heroku throws a server error 500**
+
+**Issue:** Deployed project throws a server error 500 when trying to access newsletter subscription in admin and after entering an email to test newsletter subscription functinality but works fine workspace
+
+**Resolution:** Despite running database migrations in workspace, migrations have to be applied in heroku by running: 
+    
+    heroky run python3 manage.py migrate
+
 
 
   
