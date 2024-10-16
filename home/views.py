@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.core.mail import send_mail
 from django.contrib import messages
 from .forms import ContactForm, NewsletterSubscriptionForm
@@ -50,17 +50,20 @@ def subscribe_newsletter(request):
         form = NewsletterSubscriptionForm(request.POST)
         if form.is_valid():
             subscription = form.save()
-           # Send a confirmation email
+
+            # Send a confirmation email
             send_mail(
                 'Welcome to Dough & Drizzle',
                 'Thank you for subscribing to our newsletter! Use code WELCOME10 and enjoy 10% off on your first order.',
-                'doughndrizzle@example.com',  # Replace with your email
+                'doughndrizzle@example.com', 
                 [subscription.email],
-                fail_silently=False,
+                fail_silently=True,
             )
             messages.success(request, 'Thank you for subscribing!')
             return redirect('home')
-    else:
-        messages.error(request, 'There was an error with your subscription.')
-    
-    return redirect('home')
+        else:
+            # If form is invalid, provide detailed feedback
+            messages.error(request, 'Invalid email. Please try again.')
+            return redirect('home')  # Or redirect to a subscription page to retry
+    else:    
+        return redirect('home')
