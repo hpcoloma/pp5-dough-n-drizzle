@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import dj_database_url
 
+if os.path.isfile("env.py"):
+    import env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,19 +27,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-hpcoloma-pp5doughndrizz-ghhtuxykw47.ws.codeinstitute-ide.net', 
                  'pp5-dough-n-drizzle-257d1212e951.herokuapp.com']
 
-
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-hpcoloma-pp5doughndrizz-ghhtuxykw47.ws.codeinstitute-ide.net',
 ]
-
 
 # Application definition
 
@@ -121,13 +120,10 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-
 WSGI_APPLICATION = 'doughndrizzle.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
@@ -140,7 +136,6 @@ else:
             'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -160,7 +155,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -175,8 +169,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-
-
 
 # Static and media files
 STATIC_URL = '/static/'
@@ -215,8 +207,6 @@ if 'USE_AWS' in os.environ:
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-
-
 # Stripe
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 15
@@ -227,7 +217,6 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'doughndrizzle@gmail.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
@@ -236,6 +225,5 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

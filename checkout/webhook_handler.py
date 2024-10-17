@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 import json
 import time
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -50,16 +51,22 @@ class StripeWH_Handler:
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
+        # charges object does not exist
+        # billing_details = intent.charges.data[0].billing_details
+        # shipping_details = intent.shipping
+        # grand_total = round(intent.charges.data[0].amount / 100, 2)
+        # Get the Charge object
+        stripe_charge = stripe.Charge.retrieve(
+            intent.latest_charge
+        )
 
-        billing_details = intent.charges.data[0].billing_details
+        billing_details = stripe_charge.billing_details # updated
         shipping_details = intent.shipping
-        grand_total = round(intent.charges.data[0].amount / 100, 2)
-
+        grand_total = round(stripe_charge.amount / 100, 2) # updated
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-
 
         # Update profile information if save_info was checked
         profile = None
@@ -91,7 +98,7 @@ class StripeWH_Handler:
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
-                    original_cart=cart,
+                    original_bag=cart,
                     stripe_pid=pid,
                 )
                 order_exists = True
@@ -118,7 +125,7 @@ class StripeWH_Handler:
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
-                    original_cart=cart,
+                    original_bag=cart,
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(cart).items():
