@@ -18,15 +18,15 @@
                     <!-- Product Image on Left -->
                     <div class="col-md-6 text-center">
                         <div class="w-100 my-auto">
-                            {% if product.image %}
-                            <a href="{{ product.image.url }}" target="_blank">
-                                <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </a>
-                            {% else %}
-                            <a href="">
-                                <img class="img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
-                            </a>
-                            {% endif %}
+                                {% if product.image %}
+                                <a href="{{ product.image.url }}" target="_blank">
+                                    <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="">
+                                    <img class="img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
                         </div>
                     </div>
 
@@ -97,9 +97,7 @@
                                         <input type="submit" class="btn btn-cyan rounded-0 text-uppercase mt-5" value="Add to Cart">
                                     </div>
                                 </div>
-                            </form>  
-                            <!-- Edit and Delete -->
-                              
+                            </form>                              
                         </div>
                     </div>
                 </div>

@@ -296,7 +296,7 @@ main {
   margin-right: 10px;
 }
 
-/* Custom styling for products page */
+/* Custom styling for details and conatiners */
 .category-section h3 {
   font-size: 1.75rem;
   font-weight: bold;
@@ -311,7 +311,7 @@ main {
   transition: background-color 0.3s ease-in-out; /* Smooth transition for background */
 }
 
-.product-container {
+.product-container, .about-details {
   /* justify-content: center;  */
   display: flex;
   flex-wrap: wrap; /* Ensures items wrap correctly in smaller viewports */
