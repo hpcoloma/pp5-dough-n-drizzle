@@ -13,27 +13,31 @@
 <div class="overlay"></div>
 <div class="container content-container">
     <div class="row justify-content-center">
-        <div class="col text-center mt-3">
+        <div class="col text-center mt-3 contact-details">
             <h3>Let’s Connect & Create Something Delicious</h3>
-            <hr class="w-50 mb-1">
+            <hr class="w-50 mb-2">
             <p class="lead">
                 Got questions? We’ve got answers (and treats)! 
                 Whether you’re curious about our products, need help 
                 with a custom order, or just want to share your love 
                 for food, we’d love to hear from you.
             </p>
-            <div class="contact-details">
-                <p>
+            <div>
+                <p class="text-left pt-2">
+                    <img src="{% static 'img/mail.png' %}" class="contact-icon" alt="Mail Icon">
                     <strong>Email Us</strong>: Reach out at <a href="mailto:doughndrizzle@gmail.com">doughndrizzle@gmail.com</a><br>
+                    <img src="{% static 'img/phone-call.png' %}" class="contact-icon" alt="Call Us Icon">
                     <strong>Call Us</strong>: Prefer to chat? Dial +353 83 123456</a><br>
+                    <img src="{% static 'img/socials.png' %}" class="contact-icon" alt="Social Media Icon">
                     <strong>Social Media</strong>: Connect with us for all the latest treats and behind-the-scenes magic!<br>
                 </p>
-                <p>
-                    ➡️ Let’s make your next occasion unforgettable. Contact us today!
+                <p class="text-center pt-2">
+                    Let’s make your next occasion unforgettable. <br>
+                    Contact us today!
                 </p>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <!-- Display success messages -->
             {% if messages %}
                 <div class="alert alert-success">

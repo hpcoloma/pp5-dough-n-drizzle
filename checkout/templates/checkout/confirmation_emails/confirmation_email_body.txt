@@ -1,35 +1,47 @@
-Hello {{ order.full_name }}!
+{% load bag_tools %}
+
+Dear {{ order.full_name }},
 
 Thank you for your order from Dough n Drizzle! 
-We're excited to start preparing your delicious treats. Below are the details of your order:
+We're delighted to confirm your purchase and are excited to start preparing your order. 
 
-Order Summary
-Order Number: {{ order_number }}
-Order Date: {{ order_date }}
+Below are the details of your purchase:
+
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
 
 Items Ordered:
-{% for item in order_items %}
-    {{ item.product_name }}
+{% for item in order.lineitems.all %}
+    {{ item.product.name }}
     Quantity: {{ item.quantity }}
-    Price: €{{ item.price | floatformat:2 }} {% endfor %}
+    Price: €{{ item.product.price | floatformat:2 }}
+    Total: €€{{ item.product.price | calc_subtotal:item.quantity }}
+{% endfor %}
+
 
 Order Total:
-Subtotal: €{{ subtotal | floatformat:2 }}
-Delivery: €{{ delivery | floatformat:2 }}
-Grand Total: €{{ grand_total | floatformat:2 }}
+Subtotal: €{{ order.order_total | floatformat:2 }}
+Delivery: €{{ order.delivery_cost | floatformat:2 }}
+Grand Total: €{{ order.grand_total | floatformat:2 }}
+
 
 Delivery Information:
-Name: {{ customer_name }}
-Address: {{ delivery_address }}
-Estimated Delivery Date: {{ delivery_date }}
+Name: {{ order.full_name }}
+Address: {{ order.delivery_address }}
 Delivery Method: {{ delivery_method }}
+
 
 If you have any questions or need to make changes to your order, 
 feel free to reach out to us at {{ contact_email }}, and we’ll be happy to assist you.
 
+
 You will receive another email once your order is on its way!
 
+
 Thank you for choosing Dough n Drizzle – where every bite is made with love.
+
 
 Best regards,
 The Dough n Drizzle Team

@@ -311,7 +311,7 @@ main {
   transition: background-color 0.3s ease-in-out; /* Smooth transition for background */
 }
 
-.product-container, .about-details {
+.product-container {
   /* justify-content: center;  */
   display: flex;
   flex-wrap: wrap; /* Ensures items wrap correctly in smaller viewports */
@@ -392,7 +392,7 @@ th {
   opacity: 0.8; /* Slightly transparent on hover */
 }
 
-.product-details, .card-footer, .table-responsive {
+.product-details, .card-footer, .table-responsive, .about-details, .contact-details {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
@@ -434,6 +434,17 @@ th {
   font-size: 1.5rem;
   color: #333;
   text-align: center;
+}
+
+/* Contact us page */
+.contact-icon {
+  width: 16px; 
+  height: 16px; 
+  margin-right: 5px;
+}
+
+.contact-details {
+  text-align: left;
 }
 
 /* Bootstrap toasts */
