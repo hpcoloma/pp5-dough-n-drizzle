@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.contrib import messages
 from .forms import ContactForm, NewsletterSubscriptionForm
@@ -9,7 +10,22 @@ from .models import NewsletterSubscription
 def index(request):
     """A view to retunr the index page"""
     
-    return render(request, 'home/index.html')
+    show_newsletter_modal = False
+
+    # Check if the user is logged in
+    if request.user.is_authenticated:
+        user_email = request.user.email
+        
+        # Check if the user's email is already subscribed to the newsletter
+        if not NewsletterSubscription.objects.filter(email=user_email).exists():
+            show_newsletter_modal = True
+
+    # Pass the flag to the context
+    context = {
+        'show_newsletter_modal': show_newsletter_modal
+    }
+
+    return render(request, 'home/index.html', context)
 
 
 def about(request):

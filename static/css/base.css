@@ -392,7 +392,7 @@ th {
   opacity: 0.8; /* Slightly transparent on hover */
 }
 
-.product-details, .card-footer, .table-responsive, .about-details, .contact-details {
+.product-details, .card-footer, .table-responsive, .about-details, .contact-details, .admin-details, .discount-container, .order-confirmation {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */

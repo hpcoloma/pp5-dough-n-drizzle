@@ -13,25 +13,30 @@
 <div class="overlay"></div>
     <div class="container-fluid content-container">
         <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="">ABOUT US</h2>
+                <hr class="w-50 mb-3">
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="row">
                     <!-- Product Image on Left -->
                     <div class="col-md-6 text-center">
-                        <div class="w-100 mb-5 mt-md-5">
+                        <div class="w-100 mb-5 mt-md-3">
                             <img src="{% static 'img/pastry-chef.png' %}" alt="Dough n Drizzle" class="img-fluid" style="border-radius: 5px;"> 
                         </div>
                     </div>
 
                     <!-- Product Details on Right -->
                     <div class="col-md-6 d-flex flex-column">
-                        <div class="about-details mb-5 mt-md-5">
-                            <h1>About Us</h1>
+                        <div class="about-details mb-5 mt-md-3">
                             <p>Welcome to Dough n Drizzle, where we bring you the best desserts with a drizzle of love. Our passion for baking and quality ingredients sets us apart.</p>
                             <p>Founded in 2023, we aim to provide delicious and unique treats that satisfy your sweet tooth. Whether it's our signature cakes, pastries, or custom orders, we strive for excellence in every bite.</p>
                             <h2>Our Mission</h2>
                             <p>To create delightful desserts that bring joy and happiness to our customers.</p>
                             <h2>Contact Us</h2>
-                            <p>If you have any questions or feedback, feel free to <a href="">contact us</a>.</p>
+                            <p>If you have any questions or feedback, feel free to <a href="{% url 'contact_us' %}">contact us</a>.</p>
                               
                         </div>
                     </div>

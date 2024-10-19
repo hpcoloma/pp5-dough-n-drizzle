@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_tags %}
 
 <!doctype html>
 <html lang="en">
@@ -89,11 +90,11 @@
       {% endblock %}
     </main>
 
-    <!-- Include footer on all pages except home and checkout page-->
-    {% if request.path != '/' %}
-      <footer>
+    <!-- Include footer on all pages except specified ones -->
+    {% if show_footer %}
+    <footer>
         {% include "snippets/footer.html" %}
-      </footer>
+    </footer>
     {% endif %}
 
     <!-- Search Modal -->

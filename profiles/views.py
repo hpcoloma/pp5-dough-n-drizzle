@@ -49,3 +49,13 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def admin_management(request):
+    """ Display the admin management options. """
+    if not request.user.is_superuser:
+        return redirect('home')  # Redirect non-superusers to home
+
+    context = {}
+    return render(request, 'profiles/admin_management.html', context)

@@ -6,6 +6,7 @@ from decimal import Decimal
 
 from products.models import Product
 from discount.models import Discount, DiscountUsage
+from checkout.models import Order
 
 
 def view_cart(request):
@@ -74,7 +75,7 @@ def add_to_cart(request, item_id):
         cart[item_id] += quantity
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your cart.')
+        messages.success(request, f'Added {product.name} to your cart.', extra_tags='cart_action')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -90,10 +91,10 @@ def adjust_cart(request, item_id):
     if quantity > 0:
         cart[item_id] = quantity
         messages.success(
-            request, f'Updated {product.name} quantity to {cart[item_id]}')
+            request, f'Updated {product.name} quantity to {cart[item_id]}', extra_tags='cart_action')
     else:
         cart.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your cart')
+        messages.success(request, f'Removed {product.name} from your cart', extra_tags='cart_action')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -107,7 +108,7 @@ def remove_from_cart(request, item_id):
         cart = request.session.get('cart', {})
 
         cart.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your cart')
+        messages.success(request, f'Removed {product.name} from your cart', extra_tags='cart_action')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
@@ -127,8 +128,9 @@ def apply_discount(request):
                 discount = Discount.objects.get(code=discount_code)
 
                 if discount.is_valid():
+                    # Check if the user has already used this discount code
                     if DiscountUsage.objects.filter(discount=discount, user=request.user).exists():
-                        messages.error(request, "You have already used this discount code.", extra_tags='discount')
+                        messages.error(request, "You have already used this discount code.")
                         request.session.pop('discount_code', None)
                     else:
                         # Record the usage of the discount code
@@ -136,14 +138,14 @@ def apply_discount(request):
 
                         # Store the discount code in the session
                         request.session['discount_code'] = discount_code
-                        messages.success(request, f'Discount code "{discount_code}" applied!', extra_tags='discount')
+                        messages.success(request, f'Discount code "{discount_code}" applied!')
                 else:
-                    messages.error(request, 'Discount code is not valid or has expired.', extra_tags='discount')
+                    messages.error(request, 'Discount code is not valid or has expired.')
                     request.session.pop('discount_code', None)
             except Discount.DoesNotExist:
-                messages.error(request, 'Invalid discount code.', extra_tags='discount')
+                messages.error(request, 'Invalid discount code.')
                 request.session.pop('discount_code', None)
         else:
-            messages.error(request, 'Please enter a discount code.', extra_tags='discount')
+            messages.error(request, 'Please enter a discount code.')
 
     return redirect(reverse('view_cart'))
