@@ -114,10 +114,34 @@
                                     {% endfor %}
                                 </tbody>
                                 <tfoot class="pt-5 text-right">
+                                    <!-- Discount Code Field -->
+                                    <tr>
+                                        <td colspan="3"></td>
+                                        <td colspan="2">
+                                            <form action="{% url 'apply_discount' %}" method="POST" class="my-2">
+                                                {% csrf_token %}
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Enter discount code" name="discount_code" value="{{ discount_code|default:'' }}">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-cyan rounded-0" type="submit">Apply</button>
+                                                    </div>
+                                                </div>
+                                                {% if discount_code %}
+                                                    <p class="text-success small mb-2">Discount Code Applied</p>
+                                                {% endif %}
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <!-- End of Discount Code Field -->
                                     <tr>
                                         <td colspan="3"></td>
                                         <td>Bag Total:</td>
-                                        <td>€{{ total|floatformat:2 }}</td>
+                                        <td>€{{ total | floatformat:2 }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"></td>
+                                        <td>Discount:</td>
+                                        <td class="text-danger">-€{{ discount_amount | floatformat:2 }}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="3"></td>
@@ -127,10 +151,10 @@
                                     <tr>
                                         <td colspan="3"></td>
                                         <td><strong>Grand Total:</strong></td>
-                                        <td><strong>€{{ grand_total|floatformat:2 }}</strong></td>
+                                        <td><strong>€{{ grand_total | floatformat:2 }}</strong></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" class="text-danger text-right">
+                                        <td colspan="6" class="text-danger text-right">
                                             {% if free_delivery_delta > 0 %}
                                                 <span class="mb-1 text-danger text-right">
                                                     You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mb-2 content-container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <hr>
+            <h2 class="logo-font mb-4">DISCOUNT MANAGEMENT</h2>
+            <h5 class="text-muted">Add Discount</h5>
+            <hr>
+        </div>
+    </div>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Discount</button>
+  </form>
+{% endblock %}

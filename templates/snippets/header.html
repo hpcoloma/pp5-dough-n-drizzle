@@ -4,21 +4,6 @@
     <div class="row top-header">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
             <div class="d-flex justify-content-start align-items-center">
-                <!-- Currency Dropdown
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="currencyDropdown"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    EUR
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="currencyDropdown">
-                    <a class="dropdown-item" href="#">EUR</a>
-                    <a class="dropdown-item" href="#">USD</a>
-                    </div>
-                </div>
-
-                    <span class="mx-2">|</span> -->
-
-                <!-- MY ACCOUNT Dropdown -->
                 <div class="dropdown d-flex flex-column align-items-center">
                     <a href="#" class="icon-container user-icon d-flex flex-column align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="icons" src="{% static 'img/user1.png' %}" alt="My Account">
@@ -27,7 +12,8 @@
                     <div class="dropdown-menu" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                <a href="{% url 'add_product' %}" class="dropdown-item">Products</a>
+                                <a href="{% url 'discount_list' %}" class="dropdown-item">Discounts</a>
                             {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
