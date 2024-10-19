@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid px-3 content-container">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="">TESTIMONIALS</h2>
+                <hr class="w-50 mb-3">
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Display Testimonials -->
+            <div class="col-md-8 mx-auto mb-4">
+                {% for testimonial in testimonials %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ testimonial.title }}</h5>
+                            <p class="card-text">{{ testimonial.content }}</p>
+                            <p class="card-text text-muted"><small>Submitted by {{ testimonial.user.username }} on {{ testimonial.created_at }}</small></p>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No testimonials yet.</p>
+                {% endfor %}
+            </div>
+
+            <!-- Testimonial Submission Form (only for users with an order history) -->
+            {% if user.is_authenticated %}
+            <div class="col-md-8 mx-auto">
+                <h3>Submit Your Testimonial</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+                </form>
+            </div>
+            {% else %}
+                <p>You must be logged in to submit a testimonial.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
