@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Discount(models.Model):
@@ -8,6 +9,8 @@ class Discount(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     active = models.BooleanField(default=True)
     expiration_date = models.DateField(null=True, blank=True)
+    max_uses = models.PositiveIntegerField(default=1)
+    current_uses = models.PositiveIntegerField(default=0)
 
     def is_valid(self):
         """
@@ -15,5 +18,17 @@ class Discount(models.Model):
         """
         return self.active and (self.expiration_date is None or self.expiration_date >= timezone.now().date())
 
-def __str__(self):
-    return self.code
+    def __str__(self):
+        return self.code
+
+
+class DiscountUsage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    discount = models.ForeignKey(Discount, on_delete=models.CASCADE)
+    used_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('discount', 'user')  # Ensure a user can only use a discount once
+
+    def __str__(self):
+        return f"{self.user.username} used {self.discount.code} on {self.used_at}"

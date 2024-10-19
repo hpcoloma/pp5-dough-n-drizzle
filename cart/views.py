@@ -1,10 +1,11 @@
 from django.shortcuts import render, reverse, redirect, HttpResponse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import F
 from decimal import Decimal
 
 from products.models import Product
-from discount.models import Discount
+from discount.models import Discount, DiscountUsage
 
 
 def view_cart(request):
@@ -115,17 +116,27 @@ def remove_from_cart(request, item_id):
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
 
-
+@login_required
 def apply_discount(request):
     """Apply a discount code to the cart"""
     if request.method == 'POST':
-        discount_code = request.POST.get('discount_code')
+        discount_code = request.POST.get('discount_code', None)
+        
         if discount_code:
             try:
                 discount = Discount.objects.get(code=discount_code)
+
                 if discount.is_valid():
-                    request.session['discount_code'] = discount_code
-                    messages.success(request, f'Discount code "{discount_code}" applied!', extra_tags='discount')
+                    if DiscountUsage.objects.filter(discount=discount, user=request.user).exists():
+                        messages.error(request, "You have already used this discount code.", extra_tags='discount')
+                        request.session.pop('discount_code', None)
+                    else:
+                        # Record the usage of the discount code
+                        DiscountUsage.objects.create(discount=discount, user=request.user)
+
+                        # Store the discount code in the session
+                        request.session['discount_code'] = discount_code
+                        messages.success(request, f'Discount code "{discount_code}" applied!', extra_tags='discount')
                 else:
                     messages.error(request, 'Discount code is not valid or has expired.', extra_tags='discount')
                     request.session.pop('discount_code', None)
