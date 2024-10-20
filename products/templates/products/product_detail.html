@@ -49,27 +49,15 @@
                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                 </a>
                             </p>
-                            {% if request.user.is_superuser %}
-                                <small class="ml-0">
-                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                    <a href="#" 
-                                        class="text-danger" 
-                                        data-toggle="modal" 
-                                        data-target="#deleteConfirmationModal" 
-                                        data-url="{% url 'delete_product' product.id %}" 
-                                        onclick="setDeleteUrl(this);">
-                                        Delete
-                                    </a>
-                                    <div>
-                                        <form action="{% url 'add_to_wishlist' product.id %}" method="post" style="display: inline;">
-                                            {% csrf_token %}
-                                            <button type="submit" class="wishlist-btn mt-2">
-                                                <img class="icons wishlist-icon" src="{% static 'img/wishlist.png' %}" alt="Add to Wishlist" title="Add to Wishlist">
-                                            </button>
-                                        </form>
-                                    </div>
-                                </small>
-                            {% endif %}    
+                            <!-- Wishlist button -->
+                            <div>
+                                <form action="{% url 'add_to_wishlist' product.id %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="wishlist-btn mt-2">
+                                        <img class="icons wishlist-icon" src="{% static 'img/wishlist.png' %}" alt="Add to Wishlist" title="Add to Wishlist">
+                                    </button>
+                                </form>
+                            </div>   
                             <!-- Add to cart -->
                             <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                                 {% csrf_token %}
@@ -110,6 +98,22 @@
                                             <span class="text-uppercase">Keep Shopping</span>
                                         </a>
                                         <input type="submit" class="btn btn-cyan rounded-0 text-uppercase mt-3" value="Add to Cart">
+                                    </div>
+                                    <div class="mt-2">
+                                        {% if request.user.is_superuser %}
+                                            <small class="ml-0">
+                                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                <a href="#" 
+                                                    class="text-danger" 
+                                                    data-toggle="modal" 
+                                                    data-target="#deleteConfirmationModal" 
+                                                    data-url="{% url 'delete_product' product.id %}" 
+                                                    onclick="setDeleteUrl(this);">
+                                                    Delete
+                                                </a> |
+                                                <a href="{% url 'add_product' %}">Add Products</a>
+                                            </small>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </form>                              

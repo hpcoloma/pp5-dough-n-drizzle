@@ -6,28 +6,11 @@
 <div class="container-fluid px-3 mb-2 content-container">
     <div class="row justify-content-center">
         <div class="col-sm-2">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a href="{% url 'admin_management' %}" class="admin-menu-link" data-type="product">Admin Dashboard</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="{% url 'add_product' %}" class="admin-menu-link" data-type="product">Product Management</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="{% url 'discount_list' %}" class="admin-menu-link" data-type="discount">Discounts</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="" class="admin-menu-link" data-type="gift">Gift Cards</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="" class="admin-menu-link" data-type="testimonial">Testimonials</a>
-                </li>
-            </ul>
+            {% include 'snippets/admin_menu.html' %}
         </div>
         <div class="col-sm-8" id="admin-container">
             <div class="row">
                 <div class="col text-center mt-3">
-                    <hr>
                     <h2 class="logo-font mb-4">DISCOUNT MANAGEMENT</h2>
                     <hr>
                 </div>
