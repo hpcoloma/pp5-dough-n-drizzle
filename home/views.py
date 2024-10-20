@@ -83,3 +83,15 @@ def subscribe_newsletter(request):
             return redirect('home')  # Or redirect to a subscription page to retry
     else:    
         return redirect('home')
+
+
+def privacy_policy(request):
+    return render(request, 'home/privacy_policy.html')
+
+
+def faqs(request):
+    return render(request, 'home/faqs.html')
+
+
+def term_service(request):
+    return render(request, 'home/term_service.html')

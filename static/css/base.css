@@ -211,11 +211,9 @@ main {
 
 /* Hero Style */
 .hero {
-  background: url(/static/img/hero.png) no-repeat center/cover;
-  /* position: relative; */
+  background: url(/static/img/hero.png) no-repeat center center;
   background-size: cover;
-  height: 100vh;
-  width: 100vh;
+  height: cover;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -235,7 +233,6 @@ main {
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Space between buttons */
   position: relative;
   background-color: transparent;
 }
@@ -705,10 +702,14 @@ color: #17a2b8; /* text-info */
     
 }
 
-
 @media (max-width: 768px) {
   .category-title {
     width: 100%; /* Make the h3 full width */
   }
 }
 
+@media (max-width: 1540px) {
+  .hero {
+    animation: none;
+  }
+}
