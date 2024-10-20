@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profiles/
+Disallow: /discount/
+Disallow: /management/
+Sitemap: https://pp5-dough-n-drizzle-257d1212e951.herokuapp.com/sitemap.xml

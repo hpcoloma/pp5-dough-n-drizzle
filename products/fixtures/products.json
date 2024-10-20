@@ -1,249 +1,249 @@
 [
-    {
-    "model": "products.Product",
-    "pk": 1,
-    "fields": {
-      "sku": "GT1",
-      "category": 1,
-      "name": "Grazing Table for 50 pax",
-      "description": "Indulge your guests with our Grazing Table for 50 pax, a beautifully arranged selection of gourmet treats that transforms any gathering into a culinary delight. Featuring an exquisite array of cheeses, cured meats, artisan breads, seasonal fruits, and elegant dips, this table is designed to impress. Ideal for parties, weddings, or corporate events, it offers both visual appeal and a variety of flavors that cater to all tastes. Experience the joy of sharing delicious food in a stunning presentation with our Grazing Table.",
-      "price": 350.00,
-      "image_url":"media/dessert-table2.png",
-      "image": "dessert-table2.png"
-    }
-  },
   {
-    "model": "products.Product",
-    "pk": 2,
-    "fields": {
-      "sku": "GT2",
-      "category": 1,
-      "name": "Grazing Table for 80 pax",
-      "description": "Elevate your next event with our Grazing Table for 80 pax, crafted to tantalize your guests'taste buds. This lavish spread includes a diverse selection of artisanal cheeses, fresh fruits, and gourmet meats, all beautifully arranged to create a feast for the eyes as well as the palate. Perfect for larger gatherings, this grazing table fosters a social atmosphere, allowing guests to mingle while enjoying an array of flavors. Make your event unforgettable with this sumptuous grazing table!  ",
-      "price": 480.00,
-      "image_url":"media/dessert-table.png",
-      "image": "dessert-table.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 3,
-    "fields": {
-      "sku": "GT3",
-      "category": 1,
-      "name": "Grazing Table for 100 pax",
-      "description": "Our Grazing Table for 100 pax is the ultimate centerpiece for your next celebration! With a grand selection of gourmet cheeses, exquisite charcuterie, fresh vegetables, and artisan dips, this table caters to a wide range of palates and dietary preferences. The impressive presentation encourages guests to sample and share, creating a warm, inviting atmosphere at your event. Perfect for weddings, corporate events, or milestone celebrations, this grazing table is sure to be a hit!",
-      "price": 600.00,
-      "image_url":"media/table4.png",
-      "image": "table4.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 4,
-    "fields": {
-      "sku": "GT4",
-      "category": 1,
-      "name": "Grazing Table for 200 pax",
-      "description": "Impress your guests with our lavish Grazing Table for 200 pax, an abundant display of gourmet delicacies perfect for large events. Featuring a vibrant selection of artisanal cheeses, charcuterie, seasonal fruits, and savory dips, this grazing table provides something for everyone. Ideal for weddings, corporate functions, or large parties, this stunning spread is designed to foster connections and create memorable moments through the shared love of food.",
-      "price": 1100.00,
-      "image_url":"media/table2.png",
-      "image": "table2.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 5,
-    "fields": {
-      "sku": "GB1",
-      "category": 2,
-      "name": "Sweet Bites Box",
-      "description": "Satisfy your sweet cravings with our Sweet Bites Box, a delightful assortment of bite-sized sweets designed for sharing. Each box features a carefully curated selection of mini desserts that bring a burst of flavor and fun to any occasion. Whether you’re hosting a small gathering or looking for the perfect gift, these delectable treats are sure to please everyone’s palate. Enjoy a taste of happiness in every bite!",
-      "price": 20.00,
-      "image_url":"media/dessert-smallbox.png",
-      "image": "dessert-smallbox.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 6,
-    "fields": {
-      "sku": "GB2",
-      "category": 2,
-      "name": "Sugar Bliss Box",
-      "description": "Experience dessert heaven with our Sugar Bliss Box, filled with a variety of sugary treats that will leave you wanting more. Perfect for celebrations or as a sweet surprise for loved ones, this medium box contains an assortment of pastries, cookies, and chocolates that cater to all tastes. Ideal for parties, meetings, or simply indulging yourself, each bite is a blissful escape into sweetness.",
-      "price": 30.00,
-      "image_url":"media/dessert-medbox.png",
-      "image": "dessert-medbox.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 7,
-    "fields": {
-      "sku": "GB3",
-      "category": 2,
-      "name": "Dessert Dream Box",
-      "description": "Dream big with our Dessert Dream Box, a large assortment of decadent desserts that will delight any sweet tooth. This box includes an irresistible selection of cakes, pastries, and treats that are perfect for parties or as a luxurious gift. Every dessert is crafted with love and high-quality ingredients, ensuring an unforgettable experience. Treat yourself or share the joy with friends and family; this box is a dream come true!",
-      "price": 40.00,
-      "image_url":"media/dessert-largebox.png",
-      "image": "dessert-largebox.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 8,
-    "fields": {
-      "sku": "C001",
-      "category": 3,
-      "name": "Signature Cake",
-      "description": "Celebrate your special moments with our Signature Cake, a beautifully designed 8-inch, one-tier themed cake that is perfect for any occasion. This cake is customizable to match your theme and tastes, ensuring it not only looks stunning but also tastes divine. Made with premium ingredients, our Signature Cake promises a moist, flavorful experience that will leave your guests raving. Make your celebrations memorable with a cake that stands out!",
-      "price": 75.00,
-      "image_url":"media/cake-floral.png",
-      "image": "cake-floral.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 9,
-    "fields": {
-      "sku": "D001",
-      "category": 4,
-      "name": "Cake Pops",
-      "description": "Brighten up any event with our Cake Pops, cute and fun treats that come in a set of 12. These delightful cake pops are perfect for parties, baby showers, or any occasion where you want to add a touch of sweetness. Coated in colorful chocolate and decorated to perfection, they offer a fun twist on traditional cakes. Enjoy the delightful flavors in every bite and share the joy with friends and family!",
-      "price": 10.00,
-      "image_url":"media/cake-pops.png",
-      "image": "cake-pops.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 10,
-    "fields": {
-      "sku": "D002",
-      "category": 4,
-      "name": "Cupcakes",
-      "description": "Indulge in our delicious Cupcakes, beautifully decorated and perfect for any celebration. Each box contains 12 cupcakes, offering a delightful mix of flavors that cater to all tastes. From classic vanilla to rich chocolate, our cupcakes are made with high-quality ingredients, ensuring a moist and flavorful experience. They’re perfect for birthday parties, weddings, or just a sweet treat to brighten your day!",
-      "price": 20.00,
-      "image_url":"media/mini-cupcakes.png",
-      "image": "mini-cupcakes.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 11,
-    "fields": {
-      "sku": "D003",
-      "category": 4,
-      "name": "Cheesecakes",
-      "description": "Treat yourself to our luxurious Cheesecakes,a rich and creamy delight that comes in a set of 12. Each cheesecake is crafted with care, using only the finest ingredients to create a smooth and velvety texture. Perfect for dessert lovers, these cheesecakes are an ideal addition to parties, celebrations, or cozy nights in. Experience the indulgence of rich flavors and creamy goodness with every slice.",
-      "price": 20.00,
-      "image_url":"media/cake-floral.png",
-      "image": "cheesecakes.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 12,
-    "fields": {
-      "sku": "D004",
-      "category": 4,
-      "name": "Fruit Cones",
-      "description": "Enjoy the freshness of our Fruit Cones, a vibrant selection of fresh fruit presented in a fun and portable way. Each set contains 8 cones, making them perfect for parties, picnics, or as a healthy snack option. Packed with vitamins and flavors, these fruit cones offer a refreshing alternative to traditional desserts. Delight in the natural sweetness of fresh fruits and add a burst of color to your event!",
-      "price": 15.00,
-      "image_url":"media/fruit-cones.png",
-      "image": "fruit-cones.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 13,
-    "fields": {
-      "sku": "D005",
-      "category": 4,
-      "name": "Macaroons",
-      "description": "Savor the delicate flavors of our Macaroons, a set of 12 beautifully crafted treats that are as lovely to look at as they are to taste. These colorful confections are made with almond flour and filled with a variety of delicious creams. Perfect for weddings, birthdays, or afternoon tea, our macaroons provide a delightful and elegant treat that will impress your guests and elevate your dessert table!",
-      "price": 10.00,
-      "image_url":"media/macarons.png",
-      "image": "macarons.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 14,
-    "fields": {
-      "sku": "D006",
-      "category": 4,
-      "name": "Dessert Cups",
-      "description": "Indulge in our elegant Dessert Cups, featuring 6 individual servings of layered desserts that are perfect for any occasion. Each cup is filled with a delightful mix of flavors and textures, providing a sophisticated touch to your dessert selection. Ideal for events, parties, or simply treating yourself, these dessert cups are a beautiful way to enjoy a variety of sweets in one delicious serving.",
-      "price": 12.00,
-      "image_url":"media/dessert-cups.png",
-      "image": "dessert-cups.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 15,
-    "fields": {
-      "sku": "P001",
-      "category": 5,
-      "name": "Donuts",
-      "description": "Enjoy our freshly made Donuts, available in a variety of flavors and packaged in sets of 12. These fluffy treats are crafted from high-quality ingredients, ensuring a delightful taste in every bite. Perfect for breakfast, snacks, or dessert, our donuts offer a sweet escape that everyone will love. Treat yourself and your loved ones to these irresistible pastries!",
-      "price": 8.00,
-      "image_url":"media/mini-donuts.png",
-      "image": "mini-donuts.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 16,
-    "fields": {
-      "sku": "P002",
-      "category": 5,
-      "name": "Tarts",
-      "description": "Delight in our Tarts, a selection of sweet and savory options available in sets of 12. Each tart is crafted with a flaky crust and filled with delicious fillings, perfect for parties or as a gourmet snack. Whether you prefer fruity, creamy, or savory flavors, our tarts are designed to please every palate. Elevate your gatherings with these exquisite bite-sized delights!",
-      "price": 15.00,
-      "image_url":"media/mini-tarts.png",
-      "image": "mini-tarts.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 17,
-    "fields": {
-      "sku": "GC1",
-      "category": 6,
-      "name": "Gift Card",
-      "description": "Gift the perfect present with a Dough n Drizzle gift card.",
-      "price": 50.00,
-      "image_url":"media/giftcard.png",
-      "image": "giftcard.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 18,
-    "fields": {
-      "sku": "GC2",
-      "category": 6,
-      "name": "Gift Card",
-      "description": "Gift the perfect present with a Dough n Drizzle gift card.",
-      "price": 80.00,
-      "image_url":"media/giftcard.png",
-      "image": "giftcard.png"
-    }
-  },
-  {
-    "model": "products.Product",
-    "pk": 19,
-    "fields": {
-      "sku": "GC3",
-      "category": 6,
-      "name": "Gift Card",
-      "description": "Gift the perfect present with a Dough n Drizzle gift card.",
-      "price": 120.00,
-      "image_url":"media/giftcard.png",
-      "image": "giftcard.png"
-    }
+  "model": "products.Product",
+  "pk": 1,
+  "fields": {
+    "sku": "GT1",
+    "category": 1,
+    "name": "Grazing Table for 50 pax",
+    "description": "Indulge your guests with our Grazing Table for 50 pax, a beautifully arranged selection of gourmet treats that transforms any gathering into a culinary delight. Featuring an exquisite array of cheeses, cured meats, artisan breads, seasonal fruits, and elegant dips, this table is designed to impress. Ideal for parties, weddings, or corporate events, it offers both visual appeal and a variety of flavors that cater to all tastes. Experience the joy of sharing delicious food in a stunning presentation with our Grazing Table.",
+    "price": 350.00,
+    "image_url":"media/dessert-table2.png",
+    "image": "dessert-table2.png"
   }
+},
+{
+  "model": "products.Product",
+  "pk": 2,
+  "fields": {
+    "sku": "GT2",
+    "category": 1,
+    "name": "Grazing Table for 80 pax",
+    "description": "Elevate your next event with our Grazing Table for 80 pax, crafted to tantalize your guests'taste buds. This lavish spread includes a diverse selection of artisanal cheeses, fresh fruits, and gourmet meats, all beautifully arranged to create a feast for the eyes as well as the palate. Perfect for larger gatherings, this grazing table fosters a social atmosphere, allowing guests to mingle while enjoying an array of flavors. Make your event unforgettable with this sumptuous grazing table!  ",
+    "price": 480.00,
+    "image_url":"media/dessert-table.png",
+    "image": "dessert-table.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 3,
+  "fields": {
+    "sku": "GT3",
+    "category": 1,
+    "name": "Grazing Table for 100 pax",
+    "description": "Our Grazing Table for 100 pax is the ultimate centerpiece for your next celebration! With a grand selection of gourmet cheeses, exquisite charcuterie, fresh vegetables, and artisan dips, this table caters to a wide range of palates and dietary preferences. The impressive presentation encourages guests to sample and share, creating a warm, inviting atmosphere at your event. Perfect for weddings, corporate events, or milestone celebrations, this grazing table is sure to be a hit!",
+    "price": 600.00,
+    "image_url":"media/table4.png",
+    "image": "table4.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 4,
+  "fields": {
+    "sku": "GT4",
+    "category": 1,
+    "name": "Grazing Table for 200 pax",
+    "description": "Impress your guests with our lavish Grazing Table for 200 pax, an abundant display of gourmet delicacies perfect for large events. Featuring a vibrant selection of artisanal cheeses, charcuterie, seasonal fruits, and savory dips, this grazing table provides something for everyone. Ideal for weddings, corporate functions, or large parties, this stunning spread is designed to foster connections and create memorable moments through the shared love of food.",
+    "price": 1100.00,
+    "image_url":"media/table2.png",
+    "image": "table2.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 5,
+  "fields": {
+    "sku": "GB1",
+    "category": 2,
+    "name": "Sweet Bites Box",
+    "description": "Satisfy your sweet cravings with our Sweet Bites Box, a delightful assortment of bite-sized sweets designed for sharing. Each box features a carefully curated selection of mini desserts that bring a burst of flavor and fun to any occasion. Whether you’re hosting a small gathering or looking for the perfect gift, these delectable treats are sure to please everyone’s palate. Enjoy a taste of happiness in every bite!",
+    "price": 20.00,
+    "image_url":"media/dessert-smallbox.png",
+    "image": "dessert-smallbox.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 6,
+  "fields": {
+    "sku": "GB2",
+    "category": 2,
+    "name": "Sugar Bliss Box",
+    "description": "Experience dessert heaven with our Sugar Bliss Box, filled with a variety of sugary treats that will leave you wanting more. Perfect for celebrations or as a sweet surprise for loved ones, this medium box contains an assortment of pastries, cookies, and chocolates that cater to all tastes. Ideal for parties, meetings, or simply indulging yourself, each bite is a blissful escape into sweetness.",
+    "price": 30.00,
+    "image_url":"media/dessert-medbox.png",
+    "image": "dessert-medbox.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 7,
+  "fields": {
+    "sku": "GB3",
+    "category": 2,
+    "name": "Dessert Dream Box",
+    "description": "Dream big with our Dessert Dream Box, a large assortment of decadent desserts that will delight any sweet tooth. This box includes an irresistible selection of cakes, pastries, and treats that are perfect for parties or as a luxurious gift. Every dessert is crafted with love and high-quality ingredients, ensuring an unforgettable experience. Treat yourself or share the joy with friends and family; this box is a dream come true!",
+    "price": 40.00,
+    "image_url":"media/dessert-largebox.png",
+    "image": "dessert-largebox.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 8,
+  "fields": {
+    "sku": "C001",
+    "category": 3,
+    "name": "Signature Cake",
+    "description": "Celebrate your special moments with our Signature Cake, a beautifully designed 8-inch, one-tier themed cake that is perfect for any occasion. This cake is customizable to match your theme and tastes, ensuring it not only looks stunning but also tastes divine. Made with premium ingredients, our Signature Cake promises a moist, flavorful experience that will leave your guests raving. Make your celebrations memorable with a cake that stands out!",
+    "price": 75.00,
+    "image_url":"media/cake-floral.png",
+    "image": "cake-floral.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 9,
+  "fields": {
+    "sku": "D001",
+    "category": 4,
+    "name": "Cake Pops",
+    "description": "Brighten up any event with our Cake Pops, cute and fun treats that come in a set of 12. These delightful cake pops are perfect for parties, baby showers, or any occasion where you want to add a touch of sweetness. Coated in colorful chocolate and decorated to perfection, they offer a fun twist on traditional cakes. Enjoy the delightful flavors in every bite and share the joy with friends and family!",
+    "price": 10.00,
+    "image_url":"media/cake-pops.png",
+    "image": "cake-pops.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 10,
+  "fields": {
+    "sku": "D002",
+    "category": 4,
+    "name": "Cupcakes",
+    "description": "Indulge in our delicious Cupcakes, beautifully decorated and perfect for any celebration. Each box contains 12 cupcakes, offering a delightful mix of flavors that cater to all tastes. From classic vanilla to rich chocolate, our cupcakes are made with high-quality ingredients, ensuring a moist and flavorful experience. They’re perfect for birthday parties, weddings, or just a sweet treat to brighten your day!",
+    "price": 20.00,
+    "image_url":"media/mini-cupcakes.png",
+    "image": "mini-cupcakes.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 11,
+  "fields": {
+    "sku": "D003",
+    "category": 4,
+    "name": "Cheesecakes",
+    "description": "Treat yourself to our luxurious Cheesecakes,a rich and creamy delight that comes in a set of 12. Each cheesecake is crafted with care, using only the finest ingredients to create a smooth and velvety texture. Perfect for dessert lovers, these cheesecakes are an ideal addition to parties, celebrations, or cozy nights in. Experience the indulgence of rich flavors and creamy goodness with every slice.",
+    "price": 20.00,
+    "image_url":"media/cake-floral.png",
+    "image": "cheesecakes.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 12,
+  "fields": {
+    "sku": "D004",
+    "category": 4,
+    "name": "Fruit Cones",
+    "description": "Enjoy the freshness of our Fruit Cones, a vibrant selection of fresh fruit presented in a fun and portable way. Each set contains 8 cones, making them perfect for parties, picnics, or as a healthy snack option. Packed with vitamins and flavors, these fruit cones offer a refreshing alternative to traditional desserts. Delight in the natural sweetness of fresh fruits and add a burst of color to your event!",
+    "price": 15.00,
+    "image_url":"media/fruit-cones.png",
+    "image": "fruit-cones.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 13,
+  "fields": {
+    "sku": "D005",
+    "category": 4,
+    "name": "Macaroons",
+    "description": "Savor the delicate flavors of our Macaroons, a set of 12 beautifully crafted treats that are as lovely to look at as they are to taste. These colorful confections are made with almond flour and filled with a variety of delicious creams. Perfect for weddings, birthdays, or afternoon tea, our macaroons provide a delightful and elegant treat that will impress your guests and elevate your dessert table!",
+    "price": 10.00,
+    "image_url":"media/macarons.png",
+    "image": "macarons.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 14,
+  "fields": {
+    "sku": "D006",
+    "category": 4,
+    "name": "Dessert Cups",
+    "description": "Indulge in our elegant Dessert Cups, featuring 6 individual servings of layered desserts that are perfect for any occasion. Each cup is filled with a delightful mix of flavors and textures, providing a sophisticated touch to your dessert selection. Ideal for events, parties, or simply treating yourself, these dessert cups are a beautiful way to enjoy a variety of sweets in one delicious serving.",
+    "price": 12.00,
+    "image_url":"media/dessert-cups.png",
+    "image": "dessert-cups.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 15,
+  "fields": {
+    "sku": "P001",
+    "category": 5,
+    "name": "Donuts",
+    "description": "Enjoy our freshly made Donuts, available in a variety of flavors and packaged in sets of 12. These fluffy treats are crafted from high-quality ingredients, ensuring a delightful taste in every bite. Perfect for breakfast, snacks, or dessert, our donuts offer a sweet escape that everyone will love. Treat yourself and your loved ones to these irresistible pastries!",
+    "price": 8.00,
+    "image_url":"media/mini-donuts.png",
+    "image": "mini-donuts.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 16,
+  "fields": {
+    "sku": "P002",
+    "category": 5,
+    "name": "Tarts",
+    "description": "Delight in our Tarts, a selection of sweet and savory options available in sets of 12. Each tart is crafted with a flaky crust and filled with delicious fillings, perfect for parties or as a gourmet snack. Whether you prefer fruity, creamy, or savory flavors, our tarts are designed to please every palate. Elevate your gatherings with these exquisite bite-sized delights!",
+    "price": 15.00,
+    "image_url":"media/mini-tarts.png",
+    "image": "mini-tarts.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 17,
+  "fields": {
+    "sku": "GC1",
+    "category": 6,
+    "name": "Gift Card",
+    "description": "Gift the perfect present with a Dough n Drizzle gift card.",
+    "price": 50.00,
+    "image_url":"media/giftcard.png",
+    "image": "giftcard.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 18,
+  "fields": {
+    "sku": "GC2",
+    "category": 6,
+    "name": "Gift Card",
+    "description": "Gift the perfect present with a Dough n Drizzle gift card.",
+    "price": 80.00,
+    "image_url":"media/giftcard.png",
+    "image": "giftcard.png"
+  }
+},
+{
+  "model": "products.Product",
+  "pk": 19,
+  "fields": {
+    "sku": "GC3",
+    "category": 6,
+    "name": "Gift Card",
+    "description": "Gift the perfect present with a Dough n Drizzle gift card.",
+    "price": 120.00,
+    "image_url":"media/giftcard.png",
+    "image": "giftcard.png"
+  }
+}
 ]
