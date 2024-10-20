@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import custom_404_view
+from .views import custom_404_view, custom_403_view, custom_401_view, custom_500_view
 
 
 urlpatterns = [
@@ -34,3 +34,6 @@ urlpatterns = [
 
 
 handler404 = custom_404_view
+handler403 = custom_403_view
+handler401 = custom_401_view
+handler500 = custom_500_view

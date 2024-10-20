@@ -310,17 +310,16 @@ main {
 }
 
 .product-container .card-img-top {
-  object-fit: cover;  /* Ensures image maintains aspect ratio while covering its container */
-  height: auto;      /* Set a fixed height for all images */
-  width: 100%;        /* Make sure the image takes the full width of the card */
-  border-radius: 8px; /* Optionally, round the corners of the images */
+  object-fit: cover; 
+  height: auto;
+  width: 100%; 
+  border-radius: 8px; 
   transition: background-color 0.3s ease-in-out; /* Smooth transition for background */
 }
 
 .product-container {
-  /* justify-content: center;  */
   display: flex;
-  flex-wrap: wrap; /* Ensures items wrap correctly in smaller viewports */
+  flex-wrap: wrap; 
   margin-left: 0;
   margin-right: 0;
 }
@@ -328,24 +327,6 @@ main {
 /* Cart styling */
 th {
   background-color: rgb(101,182,192, 0.5);
-}
-
-/*My Profile Styling */
-.admin-menu-link:active {
-  background-color: #007bff;
-}
-
-.account-title {
-  font-weight: bold;
-  font-size: large;
-  background-color: rgb(101,182,192);
-  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
-              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
-}
-
-.btn-small-height {
-  height: auto;
-  line-height: 15px; /* Ensures the text is vertically centered */
 }
 
 /* Add spacing between products */
@@ -444,7 +425,6 @@ th {
 	z-index: -1;
 }
 
-
 /* Styling for the 'no products available' message */
 .no-products-container {
   height: 300px;
@@ -470,6 +450,40 @@ th {
 .contact-details {
   text-align: left;
 }
+
+/*My Profile Styling */
+.admin-menu-link:active {
+  background-color: #007bff;
+}
+
+.account-title {
+  font-weight: bold;
+  font-size: large;
+  background-color: rgb(101,182,192);
+  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
+              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+}
+
+.btn-small-height {
+  height: auto;
+  line-height: 15px; /* Ensures the text is vertically centered */
+}
+
+/* Error page stayling */
+.error-container {
+  background-color: transparent;
+  color: #721c24;
+}
+
+.error-details {
+  background-color: #721c24;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
+              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
 
 /* Bootstrap toasts */
 
