@@ -130,6 +130,25 @@ SEO strategies for Dough n Drizzle to improve its search visibility and attract 
                 3.  **Open Graph & Twitter Meta Tags**: Optimizes the website for sharing on social media platforms like Facebook, ensuring that when someone shares the site, it shows a title, description, and an image.
     -   **Headings (H1, H2, H3):** Use primary keywords in H1 and secondary keywords in H2/H3 tags. Structure the content clearly for users and search engines.
 2.  **Keyword Research & Optimization**
+    -   **Target Primary & Long-Tail Keywords**: Identify relevant keywords for custom cakes, delivery options, and other baked goods. For example:
+        -   Primary: "Custom cakes," "Cake delivery," "Gourmet cookies"
+        -   Long-tail: "Best custom birthday cakes near me," "Online bakery for weddings"
+    -   **Integrate Keywords Naturally**: Place keywords in key areas (page titles, product descriptions, URLs, headings, alt tags for images) without overstuffing.
+3.  **Content Marketing**
+    -   Create detailed FAQs addressing customer needs. This will also rank for long-tail queries like “What products do you offer?”
+4.  **Mobile Optimization**
+    -   **Mobile-Friendly Design**: Ensure the website is fully responsive on mobile devices. Since many users may order via mobile, optimize loading times and usability.
+    -   **Page Speed Optimization**: Compress images, leverage browser caching, and use content delivery networks (CDNs) to improve website speed.
+5.  **On-Page SEO for Product Pages**
+    -   **Product Descriptions**: Write unique, descriptive content for each product, incorporating primary keywords and long-tail variations. Focus on the benefits and features of the cakes or desserts.
+    -   **Alt:** all images have alt attribut
+    -   **Schema Markup**: Implement schema for products and reviews to enhance rich snippets in search results (e.g., category, product prices).
+6.  **E-Commerce SEO**
+    -   **Optimized URLs**: Use clean, descriptive URLs (e.g., “/signature-cakes/” instead of “/product1234”).
+
+### WEB MARKETING STARTEGIES
+
+1.  
 
 ## The Structure Plane
 
@@ -227,6 +246,31 @@ PHOTO HERE
 # FEATURES
 
 # FUTURE ENHANCEMENTS
+
+## SEO
+
+1.  **Content Marketing**
+    -   **Blog**: Regularly update the blog with relevant, engaging content such as cake design trends, how to choose wedding cakes, cake care tips, or seasonal dessert ideas. Include targeted keywords and long-tail search queries.
+        -   Example blog posts:
+            -   "Top 5 Wedding Cake Trends for 2024"
+            -   "How to Store and Serve Your Custom Cakes"
+2.  **Local SEO Optimization**
+    -   **Google My Business (GMB)**: Create or optimize your GMB listing. Ensure that the business name, address, phone number, and hours are accurate. Include high-quality images of your bakery and products.
+    -   **Local Keywords**: Focus on local keywords like “Best custom cakes near [City Name]” or “Artisan bakery in [City Name].”
+    -   **Local Listings & Reviews**: Encourage satisfied customers to leave reviews on Google and Yelp. Positive reviews improve trust and local rankings.
+3.  **Backlink Building**
+    -   **Collaborate with Local Influencers**: Partner with local food bloggers or event planners to generate backlinks and social mentions.
+    -   **Guest Blogging**: Write guest posts for local publications or industry websites to build credibility and backlinks to your site.
+    -   **Submit to Local Directories**: Ensure your business is listed on relevant directories (Yelp, TripAdvisor, etc.) with accurate information.
+4.  **E-Commerce SEO**
+    -   **Internal Linking**: Strategically link to relevant product pages, blog posts, and categories to keep users on your site longer and help search engines crawl your content.
+    -   **Breadcrumb Navigation**: Implement breadcrumb navigation to improve user experience and help search engines understand your site’s structure.
+5.  **Monitor and Improve**
+    -   **Analytics & SEO Tools**: Regularly monitor performance using Google Analytics, Google Search Console, and tools like Ahrefs or SEMrush to track keyword rankings, site traffic, and user behavior.
+    -   **Improve Based on Data**: Continuously optimize content based on the insights from these tools. Track which pages are performing well and refine those that are underperforming.
+6.  **External Links**
+    -   Calendar of upcoming wedding/party fairs that will be attending
+    -   Tips & Advice for baking
 
 # TESTING
 

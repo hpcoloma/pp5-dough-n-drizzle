@@ -46,6 +46,7 @@ def order_history(request, order_number):
     context = {
         'order': order,
         'from_profile': True,
+        'from_odrder_history': True,
     }
 
     return render(request, template, context)
@@ -59,3 +60,20 @@ def admin_management(request):
 
     context = {}
     return render(request, 'profiles/admin_management.html', context)
+
+
+@login_required
+def order_history_list(request):
+    """ Display the user's order history. """
+    # Fetch the user's profile
+    profile = get_object_or_404(UserProfile, user=request.user)
+    
+    # Fetch all orders associated with the user's profile
+    orders = Order.objects.filter(user_profile=profile)
+
+    template = 'profiles/order_history.html'
+    context = {
+        'orders': orders,
+    }
+
+    return render(request, template, context)
