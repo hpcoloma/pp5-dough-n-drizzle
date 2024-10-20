@@ -1,0 +1,37 @@
+<!-- Mobile-Responsive Side Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent d-lg-none mobile-header">
+    <button class="navbar-toggler btn-cyan" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Off-Canvas Navigation Menu -->
+    <div class="mobile-nav collapse" id="mobile-nav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="mobileDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Shop
+                </a>
+                <div class="dropdown-menu" aria-labelledby="mobileDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'products' %}?category=grazing_tables">Grazing Table</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=grazing_box">Grazing Box</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=cakes">Cakes</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=desserts">Desserts</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=pastries">Pastries</a>
+                    <a class="dropdown-item" href="{% url 'products' %}?category=gift_cards">Gift Cards</a>
+                    <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</nav>

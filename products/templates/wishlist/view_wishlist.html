@@ -14,9 +14,15 @@
 <div class="overlay"></div>
 <div class="container-fluid px-3 mb-2 content-container">
     <div class="row justify-content-center">
-        <div class="col-sm-2">
+        <!-- Profile Menu -->
+        <div class="col-sm-2 d-none d-sm-block" id="profile-menu">
             {% include 'snippets/profile_menu.html' %}
         </div>
+        <!-- Profile Menu (mobile view) -->
+        <div class="col-12 d-block d-sm-none" id="profile-menu-mobile">
+            {% include 'snippets/profile_menu.html' %}
+        </div>
+        
         <div class="col-sm-8" id="admin-container">
             <div class="row">
                 <div class="col text-center mt-3">
@@ -24,83 +30,84 @@
                     <hr>
                 </div>
             </div>
-        <div class="row">
-            <div class="col">
-                <div class="table-responsive rounded p-4">
-                    {% if wishlist_items %}
-                        <div class="rounded">
-                            <table class="table table-sm table-borderless">
-                                <thead class="text-black">
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Product Info</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col" class="text-center">Remove/Add To Cart</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for item in wishlist_items %}
-                                    <tr>
-                                        <td class="align-middle w-25">
-                                            {% if item.product.image %}
-                                                <a href="#" data-toggle="modal" data-target="#imageModal{{ item.product.id }}">
-                                                    <img class="img-fluid rounded w-75" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                                </a>
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive rounded p-4">
+                        {% if wishlist_items %}
+                            <div class="rounded">
+                                <table class="table table-sm table-borderless">
+                                    <thead class="text-black">
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Product Info</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col" class="text-center">Remove/Add To Cart</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in wishlist_items %}
+                                        <tr>
+                                            <td class="align-middle w-25">
+                                                {% if item.product.image %}
+                                                    <a href="#" data-toggle="modal" data-target="#imageModal{{ item.product.id }}">
+                                                        <img class="img-fluid rounded w-75" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                    </a>
 
-                                                <!-- Modal Structure for Enlarged Image -->
-                                                <div class="modal fade" id="imageModal{{ item.product.id }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ item.product.id }}" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="imageModalLabel{{ item.product.id }}">{{ item.product.name }}</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body text-center">
-                                                                <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                    <!-- Modal Structure for Enlarged Image -->
+                                                    <div class="modal fade" id="imageModal{{ item.product.id }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ item.product.id }}" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="imageModalLabel{{ item.product.id }}">{{ item.product.name }}</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body text-center">
+                                                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            {% else %}
-                                                <img class="img-fluid rounded w-50" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product_name }}">
-                                            {% endif %}
-                                        </td>
-                                        <td class="align-middle" style="width: auto;">
-                                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                            <p class="small mt-1 mb-0">
-                                                <span class="text-muted">SKU: {{ item.product.sku }}</span>
-                                            </p>
-                                        </td>
-                                        <td class="align-middle">
-                                            <p class="my-0">€{{ item.product.price }}</p>
-                                        </td>
-                                        <td class="align-middle text-lg-center">
-                                            <a href="{% url 'remove_from_wishlist' item.product.id %}" class="btn btn-outline-cyan" alt="Remove from Wishlist">Remove</a>
-                                            <a href="{% url 'add_to_cart' item.product.id %}" class="btn btn-cyan btn-sm" alt="Add to Cart">Add to Cart</a>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
+                                                {% else %}
+                                                    <img class="img-fluid rounded w-50" src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product_name }}">
+                                                {% endif %}
+                                            </td>
+                                            <td class="align-middle" style="width: auto;">
+                                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                                <p class="small mt-1 mb-0">
+                                                    <span class="text-muted">SKU: {{ item.product.sku }}</span>
+                                                </p>
+                                            </td>
+                                            <td class="align-middle">
+                                                <p class="my-0">€{{ item.product.price }}</p>
+                                            </td>
+                                            <td class="align-middle text-lg-center">
+                                                <a href="{% url 'remove_from_wishlist' item.product.id %}" class="btn btn-outline-cyan" alt="Remove from Wishlist">Remove</a>
+                                                <a href="{% url 'add_to_cart' item.product.id %}" class="btn btn-cyan btn-sm" alt="Add to Cart">Add to Cart</a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+                        {% else %}
+                        <div class="">
+                            <p class="lead mb-5">Your wishlist is empty.</p>
+                            <a href="{% url 'products' %}" class="btn btn-secondary btn-outline-cyan rounded-0 btn-lg">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
                         </div>
-                    
-                    {% else %}
-                    <div class="">
-                        <p class="lead mb-5">Your wishlist is empty.</p>
-                        <a href="{% url 'products' %}" class="btn btn-secondary btn-outline-cyan rounded-0 btn-lg">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
+                        {% endif %}
                     </div>
-                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
-

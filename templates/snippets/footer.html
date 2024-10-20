@@ -1,13 +1,13 @@
 {% load static %}
 
-<footer class="d-none d-md-block my-3 position-relative footer">
+<footer class="my-3 position-relative footer">
     <div class="container-fluid">
         <div class="row justify-content-between align-items-center">
             <!-- Social Links Section -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
+            <div class="col-12 col-md-4 my-auto py-1 text-center order-md-1">
                 Find Us Here
                 <div class="d-flex justify-content-center align-items-center pt-3">
-                    <ul class="social-links d-flex p-0 m-0">
+                    <ul class="social-links d-flex justify-content-center p-0 m-0">
                         <li class="mx-2">
                             <a href="https://www.facebook.com/doughndrizzle" target="_blank" rel="noopener">
                                 <img class="socials" src="{% static 'img/facebook.png' %}" alt="Facebook">
@@ -33,7 +33,7 @@
             </div>
 
             <!-- Logo Section -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 align-items-center">
+            <div class="col-12 col-md-4 my-auto py-1 text-center order-md-2">
                 <a href="{% url 'home' %}" class="main-logo-link">
                     <h1 id="logo">Dough n Drizzle</h1>
                     <img class="footer-logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
@@ -41,8 +41,8 @@
             </div>
 
             <!-- Footer Links -->
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
-                <ul class="footer-links">
+            <div class="col-12 col-md-4 my-auto py-1 text-center order-md-3">
+                <ul class="footer-links p-0 m-0">
                     <li><a href="{% url 'privacy_policy' %}" aria-label="Privacy Policy">Privacy Policy</a></li>
                     <li><a href="{% url 'faqs' %}" aria-label="FAQs">FAQs</a></li>
                     <li><a href="{% url 'contact_us' %}" aria-label="Contact Information">Contact Information</a></li>
@@ -58,3 +58,4 @@
             This site is created for Code Institute as a requirement for Full Stack Software Development.
         </div>
     </div>
+</footer>
