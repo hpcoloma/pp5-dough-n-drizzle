@@ -114,41 +114,11 @@
                                     {% endfor %}
                                 </tbody>
                                 <tfoot class="pt-5 text-right">
-                                {% if user.is_authenticated %}
-                                    <!-- Discount Code Field -->
-                                    <tr>
-                                        <td colspan="3"></td>
-                                        <td colspan="2">
-                                            <form action="{% url 'apply_discount' %}" method="POST" class="my-2">
-                                                {% csrf_token %}
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="Enter discount code" name="discount_code" value="{{ discount_code|default:'' }}">
-                                                    <div class="input-group-append">
-                                                        <button class="btn btn-outline-cyan rounded-0" type="submit">Apply</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    {% else %}
-                                        <tr>
-                                            <td colspan="5">
-                                                <p class="text-muted text-center">Log in to apply a discount code.</p>
-                                            </td>
-                                        </tr>
-                                    {% endif %}
                                     <tr>
                                         <td colspan="3"></td>
                                         <td>Bag Total:</td>
                                         <td>€{{ total | floatformat:2 }}</td>
                                     </tr>
-                                    {% if discount_amount > 0 %}
-                                    <tr>
-                                        <td colspan="3"></td>
-                                        <td>Discount:</td>
-                                        <td class="text-danger">-€{{ discount_amount | floatformat:2 }}</td>
-                                    </tr>
-                                    {% endif %}
                                     <tr>
                                         <td colspan="3"></td>
                                         <td>Delivery:</td>

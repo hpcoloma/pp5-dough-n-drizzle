@@ -3,15 +3,15 @@
         <a href="{% url 'admin_management' %}" class="admin-menu-link" data-type="product">Admin Dashboard</a>
     </li>
     <li class="list-group-item">
-        <a href="{% url 'add_product' %}" class="admin-menu-link" data-type="product">Product Management</a>
+        <a href="{% url 'add_product' %}" class="admin-menu-link" data-type="product">Products</a>
     </li>
     <li class="list-group-item">
         <a href="{% url 'discount_list' %}" class="admin-menu-link" data-type="discount">Discounts</a>
     </li>
-    <!-- <li class="list-group-item">
-        <a href="" class="admin-menu-link" data-type="gift">Gift Cards</a>
+    <li class="list-group-item">
+        <a href="{% url 'order_management' %}" class="admin-menu-link" data-type="gift">Orders</a>
     </li>
     <li class="list-group-item">
         <a href="" class="admin-menu-link" data-type="testimonial">Testimonials</a>
-    </li> -->
+    </li>
 </ul>

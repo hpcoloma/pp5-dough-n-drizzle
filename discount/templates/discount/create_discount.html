@@ -9,19 +9,24 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container mb-2 content-container">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <hr>
-            <h2 class="logo-font mb-4">DISCOUNT MANAGEMENT</h2>
-            <h5 class="text-muted">Add Discount</h5>
-            <hr>
+    <div class="container-fluid px-3 mb-2 content-container">
+        <div class="row justify-content-center">
+            <div class="col-sm-2">
+                {% include 'snippets/admin_menu.html' %}
+            </div>
+            <div class="col-sm-8" id="admin-container">
+                <div class="row">
+                    <div class="col text-center mt-3">
+                        <h2 class="logo-font mb-4">ADD DISCOUNT</h2>
+                        <hr>
+                    </div>
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-cyan">Create Discount</button>
+                  </form>
+            </div>
         </div>
     </div>
-
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create Discount</button>
-  </form>
 {% endblock %}
