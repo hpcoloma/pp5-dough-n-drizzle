@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from .views import custom_404_view
 
 
 urlpatterns = [
@@ -30,3 +31,6 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('discounts/', include('discount.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = custom_404_view
