@@ -27,17 +27,34 @@ AM I RESPONSIVE PHOTO HERE
 
 ## Project Introduction
 
-Text goes here
+Dough n' Drizzle is a comprehensive e-commerce web application designed for selling artisanal baked goods and confectionery products. Built using the Django framework, the project offers a streamlined user experience, allowing customers to browse and purchase items online with ease. The website supports essential e-commerce features such as product listings, shopping cart functionality, order management, secure payment processing via Stripe, and user authentication through social accounts.
 
-The project will include front-end development with HTML, CSS, and JavaScript, and back-end development using Python and Django.
+The project follows best practices for web development, incorporating features such as form handling with Django Crispy Forms, media management through AWS S3 via django-storages, and secure deployment with Gunicorn and PostgreSQL. It's a robust, scalable, and user-friendly platform that serves both customers and administrators efficiently.
 
-### [Link to Live project](https://pp4-techtackles-by-hc-ed362e72006b.herokuapp.com/)
+Key Features
+ - Product Listings: A clean and responsive interface for browsing baked goods with detailed product pages.
+ - Shopping Cart: Users can add and manage products in their cart, modify quantities, and proceed to checkout.
+ - Wishlist: Allows users to save their favorite items for future purchases.
+ - Stripe Integration: Secure payment processing with Stripe API for handling transactions.
+ - User Authentication: Django Allauth enables social login functionality (e.g., Facebook, Google) and regular account management.
+ - Responsive Design: The front end is fully responsive, ensuring a smooth experience on both desktop and mobile devices.
+ - Admin Control: Superusers can manage product listings, categories, and view order details via Django's admin interface.
+ - Media Management: AWS S3 is used to handle static and media files, ensuring scalability and performance.
+
+Technology Stack
+ - Backend: Django 4.2 (Python web framework)
+ - Frontend: HTML5, CSS3, Bootstrap 4
+ - Database: PostgreSQL
+ - Payment Gateway: Stripe API
+ - Authentication: Django Allauth
+ - Storage: AWS S3 for static and media file handling
+ - Deployment: Gunicorn (WSGI HTTP Server), Boto3 for AWS S3
+ - Hosting: The app can be deployed on platforms like Heroku or AWS EC2.
+
+### [Link to Live project](https://pp5-dough-n-drizzle-257d1212e951.herokuapp.com/)
 
 ### Objective
-The primary objective of Dough n Drizzle
-
-
-This application will be designed using a combination of front-end and back-end technologies, including HTML, CSS, JavaScript, Python, and Django
+The primary objective of Dough N Drizzle is to create an intuitive and efficient online platform for selling artisanal baked goods and confectionery products. The project aims to deliver a seamless shopping experience for customers while providing store owners with the tools to manage product listings, orders, and user interactions effectively. By leveraging modern technologies like Django, AWS S3, and Stripe for secure payments, the platform focuses on scalability, security, and performance, ensuring it meets the needs of both small businesses and their growing customer base.
 
 ## UX/UI Design
 ### The Strategy Plane

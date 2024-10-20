@@ -1,0 +1,29 @@
+<!-- Edit Button that triggers the modal -->
+<a href="#" class="btn btn-primary btn-small-height mb-3" data-toggle="modal" data-target="#editShippingModal">Edit</a>
+
+<!-- Bootstrap Modal for Editing Shipping Details -->
+<div class="modal fade" id="editShippingModal" tabindex="-1" role="dialog" aria-labelledby="editShippingModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editShippingModalLabel">Edit Shipping Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for updating the shipping details -->
+                <form action="{% url 'profile' %}" method="POST" id="shipping-details-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <!-- This will render your form fields -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

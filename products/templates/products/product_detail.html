@@ -60,6 +60,14 @@
                                         onclick="setDeleteUrl(this);">
                                         Delete
                                     </a>
+                                    <div>
+                                        <form action="{% url 'add_to_wishlist' product.id %}" method="post" style="display: inline;">
+                                            {% csrf_token %}
+                                            <button type="submit" class="wishlist-btn mt-2">
+                                                <img class="icons wishlist-icon" src="{% static 'img/wishlist.png' %}" alt="Add to Wishlist" title="Add to Wishlist">
+                                            </button>
+                                        </form>
+                                    </div>
                                 </small>
                             {% endif %}    
                             <!-- Add to cart -->
@@ -67,7 +75,7 @@
                                 {% csrf_token %}
                                 <div class="form-row">
                                     <div class="col-12">
-                                        <p class="mt-3"><strong>Quantity:</strong></p>
+                                        <p class="mt-2"><strong>Quantity:</strong></p>
                                         <div class="form-group w-50">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
@@ -95,13 +103,13 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <a href="{% url 'products' %}" class="btn btn-secondary btn-outline-cyan rounded-0 mt-5">
+                                        <a href="{% url 'products' %}" class="btn btn-secondary btn-outline-cyan rounded-0 mt-3">
                                             <span class="icon">
                                                 <i class="fas fa-chevron-left"></i>
                                             </span>
                                             <span class="text-uppercase">Keep Shopping</span>
                                         </a>
-                                        <input type="submit" class="btn btn-cyan rounded-0 text-uppercase mt-5" value="Add to Cart">
+                                        <input type="submit" class="btn btn-cyan rounded-0 text-uppercase mt-3" value="Add to Cart">
                                     </div>
                                 </div>
                             </form>                              

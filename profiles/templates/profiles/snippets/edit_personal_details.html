@@ -1,0 +1,26 @@
+<!-- Button to trigger the modal for editing personal details -->
+<button class="btn btn-primary btn-small-height mb-3" data-toggle="modal" data-target="#personalDetailsModal">Edit</button>
+
+ <!-- Personal Details Modal -->
+ <div class="modal fade" id="personalDetailsModal" tabindex="-1" role="dialog" aria-labelledby="personalDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="personalDetailsModalLabel">Edit Personal Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'profile' %}" method="POST" id="personal-details-form">
+                    {% csrf_token %}
+                    {{ user_form|crispy }}  <!-- Use crispy forms to render the user form -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,7 @@ Items Ordered:
     {{ item.product.name }}
     Quantity: {{ item.quantity }}
     Price: €{{ item.product.price | floatformat:2 }}
-    Total: €€{{ item.product.price | calc_subtotal:item.quantity }}
+    Total: €{{ item.product.price | calc_subtotal:item.quantity }}
 {% endfor %}
 
 
@@ -29,8 +29,12 @@ Grand Total: €{{ order.grand_total | floatformat:2 }}
 
 Delivery Information:
 Name: {{ order.full_name }}
-Address: {{ order.delivery_address }}
-Delivery Method: {{ delivery_method }}
+{% if order.street_address1 %}
+Address: {{ order.street_address1 }}{% if order.street_address2 %}, {{ order.street_address2 }}{% endif %}, {{ order.town_or_city }}{% if order.county %}, {{ order.county }}{% endif %}, {{ order.country }}
+{% else %}
+Address: {{ order.street_address2 }}{% if order.town_or_city %}, {{ order.town_or_city }}{% endif %}, {% if order.county %}{{ order.county }}{% endif %}, {{ order.country }}
+{% endif %}
+Phone No: {{ order.phone_number }}
 
 
 If you have any questions or need to make changes to your order, 

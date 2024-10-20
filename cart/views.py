@@ -66,19 +66,37 @@ def view_cart(request):
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
+    # Retrieve the product or return a 404 error if not found
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
+
+    # Get the quantity from the request, default to 1 if not provided
+    quantity = request.POST.get('quantity', '1')
+
+    # Validate the quantity
+    try:
+        quantity = int(quantity)
+        if quantity < 1:
+            raise ValueError("Quantity must be at least 1.")
+    except ValueError as e:
+        messages.error(request, str(e), extra_tags='cart_action')
+        return redirect(request.POST.get('redirect_url', 'products'))
+
+    # Retrieve the cart from the session
     cart = request.session.get('cart', {})
 
-    if item_id in list(cart.keys()):
+    # Update the cart with the specified quantity
+    if item_id in cart:
         cart[item_id] += quantity
+        messages.success(request, f'Updated quantity of {product.name} to {cart[item_id]}.', extra_tags='cart_action')
     else:
         cart[item_id] = quantity
         messages.success(request, f'Added {product.name} to your cart.', extra_tags='cart_action')
 
+    # Save the updated cart back to the session
     request.session['cart'] = cart
-    return redirect(redirect_url)
+
+    # Redirect back to the specified URL or a default URL
+    return redirect(request.POST.get('redirect_url', 'products'))
 
 
 def adjust_cart(request, item_id):

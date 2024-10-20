@@ -151,9 +151,16 @@ main {
   content: url(/static/img/search.png);
 }
 
-/* Favorite Icon Hover */
-.favorite-icon:hover img {
-  content: url(/static/img/favorite1.png);
+/* Wishlist Icon Hover */
+.wishlist-icon:hover img, .wishlist-btn:hover img {
+  content: url(/static/img/wishlist1.png);
+}
+
+.wishlist-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 /* Cart */
@@ -204,9 +211,11 @@ main {
 
 /* Hero Style */
 .hero {
-  background: url(/static/img/hero.png) no-repeat;
+  background: url(/static/img/hero.png) no-repeat center/cover;
+  /* position: relative; */
   background-size: cover;
   height: 100vh;
+  width: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -321,7 +330,25 @@ main {
 
 /* Cart styling */
 th {
-  background-color: rgb(101,182,192, 0.5) ;
+  background-color: rgb(101,182,192, 0.5);
+}
+
+/*My Profile Styling */
+.admin-menu-link:active {
+  background-color: #007bff;
+}
+
+.account-title {
+  font-weight: bold;
+  font-size: large;
+  background-color: rgb(101,182,192);
+  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
+              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+}
+
+.btn-small-height {
+  height: auto;
+  line-height: 15px; /* Ensures the text is vertically centered */
 }
 
 /* Add spacing between products */
@@ -392,7 +419,7 @@ th {
   opacity: 0.8; /* Slightly transparent on hover */
 }
 
-.product-details, .card-footer, .table-responsive, .about-details, .contact-details, .admin-details, .discount-container, .order-confirmation {
+.product-details, .card-footer, .table-responsive, .about-details, .contact-details, .admin-details, .discount-container, .order-confirmation, .admin-container {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
@@ -678,12 +705,10 @@ color: #17a2b8; /* text-info */
     
 }
 
-@media screen and (min-width:640px) {
-  /* background-position: 50% 0; */
-}
 
 @media (max-width: 768px) {
   .category-title {
     width: 100%; /* Make the h3 full width */
   }
 }
+

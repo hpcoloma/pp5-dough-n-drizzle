@@ -90,12 +90,13 @@
       {% endblock %}
     </main>
 
-    <!-- Include footer on all pages except specified ones -->
-    {% if show_footer %}
+     <!-- Include footer on all pages except home, add_products, and discount_list -->
+    {% if request.path != '/' and request.path != '/products/add/' and request.path != '/discounts/' %}
     <footer>
         {% include "snippets/footer.html" %}
     </footer>
     {% endif %}
+
 
     <!-- Search Modal -->
     <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel"

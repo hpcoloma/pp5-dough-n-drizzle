@@ -4,7 +4,8 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 
-from .models import Product, Category
+
+from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
 # Create your views here.
@@ -137,3 +138,41 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """Add a product to the user's wishlist."""
+    product = get_object_or_404(Product, id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user, product=product)
+    
+    if created:
+        messages.success(request, f'Added {product.name} to your wishlist.')
+    else:
+        messages.info(request, f'{product.name} is already in your wishlist.')
+
+    return redirect('product_detail', product_id=product.id)
+
+@login_required
+def view_wishlist(request):
+    """View the user's wishlist."""
+    wishlist_items = Wishlist.objects.filter(user=request.user)
+
+    context = {
+        'wishlist_items': wishlist_items,
+    }
+
+    return render(request, 'wishlist/view_wishlist.html', context)
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    """Remove a product from the user's wishlist."""
+    product = get_object_or_404(Product, id=product_id)
+    try:
+        wishlist_item = Wishlist.objects.get(user=request.user, product=product)
+        wishlist_item.delete()
+        messages.success(request, f'Removed {product.name} from your wishlist.')
+    except Wishlist.DoesNotExist:
+        messages.error(request, f'{product.name} was not found in your wishlist.')
+
+    return redirect('view_wishlist')

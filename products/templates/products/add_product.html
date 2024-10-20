@@ -1,35 +1,65 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-<div class="overlay"></div>
-<div class="container mb-2">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <hr>
-            <h2 class="logo-font mb-4">PRODUCT MANAGEMENT</h2>
-            
-            <hr>
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
         </div>
     </div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container-fluid px-3 mb-2 content-container">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
-            <h5 class="text-muted">Add a Product</h5>
-            <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
-                {% endfor %}
-                <div class="text-right">
-                    <a class="btn btn-secondary btn-outline-cyan rounded-0" href="{% url 'products' %}">Cancel</a>
-                    <button class="btn btn-cyan rounded-0" type="submit">Add Product</button>
+        <div class="col-sm-2">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="{% url 'admin_management' %}" class="admin-menu-link" data-type="product">Admin Dashboard</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'add_product' %}" class="admin-menu-link" data-type="product">Product Management</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'discount_list' %}" class="admin-menu-link" data-type="discount">Discounts</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="" class="admin-menu-link" data-type="gift">Gift Cards</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="" class="admin-menu-link" data-type="testimonial">Testimonials</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-8" id="admin-container">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <hr>
+                    <h2 class="logo-font mb-4">PRODUCT MANAGEMENT</h2>
+                    <hr>
                 </div>
-            </form>
-        </div>       
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-10">
+                    <h5 class="text-muted">Add a Product</h5>
+                    <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {% if field.name != 'image' %}
+                                {{ field | as_crispy_field }}
+                            {% else %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                        <div class="text-right">
+                            <a class="btn btn-secondary btn-outline-cyan rounded-0" href="{% url 'products' %}">Cancel</a>
+                            <button class="btn btn-cyan rounded-0" type="submit">Add Product</button>
+                        </div>
+                    </form>
+                </div>       
+            </div>
+        </div>
     </div>
 </div>  
 {% endblock %}

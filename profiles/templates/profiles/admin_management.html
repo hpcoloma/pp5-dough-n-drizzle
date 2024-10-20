@@ -16,71 +16,47 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container-fluid px-3 mb-2 content-container">
-        <div class="row">
-            <div class="col">
-            </div>
-        </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-sm-2">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="{% url 'add_product' %}" class="admin-menu-link" data-target="#admin-container" data-type="product">Product Management</a>
+                        <a href="{% url 'admin_management' %}" class="admin-menu-link" data-type="product">Admin Dashboard</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="{% url 'discount_list' %}" class="admin-menu-link" data-target="#admin-container" data-type="discount">Discounts</a>
+                        <a href="{% url 'add_product' %}" class="admin-menu-link" data-type="product">Product Management</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="" class="admin-menu-link" data-target="#admin-container" data-type="gift">Gift Cards</a>
+                        <a href="{% url 'discount_list' %}" class="admin-menu-link" data-type="discount">Discounts</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="" class="admin-menu-link" data-target="#admin-container" data-type="testimonial">Testimonials</a>
+                        <a href="" class="admin-menu-link" data-type="gift">Gift Cards</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="" class="admin-menu-link" data-type="testimonial">Testimonials</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-10" id="admin-container">
-                <!-- This is where the content will be loaded dynamically -->
+            <div class="col-sm-8 admin-container">
+                <h3>Admin Dashboard</h3>
+                <p>Welcome to the Admin Dashboard! Here you can manage various aspects of your online store. Use the navigation on the left to access different management sections.</p>
+                
+                <h4>Manage Products</h4>
+                <p>In this section, you can add, edit, and delete products in your store. Make sure to keep your product information up-to-date for your customers.</p>
+                
+                <h4>Manage Discounts</h4>
+                <p>Here, you can create and modify discount codes to help attract customers and boost sales. You can set expiration dates and limit usage as needed.</p>
+                
+                <h4>Gift Cards</h4>
+                <p>Offer gift cards to your customers as a flexible payment option. Here, you can manage existing gift cards and set their parameters.</p>
+                
+                <h4>Testimonials</h4>
+                <p>View and manage customer testimonials to build trust with new visitors. Positive feedback can enhance your store's reputation!</p>
+                
+                <h4>Additional Notes</h4>
+                <p>Always ensure to save your changes after managing any items. Regularly review your product and discount offerings to ensure they align with current market trends.</p>
             </div>
         </div>
     </div>
 {% endblock %}
 {% block postloadjs %}
-<script>
-    $(document).ready(function() {
-        // Load the add_product page on initial load
-        var defaultUrl = "{% url 'add_product' %}";
-        $('#admin-container').load(defaultUrl, function(response, status, xhr) {
-            if (status == "error") {
-                $('#admin-container').html('<p>Error loading content. Please try again.</p>');
-            } else {
-                // Reinitialize Bootstrap dropdowns after the initial load
-                reinitializeBootstrap();
-            }
-        });
-
-        // Handle click events for admin menu links
-        $('.admin-menu-link').on('click', function(e) {
-            e.preventDefault(); // Prevent the default link behavior
-
-            var url = $(this).attr('href'); // Get the URL from the link
-            var target = $(this).data('target'); // Get the target container
-
-            // Load the content into the admin-container
-            $(target).load(url, function(response, status, xhr) {
-                if (status == "error") {
-                    // Handle error
-                    $(target).html('<p>Error loading content. Please try again.</p>');
-                } else {
-                    // Reinitialize Bootstrap dropdowns after content is loaded dynamically
-                    reinitializeBootstrap();
-                }
-            });
-        });
-
-        // Function to reinitialize Bootstrap components after content is dynamically loaded
-        function reinitializeBootstrap() {
-            // Reinitialize Bootstrap dropdowns
-            $('[data-toggle="dropdown"]').dropdown();
-        }
-    });
-</script>
 {% endblock %}
