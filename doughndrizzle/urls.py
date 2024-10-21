@@ -18,7 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import custom_404_view, custom_403_view, custom_401_view, custom_500_view
+from .views import (
+    custom_404_view,
+    custom_403_view,
+    custom_401_view,
+    custom_500_view,
+)
 
 
 urlpatterns = [

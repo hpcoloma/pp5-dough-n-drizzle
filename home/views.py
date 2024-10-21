@@ -7,17 +7,21 @@ from .models import NewsletterSubscription
 
 # Create your views here.
 
+
 def index(request):
     """A view to retunr the index page"""
-    
+
     show_newsletter_modal = False
 
     # Check if the user is logged in
     if request.user.is_authenticated:
         user_email = request.user.email
-        
+
         # Check if the user's email is already subscribed to the newsletter
-        if not NewsletterSubscription.objects.filter(email=user_email).exists():
+        # Check if the user's email is already subscribed to the newsletter
+        if not NewsletterSubscription.objects.filter(
+            email=user_email
+        ).exists():
             show_newsletter_modal = True
 
     # Pass the flag to the context
@@ -52,7 +56,8 @@ def contact_us(request):
             )
 
             # Display success message
-            messages.success(request, 'Thank you for reaching out! We will get back to you shortly.')
+            messages.success(request, 'Thank you for reaching out! '
+                             'We will get back to you shortly.')
             return redirect('contact_us')
     else:
         form = ContactForm()
@@ -70,8 +75,9 @@ def subscribe_newsletter(request):
             # Send a confirmation email
             send_mail(
                 'Welcome to Dough & Drizzle',
-                'Thank you for subscribing to our newsletter! Use code WELCOME10 and enjoy 10% off on your first order.',
-                'doughndrizzle@example.com', 
+                'Thank you for subscribing to our newsletter! '
+                'Watch out for latest promos and contents! ',
+                'doughndrizzle@example.com',
                 [subscription.email],
                 fail_silently=True,
             )
@@ -80,8 +86,8 @@ def subscribe_newsletter(request):
         else:
             # If form is invalid, provide detailed feedback
             messages.error(request, 'Invalid email. Please try again.')
-            return redirect('home')  # Or redirect to a subscription page to retry
-    else:    
+            return redirect('home')  # Or redirect to a subs page to retry
+    else:
         return redirect('home')
 
 

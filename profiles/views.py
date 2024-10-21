@@ -18,7 +18,8 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request,
+                           'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -67,7 +68,7 @@ def order_history_list(request):
     """ Display the user's order history. """
     # Fetch the user's profile
     profile = get_object_or_404(UserProfile, user=request.user)
-    
+
     # Fetch all orders associated with the user's profile
     orders = Order.objects.filter(user_profile=profile).order_by('-date')
 
@@ -83,7 +84,8 @@ def order_history_list(request):
 def order_management(request):
     """ View for staff to manage all orders. """
     if not request.user.is_staff:
-        messages.error(request, "You do not have permission to access this page.")
+        messages.error(request,
+                       "You do not have permission to access this page.")
         return redirect('home')  # Redirect if not a staff member
 
     # Get the status filter from the request
@@ -107,7 +109,8 @@ def order_management(request):
 def update_order_status(request, order_number):
     """ Update the status of a specific order. """
     if not request.user.is_staff:
-        messages.error(request, "You do not have permission to access this page.")
+        messages.error(request,
+                       "You do not have permission to access this page.")
         return redirect('home')  # Redirect if not a staff member
 
     order = get_object_or_404(Order, order_number=order_number)
@@ -117,7 +120,11 @@ def update_order_status(request, order_number):
         if new_status in dict(Order.STATUS_CHOICES):
             order.status = new_status
             order.save()
-            messages.success(request, f'Status of order {order_number} updated to {new_status}.')
+            messages.success(
+                request,
+                f'Status of order {order_number} updated to {new_status}.'
+            )
+
         else:
             messages.error(request, 'Invalid status selected.')
 
@@ -128,11 +135,15 @@ def update_order_status(request, order_number):
 def delete_order(request, order_number):
     """ Delete a specific order if the user is a superuser. """
     if not request.user.is_superuser:
-        messages.error(request, "You do not have permission to delete this order.")
+        messages.error(request,
+                       "You do not have permission to delete this order.")
         return redirect('order_management')
 
     order = get_object_or_404(Order, order_number=order_number)
     order.delete()
-    messages.success(request, f'Order {order_number} has been deleted successfully.')
+    messages.success(
+        request,
+        f'Order {order_number} has been deleted successfully.'
+        )
 
     return redirect('order_management')

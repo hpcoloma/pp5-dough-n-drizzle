@@ -8,6 +8,7 @@ from django.db.models.functions import Lower
 from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
+
 # Create your views here.
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -28,12 +29,17 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request,
+                               "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = (
+                Q(name__icontains=query) |
+                Q(description__icontains=query)
+            )
+
             products = products.filter(queries)
-    
+
     # Only sort when not filtering by category
     if not selected_categories:
         if sort_by == 'price':
@@ -85,10 +91,11 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. '
+                           'Please ensure the form is valid.')
     else:
         form = ProductForm()
-   
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -113,7 +120,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update product. '
+                           'Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -133,7 +141,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
@@ -144,14 +152,16 @@ def delete_product(request, product_id):
 def add_to_wishlist(request, product_id):
     """Add a product to the user's wishlist."""
     product = get_object_or_404(Product, id=product_id)
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user, product=product)
-    
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user,
+                                                       product=product)
+
     if created:
         messages.success(request, f'Added {product.name} to your wishlist.')
     else:
         messages.info(request, f'{product.name} is already in your wishlist.')
 
     return redirect('product_detail', product_id=product.id)
+
 
 @login_required
 def view_wishlist(request):
@@ -164,15 +174,24 @@ def view_wishlist(request):
 
     return render(request, 'wishlist/view_wishlist.html', context)
 
+
 @login_required
 def remove_from_wishlist(request, product_id):
     """Remove a product from the user's wishlist."""
     product = get_object_or_404(Product, id=product_id)
     try:
-        wishlist_item = Wishlist.objects.get(user=request.user, product=product)
+        wishlist_item = Wishlist.objects.get(user=request.user,
+                                             product=product)
         wishlist_item.delete()
-        messages.success(request, f'Removed {product.name} from your wishlist.')
+        messages.success(
+            request,
+            f'Removed {product.name} from your wishlist.'
+        )
+
     except Wishlist.DoesNotExist:
-        messages.error(request, f'{product.name} was not found in your wishlist.')
+        messages.error(
+            request,
+            f'{product.name} was not found in your wishlist.'
+        )
 
     return redirect('view_wishlist')
