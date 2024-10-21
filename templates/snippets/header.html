@@ -2,71 +2,7 @@
 
 <div class="header-top">
     <div class="row top-header">
-        <!-- Mobile View: Logo on top -->
-        <div class="col-12 d-lg-none text-center">
-            <a href="{% url 'home' %}" class="main-logo-link">
-                <h1 id="logo">Dough n Drizzle</h1>
-                <img class="logo" src="{% static 'img/logo.png' %}" alt="Dough n Drizzle logo">
-            </a>
-        </div>
-        
-        <!-- Mobile View: Account, Search, Wishlist, and Cart Icons -->
-        <div class="col-12 d-lg-none">
-            <div class="d-flex justify-content-between align-items-center py-2">
-                <div class="dropdown d-flex flex-column align-items-center">
-                    <a href="#" class="icon-container user-icon d-flex flex-column align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="icons" src="{% static 'img/user1.png' %}" alt="My Account">
-                        <p class="my-0">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    Manage
-                                {% else %}
-                                    My Account
-                                {% endif %}
-                            {% else %}
-                                Login/Register
-                            {% endif %}
-                        </p>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="user-options">
-                        {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                                <a href="{% url 'admin_management' %}" class="dropdown-item">Admin</a>
-                            {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                        {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                        {% endif %}
-                    </div>
-                </div>
-
-                <!-- Search Icon -->
-                <a href="#" class="icon-container mx-2 py-2 search-icon d-flex flex-column align-items-center" data-toggle="modal" data-target="#searchModal">
-                    <img class="icons" src="{% static 'img/search1.png' %}" alt="Search">
-                    <p class="my-0">Search</p>
-                </a>
-
-                <!-- Wishlist Icon -->
-                <a href="{% url 'view_wishlist' %}" class="icon-container mx-2 py-2 wishlist-icon d-flex flex-column align-items-center">
-                    <img class="icons" src="{% static 'img/wishlist.png' %}" alt="Wishlist">
-                    <p class="my-0">Wishlist</p>
-                </a>
-
-                <!-- Cart Icon -->
-                <a href="{% url 'view_cart' %}" class="icon-container mx-2 py-2 cart-icon d-flex flex-column align-items-center">
-                    <img class="icons" src="{% static 'img/cart1.png' %}" alt="Cart">
-                    <p class="my-0">
-                    {% if grand_total %}
-                        €{{ grand_total|floatformat:2 }}
-                    {% else %}
-                        €0.00
-                    {% endif %}
-                    </p>
-                </a>
-            </div>
-        </div>
+        {% include 'snippets/includes/header-mobile.html' %}
 
         <!-- Desktop View -->
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-flex">
