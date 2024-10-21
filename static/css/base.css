@@ -65,10 +65,6 @@ main {
     padding-bottom: 5px;
 }
 
-.logo:hover {
-  color: none;
-}
-
 /* Custome styling for Navbar */
 
 .navbar {
@@ -211,15 +207,14 @@ main {
 .hero {
   background: url(/static/img/hero.png) no-repeat center center;
   background-size: cover;
-  height: cover;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
 
   /* Animation properties */
-  animation: zoom 20s infinite; /* Adjust duration as needed */
-  animation-timing-function: ease-in-out; /* Smooth animation */  
+  animation: zoom 20s infinite;
+  animation-timing-function: ease-in-out;
 }
 
 .hero-container {
@@ -240,8 +235,8 @@ main {
 }
 
 .btn {
-  position: relative; /* Ensure btn has a position for absolute children */
-  overflow: hidden; /* Hide overflow to prevent text from showing initially */
+  position: relative;
+  overflow: hidden;
   display: inline-block;
 }
 
@@ -345,7 +340,7 @@ th {
 
 /* Add some space between product name and price */
 .card-body {
-  text-align: center;  /* Center text */
+  text-align: center;
   margin-bottom: -15px;
   margin-top: -5px;
   padding: 0;
@@ -370,8 +365,8 @@ th {
 }
 
 .card-footer {
-  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
-              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+  box-shadow: 0 4px 8px rgba(101, 182, 192),
+              0 6px 20px rgba(128, 174, 255, 0.9);
   margin-top: auto;
 }
 
@@ -408,8 +403,8 @@ th {
   background: url(/static/img/title-bg.png) no-repeat center center;
   background-size: contain;
   margin: 0 auto; /* Center the element */
-  width: 70%; /* Set width to 70% */
-  padding: 10px; /* Add some padding to the h3 */
+  width: 70%;
+  padding: 10px;
   height: fit-content;
 }
 
@@ -458,13 +453,13 @@ th {
   font-weight: bold;
   font-size: large;
   background-color: rgb(101,182,192);
-  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
-              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+  box-shadow: 0 4px 8px rgba(101, 182, 192), 
+              0 6px 20px rgba(128, 174, 255, 0.9);
 }
 
 .btn-small-height {
   height: auto;
-  line-height: 15px; /* Ensures the text is vertically centered */
+  line-height: 15px;
 }
 
 /* Error page stayling */
@@ -476,8 +471,8 @@ th {
 .error-details {
   background-color: #721c24;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(101, 182, 192), /* change shadow color to light blue */
-              0 6px 20px rgba(128, 174, 255, 0.9); /* second layer of shadow */
+  box-shadow: 0 4px 8px rgba(101, 182, 192), 
+              0 6px 20px rgba(128, 174, 255, 0.9);
   padding: 1.5rem;
   margin-top: auto;
 }
