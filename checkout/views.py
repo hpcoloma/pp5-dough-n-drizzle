@@ -1,4 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    get_object_or_404,
+    HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -13,6 +19,7 @@ from cart.contexts import cart_contents
 
 import stripe
 import json
+
 
 def cache_checkout_data(request):
     try:
@@ -76,7 +83,7 @@ def checkout(request):
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', 
+            return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
@@ -84,7 +91,8 @@ def checkout(request):
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(request,
+                           "There's nothing in your cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
@@ -92,13 +100,13 @@ def checkout(request):
         stripe_total = round(total * 100)
 
         stripe.api_key = stripe_secret_key
-        
+
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -115,9 +123,9 @@ def checkout(request):
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
-        else:        
+        else:
             order_form = OrderForm()
-    
+
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
@@ -160,7 +168,7 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-                
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')

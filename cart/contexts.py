@@ -12,9 +12,9 @@ def cart_contents(request):
     product_count = 0
     cart = request.session.get('cart', {})
 
-     # Retrieve discount code from the session
+    # Retrieve discount code from the session
     discount_code = request.session.get('discount_code', None)
-    discount_amount = Decimal(0) 
+    discount_amount = Decimal(0)
 
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -32,20 +32,27 @@ def cart_contents(request):
             discount = Discount.objects.get(code=discount_code)
 
             if discount.is_valid():
-                if not DiscountUsage.objects.filter(user=request.user, discount=discount).exists():
+                if not DiscountUsage.objects.filter(
+                    user=request.user,
+                    discount=discount
+                ).exists():
                     # Calculate discount amount based on the discount type
                     if discount.discount_type == 'fixed':
                         discount_amount = discount.amount
                     elif discount.discount_type == 'percent':
-                        discount_amount = total * (discount.amount / Decimal(100))
+                        discount_amount = (
+                            total * (discount.amount / Decimal(100))
+                            )
                 else:
                     # Discount has already been used by this user
                     request.session.pop('discount_code', None)
-                    messages.error(request, 'This discount code has already been used.')
+                    messages.error(request, 'This discount code '
+                                            'has already been used.')
             else:
                 # Discount is not valid (expired, inactive, etc.)
                 request.session.pop('discount_code', None)
-                messages.error(request, 'This discount code is no longer valid.')
+                messages.error(request, 'This discount code '
+                                        'is no longer valid.')
         except Discount.DoesNotExist:
             # Invalid discount code
             request.session.pop('discount_code', None)
@@ -53,11 +60,13 @@ def cart_contents(request):
 
     # Apply discount to total and ensure net_total doesn't go below 0
     net_total = total - discount_amount
-    net_total = max(net_total, Decimal(0))  # Ensure net_total doesn't go below 0
+    net_total = max(net_total, Decimal(0))
 
     # Calculate delivery cost
     if net_total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = net_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        delivery = net_total * (
+            Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+            )
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - net_total
     else:
         delivery = 0

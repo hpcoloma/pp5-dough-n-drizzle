@@ -1,4 +1,10 @@
-from django.shortcuts import render, reverse, redirect, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render,
+    reverse,
+    redirect,
+    HttpResponse,
+    get_object_or_404
+)
 from django.contrib import messages
 from django.db.models import F
 from decimal import Decimal
@@ -25,7 +31,7 @@ def view_cart(request):
             'product': product,
             'quantity': quantity,
             'subtotal': subtotal,
-             'item_id': item_id,
+            'item_id': item_id,
         })
 
     # Apply discount if applicable
@@ -41,7 +47,8 @@ def view_cart(request):
                 net_total = total - discount_amount
 
             else:
-                messages.error(request, 'Discount code is not valid or has expired.')
+                messages.error(request, 'Discount code is not '
+                                        'valid or has expired.')
                 del request.session['discount_code']
         except Discount.DoesNotExist:
             messages.error(request, 'Invalid discount code.')
@@ -57,7 +64,7 @@ def view_cart(request):
         'net_total': net_total,
         'discount_code': discount_code,
         'discount_amount': discount_amount,
-    }    
+    }
     return render(request, 'cart/cart.html', context)
 
 
@@ -85,10 +92,17 @@ def add_to_cart(request, item_id):
     # Update the cart with the specified quantity
     if item_id in cart:
         cart[item_id] += quantity
-        messages.success(request, f'Updated quantity of {product.name} to {cart[item_id]}.', extra_tags='cart_action')
+        messages.success(
+            request,
+            f'Updated quantity of {product.name} to {cart[item_id]}.',
+            extra_tags='cart_action'
+        )
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your cart.', extra_tags='cart_action')
+        messages.success(
+            request, f'Added {product.name} to your cart.',
+            extra_tags='cart_action'
+        )
 
     # Save the updated cart back to the session
     request.session['cart'] = cart
@@ -107,10 +121,15 @@ def adjust_cart(request, item_id):
     if quantity > 0:
         cart[item_id] = quantity
         messages.success(
-            request, f'Updated {product.name} quantity to {cart[item_id]}', extra_tags='cart_action')
+            request, f'Updated {product.name} quantity to {cart[item_id]}',
+            extra_tags='cart_action'
+            )
     else:
         cart.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your cart', extra_tags='cart_action')
+        messages.success(
+            request, f'Removed {product.name} from your cart',
+            extra_tags='cart_action'
+            )
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -124,7 +143,10 @@ def remove_from_cart(request, item_id):
         cart = request.session.get('cart', {})
 
         cart.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your cart', extra_tags='cart_action')
+        messages.success(
+            request, f'Removed {product.name} from your cart',
+            extra_tags='cart_action'
+            )
 
         request.session['cart'] = cart
         return HttpResponse(status=200)

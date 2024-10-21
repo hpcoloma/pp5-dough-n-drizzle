@@ -23,10 +23,11 @@ class OrderAdmin(admin.ModelAdmin):
               'stripe_pid')
 
     list_display = ('order_number', 'date', 'full_name',
-                    'order_total', 'delivery_cost', 
+                    'order_total', 'delivery_cost',
                     'grand_total', 'original_bag',
                     'stripe_pid')
 
     ordering = ('-date',)
+
 
 admin.site.register(Order, OrderAdmin)

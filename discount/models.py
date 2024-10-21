@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 
 class Discount(models.Model):
     code = models.CharField(max_length=50, unique=True)
-    discount_type = models.CharField(max_length=10, choices=[('fixed', 'Fixed Amount'), ('percent', 'Percentage')])
+    discount_type = models.CharField(max_length=10,
+                                     choices=[('fixed', 'Fixed Amount'),
+                                              ('percent', 'Percentage')])
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     active = models.BooleanField(default=True)
     expiration_date = models.DateField(null=True, blank=True)
@@ -16,7 +18,11 @@ class Discount(models.Model):
         """
         Check if the discount is still active and not expired.
         """
-        return self.active and (self.expiration_date is None or self.expiration_date >= timezone.now().date())
+        return (
+            self.active and
+            (self.expiration_date is None or
+             self.expiration_date >= timezone.now().date())
+        )
 
     def __str__(self):
         return self.code
@@ -27,8 +33,13 @@ class DiscountUsage(models.Model):
     discount = models.ForeignKey(Discount, on_delete=models.CASCADE)
     used_at = models.DateTimeField(auto_now_add=True)
 
+    # Ensure a user can only use a discount once
     class Meta:
-        unique_together = ('discount', 'user')  # Ensure a user can only use a discount once
+        unique_together = ('discount', 'user')
 
     def __str__(self):
-        return f"{self.user.username} used {self.discount.code} on {self.used_at}"
+        return (
+            f"{self.user.username} used "
+            f"{self.discount.code} on "
+            f"{self.used_at}"
+        )
