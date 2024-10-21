@@ -4,7 +4,7 @@
 
 **Table of Contents**
 
--   Project Introduction
+-   [Project Introduction](#project-introduction)
     -   [Dough n Drizzle](#dough-n-drizzle)
     -   [Link to Live Project](#link-to-live-project)
     -   [Objective](#objective)
