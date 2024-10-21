@@ -153,13 +153,20 @@
 
     {% block postloadjs %}
       <script type="text/javascript">
-            $('.toast').toast('show');
+        // Show the toast notification
+        $('.toast').toast('show');
 
-            function setDeleteUrl(link) {
-                var url = link.getAttribute('data-url');
-                document.getElementById('confirmDeleteButton').setAttribute('href', url);
-            }
-      </script> 
+        // Function to set the delete URL for the confirmation button
+        function setDeleteUrl(link) {
+          var url = link.getAttribute('data-url'); // Get the URL from the data attribute
+          var confirmButton = document.getElementById('confirmDeleteButton'); // Get the confirm button element
+          if (confirmButton) { // Check if the button exists before setting the href
+            confirmButton.setAttribute('href', url); // Set the href attribute to the URL
+          } else {
+            console.error('Confirm delete button not found.');
+          }
+        }
+      </script>
 
     {% endblock %}
    
