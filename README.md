@@ -1,30 +1,31 @@
-**Dougn n Drizzle**
+# Dough n Drizzle
 
 AM I RESPONSIVE PHOTO HERE
 
 **Table of Contents**
 
 -   Project Introduction
-    -   [Dough n Drizzle]
-    -   Link to Live Project
-    -   Objective
--   UX/UI Design
-    -   The Strategy Plane
-    -   The Scope Plane
-    -   The Skeleton Plane
-    -   The Structure Plane
-    -   The Surface Plane
--   Features
--   Future Enhancements
--   Testing
--   Agile Development
--   Bugs and Potential Issue
--   Technologies and Languages used
--   Developement
--   Deployment on Heroku
--   Credits
--   Acknowledgements
+    -   [Dough n Drizzle](#dough-n-drizzle)
+    -   [Link to Live Project](#link-to-live-project)
+    -   [Objective](#objective)
+-   [UX/UI Design](#uxui-design)
+    -   [The Strategy Plane](#the-strategy-plane)
+    -   [The Scope Plane](#the-scope-plane)
+    -   [The Skeleton Plane](#the-skeleton-plane)
+    -   [The Structure Plane](#the-structure-plane)
+    -   [The Surface Plane](#the-surface-plane)
+-   [Features](#features)
+-   [Future Enhancements](#future-enhancements)
+-   [Testing](#testing)
+-   [Agile Development](#agile-development)
+-   [Bugs and Issue](#bugs-and-issues)
+-   [Technologies and Languages used](#technologies-and-language)
+-   [Developement](#development)
+-   [Deployment](#deployment)
+-   [Credits](#credits)
+-   [Acknowledgements](#acknowledgements)
 
+![Am I Responsive](documentation/readme-md/amiresponsive.png)
 # PROJECT INTRODUCTION
 
 Dough n' Drizzle is a comprehensive e-commerce web application designed for selling artisanal baked goods and confectionery products. Built using the Django framework, the project offers a streamlined user experience, allowing customers to browse and purchase items online with ease. The website supports essential e-commerce features such as product listings, shopping cart functionality, order management, secure payment processing via Stripe, and user authentication through social accounts.
@@ -42,18 +43,7 @@ Key Features
 -   Admin Control: Superusers can manage product listings, categories, and view order details via Django's admin interface.
 -   Media Management: AWS S3 is used to handle static and media files, ensuring scalability and performance.
 
-Technology Stack
-
--   Backend: Django 4.2 (Python web framework)
--   Frontend: HTML5, CSS3, Bootstrap 4
--   Database: PostgreSQL
--   Payment Gateway: Stripe API
--   Authentication: Django Allauth
--   Storage: AWS S3 for static and media file handling
--   Deployment: Gunicorn (WSGI HTTP Server), Boto3 for AWS S3
--   Hosting: The app can be deployed on platforms like Heroku or AWS EC2.
-
-[**Link to Live project**](https://pp5-dough-n-drizzle-257d1212e951.herokuapp.com/)
+## [Link to Live project](https://pp5-dough-n-drizzle-257d1212e951.herokuapp.com/)
 
 ## Objective
 
@@ -65,56 +55,184 @@ The primary objective of Dough N Drizzle is to create an intuitive and efficient
 
 ### VISION
 
+To create a delightful and seamless online experience for our customers, where they can easily explore, order, and enjoy our delicious baked goods and desserts while feeling valued and engaged throughout their journey.
+
 ### OBJECTIVES
 
+-   **Responsive Design**: Ensure that the website is fully responsive, providing a consistent and enjoyable experience across all devices (desktop, tablet, and mobile).
+-   **Facilitate Easy Navigation**: Create an intuitive navigation structure that allows users to find products quickly and easily, aiming for a minimum of 80% user satisfaction in usability tests.
+-   
+
 ### USER NEEDS
+
+-   **Easy Browsing and Searching**: Users need a streamlined experience to find products, with clear categories, filters, and search functionality to locate specific items quickly.
+-   **Detailed Product Information**: Customers require comprehensive information about products, including ingredients, allergens, nutritional facts, and high-quality images to make informed purchasing decisions.
+-   **Secure and Simple Checkout Process**: Users need a hassle-free checkout experience with multiple payment options, easy editing of cart items, and clear instructions to complete their orders securely
+-   **Mobile Optimization**: Users expect a fully functional mobile experience, as many customers will shop via smartphones and tablets.
+-   **Customer Support Access**: Users need easy access to customer service through multiple channels (email, phone) for inquiries or issues regarding orders.
+
+### IMPLEMENTATION STEPS
+
+-   **Wireframing**: Create wireframes for key pages, focusing on layout, navigation, and user interaction.
+-   **UI** **Design**: Develop a visually appealing UI that reflects the brand identity of Dough n Drizzle, incorporating elements such as colors, typography, and imagery that resonate with the target audience.
 
 ## The Scope Plane
 
 ### FEATURES:
 
+-   **Core Features**
+    -   **User Account Management**
+        -   **User Registration and Login:** Users can create accounts and log in securely.
+        -   **Profile Management:** Users can view and update their personal information, including saved addresses and payment methods
+    -   **Product Management**
+        -   **Product Listings:** Users can browse through a categorized list of products.
+        -   **Product Details**: Each product will have a dedicated page with images, descriptions, prices, and reviews.
+        -   **Search and Filter Options: Users** can search for products and apply filters (e.g., category, price range).
+    -   **Shopping Cart Functionality**
+        -   **Add to Cart**: Users can add items to their shopping cart from product listings and detail pages.
+        -   **Cart Overview:** Users can view the items in their cart, adjust quantities, and remove items.
+    -   **Checkout process**
+        -   **Order Form:** A comprehensive form capturing user details (name, address, payment information).
+-   **Design Features**
+    -   **Responsive Design**
+        -   **Mobile-Friendly Interface**: Ensuring that the site is accessible and functional on all devices (desktops, tablets, and smartphones).
+    -   **User-Friendly Navigation**
+        -   **Clear Menu Structure**: Easy-to-follow navigation with categorized products and intuitive links.
+    -   **Visual Design**
+        -   **Branding Consistency:** Use of colors, typography, and images that reflect the Dough n Drizzle brand.
+        -   **High-Quality Imagery**: Professional images of products to enhance visual appeal.
+-   **Technical Features**
+    -   **Integration Capabilities:** Payment Gateway Integration: Seamless integration with payment processors like Stripe
+
 ### CUSTOM FEATURES:
 
--   **Subscription** - This allow users to sign up to receive emails about news, offers, and get a 10% discount on their first order. It store the user's email, subscription status, and track whether they have used the 10% discount on their first order.
+-   **Subscription** - This allow users to sign up to receive emails about news, offers,
+-   **Admin** **Dashboard**
+    -   **Product Management:** add, delete and update products.
+    -   **Discount Management:** add, delete and update discounts.
+    -   **Orders Management:** update status and view all orders
 
 ### CONTENT REQUIREMENTS:
 
-### FUNCTIONAL SPECIFICATIONS
+-   **Home Page Content:**
+    -   **Landing Page:** Hero Image and shortcut button links
+    -   **Login/Register:** Links to register or login
+    -   **Main Navbar:**  view about, contact us, and products
+    -   **Search:** Search functionality
+    -   **Call-to-Action (CTA)**: Encouragements to explore products or sign up for newsletters
+-   **Login Page Content:**
+    -   Login form with fields for email and password
+    -   Link to the registration page
+-   **Register Page Content:**
+    -   Registration form with fields for email, username, and password
+-   **About Us Page**
+    -   Brief introduction about the business, it’s mission and link to contact page
+-   **Products**
+    -   **Product Titles**: Clear and descriptive names for each product.
+    -   **Detailed Descriptions**: Information about ingredients, flavor profiles, and unique selling points.
+    -   **Pricing Information:** Clearly displayed pricing for each product**.**
+-   **Links to Social Medias**
+-   **Technical Contents**
+    -   **Privacy Policy**
+    -   **FAQ Page**
+        -   *Common Questions*: Answers to frequently asked questions about products, shipping, returns, and customer service.
+        -   *Clear Solutions*: Direct and informative responses that help alleviate customer concerns.
+    -   **Contact Information**
+    -   **Terms of Service**
+-   **Call To Action (CTA)**
+    -   **Sign-Up Prompts**: Invitations to join the mailing list for discounts and updates.
+    -   **Social Media Follow Links**: Encouragements to follow Dough n Drizzle on various platforms.
+-   **SEO Content Requirements**
+    -   **Keywords and Phrases: Research and identify keywords relevant to Dough n Drizzle that should be integrated into website content.**
+    -   **Meta Descriptions: Create engaging and descriptive meta tags for each page to improve search engine visibility.**
+    -   **Alt Text for Images: Provide descriptive text for all images to enhance accessibility and SEO.**
 
-### USER STORIES
+### USER STORSER STORIES
+Dough n Drizzle project uses a Kanban Board to manage and track progress throughout the development cycle. The Kanban board visualizes work stages, from initial backlog through to completed tasks, facilitating efficient task management and smooth workflow. This approach allows me to prioritize tasks, track progress, and ensure that all features and improvements are delivered in a timely manner.
 
 -   **MoSCoW Prioritization**
-    -   **Must Have:**
-    -   **Should Have:**
-    -   **Could Have:**
-    -   **Won't Have:**
--   **As a User:**
--   **As a**
--   **As an admin:**
+	- Must Have:
+		- As a User:
+
+			- I want to register for an account so that I can access the platform's features.
+			- I want to log in to my account so that I can view my profile and order history.
+			- I want to add products to my cart so that I can purchase them later.
+			- I want to make a payment using Stripe so that I can complete my order.
+			- I want to create a wishlist so that I can save products for future reference.
+			- I want to filter products by category, price, and ratings to find items that meet my preferences.
+		- As an Admin:
+			- I want to manage user accounts so that I can assist users with their issues.
+			- I want to view all orders so that I can process and manage them effectively.
+			- I want to add and update product information so that the catalog remains current.
+	- Should Have:
+		- As a User:
+			- I want to receive email notifications for order confirmations so that I have a record of my purchases.
+			- I want to view all products available on the platform so that I can make informed purchasing decisions.
+			- I want to update my account information so that my profile is always up to date.
+		- As an Admin:
+
+			- I want to generate reports on sales and user activity so that I can make informed business decisions.
+			- I want to manage product inventory levels so that we can prevent stockouts.
+	- Could Have:
+		- As a User:
+
+			
+			- I want to read product reviews and ratings from other users to guide my purchase decisions.
+		- As an Admin:
+
+			- I want to implement a promotional discount feature to attract more customers.
+			- I want to manage user feedback and suggestions for platform improvement.
+	- 	Won't Have:
+		- As a User:
+
+			- I won’t need social media integration for sharing products on external platforms.
+			- I won’t require a mobile application at this time.
+		- As an Admin:
+
+			- I won’t need to handle third-party logistics directly.
+			- I won’t be managing international shipping at this stage.
+
 
 ## The Skeleton Plane
 
 ### LAYOUT AND WIREFRAME STRUCTURE
 
--   **Home Page:** TEXT HERE PHOTO HERE
--   **Login Page:** TEXT HERE PHOTO HERE
--   **Register Page:** TEXT HERE PHOTO HERE
-
-### WIREFRAMES
+-   **Home Page:**
+	![](documentation/readme-md/wireframe-homepage.png)
+-   **About:**
+	![](documentation/readme-md/wireframe-about.png)
+-   **Shop**
+	![](documentation/readme-md/wireframe-shop.png)
+-	**Contact:**
+	![](documentation/readme-md/wireframe-contact.png)
+-	**Admin:**
+	![](documentation/readme-md/wireframe-admin.png)
+-	**Wishlist:**
+	![](documentation/readme-md/wireframe-wishlist.png)
 
 **Mobile and Tablet Wireframes:**
+	![](documentation/readme-md/mobile-home.png)
 
 ### ENTITY RELATIONSHIP MODEL
+**Relationships**
+- A User can have multiple Orders (One-to-Many).
+- An Order can have multiple OrderItems (One-to-Many).
+- A Product can belong to one Category (Many-to-One).
+- A Category can have multiple Products (One-to-Many).
+- An Order is associated with one Payment (One-to-One).
+- An Admin manages the platform and can manage multiple Products and - Orders (One-to-Many).
 
-ERD Diagram PHOTO HERE
+ERD Diagram
+![](documentation/readme-md/erd.png)
 
-### KEY POINTS
-
--   **User:**
-    -   Has a one-to-one relationship with Profile.
-    -   Has a one-to-many relationship with Ticket.
-    -   Has a one-to-many relationship with Comment.
--   **Profile:** - Linked to User with a one-to-one relationship.
+**Explanation**
+- User: Represents customers of the e-commerce platform, storing personal and account-related information.
+- Product: Represents items available for purchase, linked to categories for better organization.
+- Category: Used to group products, making it easier for users to navigate the catalog.
+- Order: Represents a user's purchase transaction, linked to multiple order items.
+- OrderItem: Contains details about each product within a specific order, including quantity and price.
+- Payment: Represents the transaction details for each order, confirming payment processing.
+- Admin: Represents administrative users who manage the system, products, and orders.
 
 ### SEO STRAGETIES
 
@@ -146,9 +264,29 @@ SEO strategies for Dough n Drizzle to improve its search visibility and attract 
 6.  **E-Commerce SEO**
     -   **Optimized URLs**: Use clean, descriptive URLs (e.g., “/signature-cakes/” instead of “/product1234”).
 
-### WEB MARKETING STARTEGIES
+### WEB MARKETING STRATEGIES
+-   **Leverage Social Media Platforms**
+    -   **Facebook:** a dummy facebook page is created for this website. Visit [FACEBOOK PAGE](https://www.facebook.com/doughndrizzle) here
+		- **Desktop Screenshots**
+![](documentation/social-media/facebook-about1.png)
+![](documentation/social-media/facebook-about2.png)
+![](documentation/social-media/facebook-albums.png)
+![](documentation/social-media/facebook-page.png)
+![](documentation/social-media/facebook-page2.png)
+![](documentation/social-media/facebook-page3.png)
+![](documentation/social-media/facebook-page4.png)
+![](documentation/social-media/facebook-photos.png)
+![](documentation/social-media/facebook-review.png)
 
-1.  
+		- **Mobile Screenshots**
+![](documentation/social-media/fb-mobile1.PNG)
+![](documentation/social-media/fb-mobile2.PNG)
+![](documentation/social-media/fb-mobile3.PNG)
+![](documentation/social-media/fb-mobile4.PNG)
+
+-   **Online Presence**
+    -   **Website Optimization:** website is user-friendly, mobile-optimized, fast-loading, and visually appealing. This is especially crucial for e-commerce if you're selling your products online
+
 
 ## The Structure Plane
 
@@ -156,7 +294,53 @@ SEO strategies for Dough n Drizzle to improve its search visibility and attract 
 
 -   **Global Navigation:**
 
-### CONTENT ORGANIZATION
+	- **Home**
+
+		Overview of the bakery, latest offers, and featured products
+
+	- **Shop**
+
+		Categories: Browse products by categories (e.g., Cakes, Pastries, Cookies, etc.).
+
+		All Products: View all available products.
+
+		Special Offers: View discounts and promotions.
+	
+	- **Cart**
+
+		View Cart: See all items added to the cart with options to update quantity or remove.
+		
+		Checkout: Proceed to enter shipping and payment information.
+
+	- **My Account**
+
+		Register/Sign Up: Create a new account.
+
+		Login: Access your account.
+
+		Order History: View past orders and their statuses.
+
+		Account Details: Update personal information, addresses, and password.
+
+		Logout: Sign out of the account.
+	- **About Us**
+
+		Our Story: Learn about Dough n Drizzle's mission and background.
+
+		Meet the Team: A brief introduction to the team behind the bakery.
+
+		Contact Us: Contact information, including address, phone, email, and a contact form.
+
+	- **FAQ**
+
+		Common questions and answers about orders, products, and policies.
+	
+	- **Policies**
+
+		Term of Service
+
+		Privacy Policy: How customer information is collected and used.
+- **Footer Navigation (Quick Links)** Social Media Links: Facebook, Instagram, e
 
 ### INTERFACE ELEMENTS:
 
@@ -206,12 +390,36 @@ SEO strategies for Dough n Drizzle to improve its search visibility and attract 
 
 ### COLOUR SCHEME
 
-PHOTO HERE
+![](documentation/readme-md/color_grid.PNG)
 
 -   **Primary Colors:**
--   **Secondary Colors:**
--   **Text Colors:**
--   **Buttons:**
+    -   \#FFFFFF (White):
+        -   Use: Backgrounds, text contrast, and elements requiring emphasis.
+        -   Example: Used for text and modal backgrounds to ensure readability.
+    -   \#000000 (Black):
+        -   Use: Text, icons, and elements requiring high contrast.
+        -   Example: Navigation links and footer text.
+    -   \#E47784 (Soft Pink):
+        -   Use: Accents, buttons, and hover effects.
+        -   Example: Use in buttons or highlight elements for calls to action.
+    -   \#65B6C0 (Turquoise):
+        -   Use: Primary buttons, backgrounds for sections, and active elements.
+        -   Example: Button backgrounds and header backgrounds.
+    -   \#E448FE (Vibrant Pink):
+        -   Use: Important highlights or error messages.
+        -   Example: Error notifications or alerts.
+    -   \#80AEFF (Light Blue):
+        -   Use: Hover states and secondary buttons.
+        -   Example: Use for button hover effects or borders.
+    -   \#FFB6BD (Light Pink):
+        -   Use: Backgrounds and subtle highlights.
+        -   Example: Background for card components or section dividers.
+    -   \#FFBD6F (Soft Yellow):
+        -   Use: Highlights and subtle attention grabbers.
+        -   Example: Notification badges or as part of a gradient.
+    -   \#25356D (Deep Blue):
+        -   Use: Text headers, backgrounds, and navigation elements.
+        -   Example: Used in the footer and headings.
 -   **Alerts and Modals:**
     -   Alerts:
         -   Background Color: Varies based on message type (e.g., success, danger)
@@ -219,111 +427,78 @@ PHOTO HERE
     -   Modals:
         -   Text Color: White
         -   Body Background: \#ffffff (white)
--   **Footer:**
 
 ### TYPOGRAPHY
 
--   Primary Font: Titillium Web
-    -   Used for headers, body text, and UI elements
-        -   Provides a clean, modern look suitable for various UI components
-        -   Font Family: "Titillium Web", sans-serif
-        -   Headings:
-            -   Font Weight: 600 to 700
-            -   Size: Varies (e.g., h1: 2.5em, h2: 2em)
-        -   Body Text:
-            -   Font Weight: 400
-            -   Size: 1em
-        -   Buttons and Links:
-            -   Font Weight: 600
-            -   Size: 1em
+-   **Playpen Sans -** a modern sans-serif typeface available through Google Fonts.
+I used this 
 
 ### IMAGES
 
--   **Background**
--   **Logo**
--   **Products** -
-
-# FEATURES
+-   **Background** found in [Freepik](https://www.freepik.com/)
+-   **Logo –** Designed and created my own logo for uniqueness
+-   **Products** – Sourced from different baking sites and added border for consistency. Linkes of images can be found [HERE](documentation/readme-md/image-links.pdf)
 
 # FUTURE ENHANCEMENTS
 
+## FEATURES
+
+-   **Shopping Cart:**
+    -   **Discount Code Application**: Users can enter discount codes and see updated totals.
+-   **Checkout Process:**
+    -   **Multiple Payment Options:** Support for various payment methods (credit/debit cards, digital wallets).
+-   **User Feedback Mechanisms**
+    -   **Product Reviews**: Users can leave reviews and ratings for products.
+    -   **Customer Support Contact**: A support form or chat feature for user inquiries.
+
 ## SEO
 
-1.  **Content Marketing**
+-   **Content Marketing**
     -   **Blog**: Regularly update the blog with relevant, engaging content such as cake design trends, how to choose wedding cakes, cake care tips, or seasonal dessert ideas. Include targeted keywords and long-tail search queries.
         -   Example blog posts:
             -   "Top 5 Wedding Cake Trends for 2024"
             -   "How to Store and Serve Your Custom Cakes"
-2.  **Local SEO Optimization**
+-   **Local SEO Optimization**
     -   **Google My Business (GMB)**: Create or optimize your GMB listing. Ensure that the business name, address, phone number, and hours are accurate. Include high-quality images of your bakery and products.
     -   **Local Keywords**: Focus on local keywords like “Best custom cakes near [City Name]” or “Artisan bakery in [City Name].”
     -   **Local Listings & Reviews**: Encourage satisfied customers to leave reviews on Google and Yelp. Positive reviews improve trust and local rankings.
-3.  **Backlink Building**
+-   **Backlink Building**
     -   **Collaborate with Local Influencers**: Partner with local food bloggers or event planners to generate backlinks and social mentions.
     -   **Guest Blogging**: Write guest posts for local publications or industry websites to build credibility and backlinks to your site.
     -   **Submit to Local Directories**: Ensure your business is listed on relevant directories (Yelp, TripAdvisor, etc.) with accurate information.
-4.  **E-Commerce SEO**
+-   **E-Commerce SEO**
     -   **Internal Linking**: Strategically link to relevant product pages, blog posts, and categories to keep users on your site longer and help search engines crawl your content.
     -   **Breadcrumb Navigation**: Implement breadcrumb navigation to improve user experience and help search engines understand your site’s structure.
-5.  **Monitor and Improve**
+-   **Monitor and Improve**
     -   **Analytics & SEO Tools**: Regularly monitor performance using Google Analytics, Google Search Console, and tools like Ahrefs or SEMrush to track keyword rankings, site traffic, and user behavior.
     -   **Improve Based on Data**: Continuously optimize content based on the insights from these tools. Track which pages are performing well and refine those that are underperforming.
-6.  **External Links**
+-   **External Links**
     -   Calendar of upcoming wedding/party fairs that will be attending
     -   Tips & Advice for baking
 
+## WEB MARKETING
+
+1.  **Build Strong Online Present**
+    -   **Blogging**: Regular blog posts related to baking, dessert trends, recipes, and health tips can help boost your website’s ranking on search engines. Include internal links to your products or services, and share these blogs across your social media platforms.
+2.  **Leverage Social Media Platforms**
+    -   **Instagram**: Visual platforms like Instagram are ideal for food businesses. Post high-quality photos and videos of your products, behind-the-scenes content, special offers, and customer testimonials. Use relevant hashtags like \#DoughnDrizzle, \#GourmetDoughnuts, and \#ArtisanDesserts to reach a broader audience.
+    -   **Facebook**: Run Facebook ads targeting local customers, highlighting promotions, special offers, and new product launches. You can also create an event for a new product release or special seasonal offerings.
+    -   **TikTok**: This platform is great for creating engaging, viral content. You could create short, entertaining videos showing unique ways you make your products, time-lapse recipes, or customer reactions.
+    -   **Pinterest**: Many users look for food ideas and recipes on Pinterest. Post appealing images of your desserts and link them to your website or blog.
+3.  **Use Email Marketing**
+    -   **Build a Mailing List**: Encourage visitors to sign up for your newsletter by offering a small incentive, such as a discount on their first order or exclusive access to new product launches.
+    -   **Weekly/Monthly Newsletters**: Send out newsletters with updates on new products, special discounts, seasonal offerings, and baking tips. Keep the content engaging and include visuals of your most popular items.
+    -   **Targeted Campaigns**: Segment your email lists to run more personalized campaigns, such as birthday discounts, "we miss you" promotions for inactive customers, or exclusive pre-sales for your loyal customers.
+4.  **Offer Online Promotions & Deals**
+    -   **Limited-Time Offers:** Create a sense of urgency with flash sales, holiday specials, or limited-time discounts on select products. Promote these offers through social media, your website, and email.
+    -   **Referral Program**: Set up a referral program that rewards customers for referring their friends to your business. You can offer discounts, free items, or loyalty points.
+    -   **Loyalty Program**: Offer a points-based loyalty program where customers can earn points with every purchase, which can be redeemed for discounts or free items.
+
 # TESTING
 
--   Complete Testing documentation can be found here
+-   Complete Testing documentation can be found [HERE](TESTING.md)
 
 # AGILE DEVELOPMENT
-
-## Iteration 0: Planning and Setup
-
--   Goals:
--   Tasks:
-
-## Iteration 1: User Authentication and Role Management
-
--   Goals:
--   Tasks:
--   Deliverables:
-
-## Iteration 2: Ticket Management
-
--   Goals:
--   Tasks:
--   Deliverables:
-
-## Iteration 3: Commenting and Interaction
-
--   Goals:
--   Tasks:
--   Deliverables: .
-
-## Iteration 4: Admin and Tech Support Features
-
--   Goals:
--   Tasks:
--   Deliverables:
-
-## Iteration 5: Testing and Bug Fixing
-
--   Goals:
--   Tasks:
--   Deliverables:
-
-## Iteration 6: Deployment and Documentation
-
--   Goals:
--   Tasks:
--   Deliverables:
-
-## Iteration 8: Feedback and Iteration
-
--   Goals:
--   Tasks:
--   Deliverables:
 
 # BUGS AND ISSUES
 
@@ -368,26 +543,14 @@ heroku run python3 manage.py migrate
 
 # TECHNOLOGIES AND LANGUAGE
 
-SOME TEXTS HERE
-
-## Frontend
-
--   **HTML5:** For structuring the web pages and content.
--   **CSS3:** For styling the web pages, including layout, design, and responsiveness.
--   **JavaScript:** For interactive features and client-side logic.
-    -   **jQuery:** For simplified DOM manipulation and event handling.
-    -   **Bootstrap:** For responsive design and pre-styled components.
-
-## Backend
-
--   **Python:** The main programming language used for backend development.
--   **Django:** A high-level Python web framework that encourages rapid development and clean, pragmatic design.
--   **Django REST Framework:** For building RESTful APIs.
-
-## Database
-
--   **SQLite:** The default database used for development and testing
--   **PostgreSQL:** Used in production..
+-   Backend: Django 4.2 (Python web framework)
+-   Frontend: HTML5, CSS3, Bootstrap 4
+-   Database: PostgreSQL
+-   Payment Gateway: Stripe API
+-   Authentication: Django Allauth
+-   Storage: AWS S3 and PostgreSQL for static and media file handling
+-   Deployment: Gunicorn (WSGI HTTP Server), Boto3 for AWS S3
+-   Hosting: The app can be deployed on platforms like Heroku or AWS EC2.
 
 Version Control
 
@@ -401,9 +564,7 @@ Version Control
 ## Additional Tools and Libraries
 
 -   **Crispy Forms:** For enhancing the rendering of Django forms.
--   **Cloudinary:** For managing media files like images.
--   **Font Awesome:** For scalable vector icons.
--   **Moment.js:** For parsing, validating, manipulating, and displaying dates and times in JavaScript.
+-   **Flaticons:** For scalable vector icons.
 
 # DEVELOPMENT
 
@@ -477,14 +638,15 @@ That's it! You've successfully cloned a repository from GitHub to your local mac
 
 I used the following sources to complete this project.
 
--   [W3School](https://w3schools.com/) – code sources for python
--   [MD Bootstrap](https://mdbootstrap.com/) - bootstrap tables
--   [Stackoverflow](https://stackoverflow.com/) - for codes, tips and answers to some q&a.
--   [Eightshades Contrast Grid](https://contrast-grid.eightshapes.com/) - checked the colour combination contrast
--   [Adobe Color](https://color.adobe.com/) - created my palette by entering colors used on my website.
--   [Adobe Stock Photos](https://vscode-remote+hpcoloma-002dpp5doughndrizz-002dghhtuxykw47-002ews-002ecodeinstitute-002dide-002enet.vscode-resource.codeinstitute-ide.net/workspace/pp5-dough-n-drizzle/README.md) - for my background.
--   [Balsamiq](https://balsamiq.com/) - for wireframes
--   [ChatGPT](https://openai.com/) - for codes, tips, documentation advice and answers to some q&a.
+-   W3School – code sources for python
+-   MD Bootstrap - bootstrap tables
+-   Stackoverflow - for codes, tips and answers to some q&a.
+-   Eightshades Contrast Grid - checked the colour combination contrast
+-   Adobe Stock Photos - for my background.
+-   Balsamiq - for wireframes
+-   ChatGPT - for codes, tips, documentation advice and answers to some q&a.
+-   Slack – support and resources
+-   Code Institute Student Support – for help in debugging issues
 
 # ACKNOWLEDGEMENTS
 
