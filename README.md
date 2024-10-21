@@ -25,7 +25,6 @@
 -   [Credits](#credits)
 -   [Acknowledgements](#acknowledgements)
 
-![Am I Responsive](documentation/readme-md/amiresponsive.png)
 # PROJECT INTRODUCTION
 
 Dough n' Drizzle is a comprehensive e-commerce web application designed for selling artisanal baked goods and confectionery products. Built using the Django framework, the project offers a streamlined user experience, allowing customers to browse and purchase items online with ease. The website supports essential e-commerce features such as product listings, shopping cart functionality, order management, secure payment processing via Stripe, and user authentication through social accounts.
