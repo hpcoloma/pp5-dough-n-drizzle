@@ -1,6 +1,6 @@
 # Dough n Drizzle
 
-AM I RESPONSIVE PHOTO HERE
+![](documentation/readme-md/amiresponsive.png)
 
 **Table of Contents**
 
