@@ -502,13 +502,14 @@ I used this
 
 # BUGS AND ISSUES
 
+## AM I Responsive website not responding on the day of testing
+    I created a a photo on how it looks on mobile, tablet and desktop screen sizes. 
+
 ## Increment/Decrement Button on product detail page
 
 **Issue:** The +/- buttons on the quantity section is meant to update the quantity on this page, however when during the early stages these buttons are directly updating the cart page. You can see the update when the button was clicked the value on the cart increases. Both buttons increases the value of the cart.
 
-**Remedies:**
-
-**Resolution:**
+**Resolution:** Issue was resolved when the css eventually load by pressing hard refresh several times.
 
 ## Problem after upgrading to django 5.0 "AttributeError: 'BlankChoiceIterator' object has no attribute "'len'"
 
@@ -539,7 +540,7 @@ I used this
 1.  Login to Heroku from workspace
 2.  Run:
 
-heroku run python3 manage.py migrate
+        heroku run python3 manage.py migrate
 
 # TECHNOLOGIES AND LANGUAGE
 
