@@ -10,6 +10,7 @@ from django.db.models import F
 from decimal import Decimal
 
 from products.models import Product
+from discount.models import Discount
 from checkout.models import Order
 
 

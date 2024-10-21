@@ -26,7 +26,7 @@
                     {% endif %}
                 </p>
             </a>
-            <div class="dropdown-menu" aria-labelledby="user-options">
+            <div class="dropdown-menu" aria-labelledby="user-options" id="user-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                         <a href="{% url 'admin_management' %}" class="dropdown-item">Admin</a>
