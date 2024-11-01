@@ -17,7 +17,6 @@
 -   [Features](#features)
 -   [Future Enhancements](#future-enhancements)
 -   [Testing](#testing)
--   [Agile Development](#agile-development)
 -   [Bugs and Issue](#bugs-and-issues)
 -   [Technologies and Languages used](#technologies-and-language)
 -   [Developement](#development)
@@ -142,11 +141,11 @@ To create a delightful and seamless online experience for our customers, where t
     -   **Sign-Up Prompts**: Invitations to join the mailing list for discounts and updates.
     -   **Social Media Follow Links**: Encouragements to follow Dough n Drizzle on various platforms.
 -   **SEO Content Requirements**
-    -   **Keywords and Phrases: Research and identify keywords relevant to Dough n Drizzle that should be integrated into website content.**
-    -   **Meta Descriptions: Create engaging and descriptive meta tags for each page to improve search engine visibility.**
-    -   **Alt Text for Images: Provide descriptive text for all images to enhance accessibility and SEO.**
+    -   **Keywords and Phrases:** Research and identify keywords relevant to Dough n Drizzle that should be integrated into website content.
+    -   **Meta Descriptions:** Create engaging and descriptive meta tags for each page to improve search engine visibility.
+    -   **Alt Text for Images:** Provide descriptive text for all images to enhance accessibility and SEO.
 
-### USER STORSER STORIES
+### USER STORIES
 Dough n Drizzle project uses a Kanban Board to manage and track progress throughout the development cycle. The Kanban board visualizes work stages, from initial backlog through to completed tasks, facilitating efficient task management and smooth workflow. This approach allows me to prioritize tasks, track progress, and ensure that all features and improvements are delivered in a timely manner.
 
 -   **MoSCoW Prioritization**
@@ -202,15 +201,15 @@ Dough n Drizzle project uses a Kanban Board to manage and track progress through
 	![](documentation/readme-md/wireframe-about.png)
 -   **Shop**
 	![](documentation/readme-md/wireframe-shop.png)
--	**Contact:**
+-   **Contact:**
 	![](documentation/readme-md/wireframe-contact.png)
--	**Admin:**
+-   **Admin:**
 	![](documentation/readme-md/wireframe-admin.png)
--	**Wishlist:**
+-   **Wishlist:**
 	![](documentation/readme-md/wireframe-wishlist.png)
-
-**Mobile and Tablet Wireframes:**
-	![](documentation/readme-md/mobile-home.png)
+-   **Mobile Wireframe**
+	
+    ![](documentation/readme-md/mobile-home.png)
 
 ### ENTITY RELATIONSHIP MODEL
 **Relationships**
@@ -221,7 +220,8 @@ Dough n Drizzle project uses a Kanban Board to manage and track progress through
 - An Order is associated with one Payment (One-to-One).
 - An Admin manages the platform and can manage multiple Products and - Orders (One-to-Many).
 
-ERD Diagram
+**ERD Diagram**
+
 ![](documentation/readme-md/erd.png)
 
 **Explanation**
@@ -233,7 +233,7 @@ ERD Diagram
 - Payment: Represents the transaction details for each order, confirming payment processing.
 - Admin: Represents administrative users who manage the system, products, and orders.
 
-### SEO STRAGETIES
+### SEO STRATEGIES
 
 SEO strategies for Dough n Drizzle to improve its search visibility and attract more organic traffic:
 
@@ -248,7 +248,7 @@ SEO strategies for Dough n Drizzle to improve its search visibility and attract 
     -   **Headings (H1, H2, H3):** Use primary keywords in H1 and secondary keywords in H2/H3 tags. Structure the content clearly for users and search engines.
 2.  **Keyword Research & Optimization**
     -   **Target Primary & Long-Tail Keywords**: Identify relevant keywords for custom cakes, delivery options, and other baked goods. For example:
-        -   Primary: "Custom cakes," "Cake delivery," "Gourmet cookies"
+        -   Primary: "Custom cakes," "Cake delivery," "Gourmet cakes"
         -   Long-tail: "Best custom birthday cakes near me," "Online bakery for weddings"
     -   **Integrate Keywords Naturally**: Place keywords in key areas (page titles, product descriptions, URLs, headings, alt tags for images) without overstuffing.
 3.  **Content Marketing**
@@ -346,44 +346,43 @@ SEO strategies for Dough n Drizzle to improve its search visibility and attract 
 -   **Forms:**
     -   **User Registration Form:** Input validation for email, username, password and password confirmation fields
     -   **Login Form:** Input validation for email and password fields
-    -   **Ticket Form:** Input validation for subject and description fields and status (hidden field or dropdown for tech support).
-    -   **Comment Form:** Input validation for comment text
+    -   **Contact Form:** Input for name, email, subject and message.
+    -   **Newsletter Subscription** Input validation for email. Checks if email is in database. Only for logged in users.
+    -   **Product Form:** Input validation after updating product
+    -   **Discount Form** Input validation for adding discount codes for date and amount.
+    -   **Order Form** Input validation for name and payment card.
+    -   **User Profile** Input to update loggedin user details. 
 -   **Buttons:**
-    -   **Primary** buttons for actions like "Register", "Log In", "Logout", "Create Ticket", "Submit", "Edit", "Delete", "Next", "Last", "First", and "Previous".
-    -   **Secondary** buttons for action like "Cancel", "Close", and "Save Changes".
+    -   **Primary** buttons for actions like "Register", "Log In", "Logout", "Secure Checkout", "Submit", "Edit", "Delete", "Back to Profile".
+    -   **Secondary** buttons for action like "Cancel", "Close",  and "Save Changes".
 -   **Tables:**
-    -   **Ticket List:** Columns for Ticket ID, Status, Subject, Created On (date only), and User. Clickable rows to view ticket details, pagination.
-    -   **Ticket List for Mobile:** Columns for Ticket ID and Status.
+    -   **Order List:** Columns for Order No, Date, Item, Status, . Clickable cell to view order details, pagination.
+    -   **Order List for Mobile:** Columns for Order No and Status.
+    -   **Discount Management (Admin)** Columns for code, type, amount, status, expiry date and action to edit or delete discount code.
+    -   **Order Management (Admin)** Columns for order number, date ordered, user, status, order total and actions to update status or delete order.
 -   **Modals:**
-    -   For editing comments to avoid navigating away from the ticket detail page. Opens when the "Edit" button is clicked on a comment, contains the comment text pre-filled, and has a save button to update the comment
-    -   For deleting ticket and comments.
+    -   For search functionality
+    -   For deleting product
 -   **Alerts:**
-    -   For success and error messages, displayed using Bootstrap alerts for actions like creating tickets, adding comments, updating tickets, etc..
+    -   For success and error messages, displayed using Bootstrap alerts for actions like placing an order, adding and editing a product, updating status and deleting order and discount for Admins.
     -   For Access Denied and 404 Error using a customised page.
 
 ### INTERACTION DESIGN:
 
--   **Ticket Creation:**
-    -   User fills out the ticket form and submits.
-    -   System validates input and creates a ticket.
+-   **Make Purchase:**
+    -   User fills details and place product in card and process purchase
+    -   System process and record order history
     -   Success message is shown.
-    -   System will display newly created ticket with an option to edit/delete.
--   **Editing Ticket:**
-    -   User clicks "Edit" on a ticket
-    -   Redirect to a page to update ticket with the text pre-filled.
-    -   User updates the ticket with the option to update status if admin/staff and then save changes
-    -   System validates and updates the ticket.
-    -   Success message is shown, and the updated ticket is displayed.
--   **Commenting:**
-    -   User adds a comment via the form.
-    -   System validates input and adds the comment.
-    -   Comment appears below the ticket details with an option to edit/delete (if allowed).
--   **Editing Comments:**
-    -   User clicks "Edit" on a comment.
-    -   Modal opens with the comment text pre-filled.
-    -   User updates the comment and saves changes.
-    -   System validates and updates the comment.
-    -   Success message is shown, and the updated comment is displayed.
+    -   System will display newly order placed.
+-   **Editing Order:**
+    -   Admin user can update status, edit and delete order
+    -   Redirect to list of orders
+    -   Admin updates the order with the option to update status if admin/staff and then save changes
+    -   System record update
+    -   Success message is shown, and the updated order is displayed.
+-   **Discount Management**
+    -   Admin can add, edit, delete discount codes in the system
+    -   Can view all discount list
 
 ## The Surface Plane
 
@@ -497,12 +496,10 @@ I used this
 
 -   Complete Testing documentation can be found [HERE](TESTING.md)
 
-# AGILE DEVELOPMENT
-
 # BUGS AND ISSUES
 
 ## AM I Responsive website not responding on the day of testing
-    I created a a photo on how it looks on mobile, tablet and desktop screen sizes. 
+I created a photo on how it looks on mobile, tablet and desktop screen sizes. 
 
 ## Increment/Decrement Button on product detail page
 
@@ -525,10 +522,9 @@ I used this
 **Remedies:**
 
 1.  I refactored AWS settings several times, disable and re-enable static_root folder.
-    1.  I created another AWS S3 bucket incase I missed a step when following the walkthrough. Another student provided an updated instruction
-    2.  
+2. I created another AWS S3 bucket incase I missed a step when following the walkthrough. Another student provided an updated instruction
 
-**Resolution:** I downgraded my Django version from 5.1.1 to Djano version 4.2. After pushing to Heroku, all my static files uploaded to my AWS S3 Bucket. Issue was fixed by Roman from Code Institute
+**Resolution:** I downgraded my Django version from 5.1.1 to Django version 4.2. After pushing to Heroku, all my static files uploaded to my AWS S3 Bucket. Issue was fixed by Roman from Code Institute
 
 ## Heroku throws a server error 500
 
@@ -552,13 +548,13 @@ I used this
 -   Deployment: Gunicorn (WSGI HTTP Server), Boto3 for AWS S3
 -   Hosting: The app can be deployed on platforms like Heroku or AWS EC2.
 
-Version Control
+## Version Control
 
 -   **GitHub:** For hosting the code repository and facilitating collaboration.
 
 ## Deployment
 
--   \***Heroku:** For deploying the web application in a scalable and reliable manner.
+-   **Heroku:** For deploying the web application in a scalable and reliable manner.
 -   **Gunicorn:** A Python WSGI HTTP Server for running the application on Heroku.
 
 ## Additional Tools and Libraries
@@ -580,7 +576,7 @@ To deploy the project through Heroku:
 
 -   Login to Heroku
 -   Create a new Heroku application by going to the Dashboard and select New and Create New App
--   Give your app a name (pp4-techtackles-by-hc) and choose the region nearest to you (Europe). This will create an app in Heroku and will redirect you to the Deploy tab.
+-   Give your app a name (pp4-dough-n-drizzle) and choose the region nearest to you (Europe). This will create an app in Heroku and will redirect you to the Deploy tab.
 -   On the Deploy tab, connect your Github and search for your repository.
 -   Manually deploy the main branch of this GitHub repo.
 -   On the Resources tab, ensure eco-dyno is enabled and delete any Postgres database Add-on.

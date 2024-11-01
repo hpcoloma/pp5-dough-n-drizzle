@@ -9,7 +9,7 @@
 
 ### Log In to My Account
 
--   **Test Case 1:** Log in with valid credentials and verify that the user is redirected to the ticket dashboard.
+-   **Test Case 1:** Log in with valid credentials and verify that the user is redirected to the homepage.
 -   **Test Case 2:** Log in with invalid credentials and verify that an error message is displayed.
 
 ### View All Products
@@ -196,11 +196,11 @@
 
 # Automated Testing
 
-There are 13 automated testing done during the development. On CART and CHECKOUT app only. Future testing could have done if given plenty of time.
+There are 10 automated testing done during the development. On CART and CHECKOUT app only. Future testing could have done if given plenty of time.
 
 ![](documentation/readme-md/at-cart-test-views.png)
 ![](documentation/readme-md/at-checkout-test-forms.png)
-![](documentation/readme-md/checkout-test-forms-views.png
+![](documentation/readme-md/checkout-test-forms-views.png)
 
 These tests cover critical functionalities including form validation, user permissions, and view access, ensuring a robust and reliable user experience.
 
